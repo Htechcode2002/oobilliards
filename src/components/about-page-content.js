@@ -68,7 +68,7 @@ export default function AboutPageContent() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               >
-                About <span className="text-[#ffd701]">O'O+ Billiards Group</span>
+                About <span className="text-[#ffd701]">O&apos;O+ Billiards Group</span>
               </motion.h1>
             
             <motion.div 
@@ -81,7 +81,7 @@ export default function AboutPageContent() {
               <Link href="/" className="text-white/60 hover:text-white transition-colors duration-300">
                 Home
               </Link>
-                <span className="mx-2 text-[#ffd701]">//</span>
+                <span className="mx-2 text-[#ffd701]">{'//'}</span>
                 <span className="text-[#ffd701]">About Us</span>
             </motion.div>
           </motion.div>
@@ -144,7 +144,7 @@ export default function AboutPageContent() {
                   <div className="absolute bottom-6 left-6 right-6">
                     <div className="bg-white/95 backdrop-blur-sm p-4 rounded-xl">
                       <p className="text-gray-900 font-bold italic text-sm" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                        "Elevating Malaysian billiards to international standards"
+                        &ldquo;Elevating Malaysian billiards to international standards&rdquo;
                       </p>
                     </div>
                   </div>
@@ -167,7 +167,7 @@ export default function AboutPageContent() {
                 <div className="inline-block bg-gradient-to-r from-[#ffd701] to-[#ccaa4c] p-1 rounded-2xl">
                   <div className="bg-white px-6 py-2 rounded-2xl">
                     <span className="text-black font-bold italic text-sm" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                      ✨ Malaysia's Premier Billiards Experience
+                      ✨ Malaysia&apos;s Premier Billiards Experience
                     </span>
                   </div>
                 </div>
@@ -180,7 +180,7 @@ export default function AboutPageContent() {
                 {/* Description */}
                 <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
                   <p className="text-lg md:text-xl text-gray-700 leading-relaxed italic font-medium" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                    O'O+ Billiards Group is Malaysia's leading billiards entertainment and sports group, 
+                    O&apos;O+ Billiards Group is Malaysia&apos;s leading billiards entertainment and sports group, 
                     offering world-class venues, professional coaching programs, high-profile tournaments, 
                     and premium cue sports equipment under one brand.
                   </p>
@@ -267,7 +267,7 @@ export default function AboutPageContent() {
                     The Beginning
                   </h3>
                   <p className="text-gray-700 leading-relaxed ml-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                    The story of O'O+ Billiards Group began with our founder's lifelong passion for snooker. 
+                    The story of O&apos;O+ Billiards Group began with our founder&apos;s lifelong passion for snooker. 
                     From humble beginnings in local billiard halls, the dream was clear: to transform cue sports 
                     into a respected, professional, and inclusive sport in Malaysia.
                   </p>
@@ -296,7 +296,7 @@ export default function AboutPageContent() {
                   </h3>
                   <p className="text-gray-700 leading-relaxed ml-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     Each outlet is designed with a unique concept—ranging from world-class tournament venues to 
-                    welcoming recreational spaces—embodying our founder's vision of creating a space where 
+                    welcoming recreational spaces—embodying our founder&apos;s vision of creating a space where 
                     competition, leisure, and community come together.
                   </p>
                 </div>
@@ -899,7 +899,7 @@ export default function AboutPageContent() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              O'O+ Billiards Group is the sole official distributor for DUYA, APLUS and EARL billiards 
+              O&apos;O+ Billiards Group is the sole official distributor for DUYA, APLUS and EARL billiards 
               tables and cues in Malaysia, delivering world-class tournament equipment, after-sales support, 
               and customization options for venues nationwide.
             </motion.p>

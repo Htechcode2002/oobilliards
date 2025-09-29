@@ -73,7 +73,7 @@ export default function AboutUsSection() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                O'O+ Billiards Group is Malaysia's leading billiards entertainment and sports group, 
+                O&apos;O+ Billiards Group is Malaysia&apos;s leading billiards entertainment and sports group, 
                 offering world-class venues, professional coaching programs, high-profile tournaments, 
                 and premium cue sports equipment under one brand.
               </motion.p>

@@ -41,7 +41,7 @@ export default function CoachingPrograms() {
         {/* Long Description Below */}
         <div className="text-center mb-12 -mt-25 md:-mt-30">
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-            Whether you're a beginner or aiming for competitive tournaments, our coaching 
+            Whether you&apos;re a beginner or aiming for competitive tournaments, our coaching 
             programs cover Snooker, Chinese 8 Ball, and American Pool. Available in one-to-one 
             or group formats, designed to improve skills and techniques effectively.
           </p>

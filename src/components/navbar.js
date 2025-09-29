@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between md:justify-between justify-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 md:flex-shrink-0">
-              <a href="/" className="flex items-center md:justify-start justify-center">
+              <Link href="/" className="flex items-center md:justify-start justify-center">
                 <Image
                   src="/logo.png"
                   alt="OOBilliards Logo"
@@ -32,7 +33,7 @@ export default function Navbar() {
                   className="h-40 w-auto object-contain mt-4 md:-ml-4 ml-0"
                   priority
                 />
-              </a>
+              </Link>
           </div>
 
           {/* Desktop Navigation */}

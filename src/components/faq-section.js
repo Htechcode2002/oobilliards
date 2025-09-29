@@ -189,7 +189,7 @@ export default function FaqSection() {
               <Link href="/" className="text-white/60 hover:text-white transition-colors duration-300">
                 Home
               </Link>
-              <span className="mx-2 text-[#ffd701]">//</span>
+              <span className="mx-2 text-[#ffd701]">{'//'}</span>
               <span className="text-[#ffd701]">FAQ</span>
             </motion.div>
           </motion.div>
@@ -212,9 +212,9 @@ export default function FaqSection() {
                   Every day help for <span className="text-[#ffd701]">our customers</span>
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-8">
-                  At O'O+ Billiards Group, we're committed to providing exceptional service and support to all our customers. 
-                  Whether you're looking for information about our outlets, products, coaching programs, or booking procedures, 
-                  we're here to help make your billiards experience as smooth as possible.
+                  At O&apos;O+ Billiards Group, we&apos;re committed to providing exceptional service and support to all our customers. 
+                  Whether you&apos;re looking for information about our outlets, products, coaching programs, or booking procedures, 
+                  we&apos;re here to help make your billiards experience as smooth as possible.
                 </p>
               </motion.div>
 
@@ -246,7 +246,7 @@ export default function FaqSection() {
                   If you need <span className="text-[#ffd701]">more help</span>
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Can't find the answer you're looking for? Our customer support team is always ready to assist you with any questions or concerns.
+                  Can&apos;t find the answer you&apos;re looking for? Our customer support team is always ready to assist you with any questions or concerns.
                 </p>
                 <button className="bg-[#ffd701] hover:bg-[#e6c200] text-black px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center space-x-2">
                   <span>Contact Support</span>

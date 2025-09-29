@@ -196,7 +196,7 @@ export default function Footer() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-white/60 text-sm font-kanit">
-                © {currentYear} O'O+ Billiards Group. All rights reserved.
+                © {currentYear} O&apos;O+ Billiards Group. All rights reserved.
               </div>
               <div className="flex space-x-6 text-sm font-kanit">
                 <a href="/privacy" className="text-white/60 hover:text-[#ffd701] transition-colors duration-300">

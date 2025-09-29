@@ -237,7 +237,7 @@ export default function ProductsPageSection() {
               <Link href="/" className="text-white/60 hover:text-white transition-colors duration-300">
                 Home
               </Link>
-              <span className="mx-2 text-[#ffd701]">//</span>
+              <span className="mx-2 text-[#ffd701]">{'//'}</span>
               <span className="text-[#ffd701]">Products</span>
             </motion.div>
           </motion.div>
