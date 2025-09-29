@@ -14,6 +14,8 @@ export default function ProductsPageSection() {
     sortBy: "name" // default sorting by name
   });
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const products = [
     {
@@ -156,6 +158,16 @@ export default function ProductsPageSection() {
     setFilters(newFilters);
   }, []);
 
+  const handleProductClick = (product) => {
+    setSelectedProduct(product);
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedProduct(null);
+  };
+
   // 筛选和排序产品
   const filteredProducts = useMemo(() => {
     let filtered = products.filter(product => {
@@ -275,11 +287,12 @@ export default function ProductsPageSection() {
             {filteredProducts.length > 0 ? filteredProducts.map((product, index) => (
               <motion.div
                 key={product.id}
-                className="bg-white overflow-hidden border border-gray-200 transition-all duration-300 group relative p-2 sm:p-4"
+                className="bg-white overflow-hidden border border-gray-200 transition-all duration-300 group relative cursor-pointer hover:shadow-lg rounded-lg p-3 sm:p-4"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                onClick={() => handleProductClick(product)}
               >
                 {/* Animated Border Lines */}
                 <div className="absolute inset-0 pointer-events-none">
@@ -322,12 +335,12 @@ export default function ProductsPageSection() {
                 </div>
 
                 {/* Product Image */}
-                <div className="relative h-48 sm:h-64 bg-gray-100 overflow-hidden">
+                <div className="relative h-48 sm:h-64 bg-white overflow-hidden rounded-lg">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover"
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';
@@ -342,43 +355,22 @@ export default function ProductsPageSection() {
                       {product.name}
                     </span>
                   </div>
+                  
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
+                      <span className="text-gray-900 font-semibold text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                        Click to view details
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Product Info */}
-                <div className="p-3 sm:p-6 text-center">
-                  {/* Product Name */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                {/* Product Name */}
+                <div className="pt-3 text-center">
+                  <h3 className="text-sm sm:text-lg font-bold text-gray-900 group-hover:text-[#ffd701] transition-colors duration-300 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     {product.name}
                   </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    {product.description}
-                  </p>
-
-                  {/* Price */}
-                  <div className="flex items-center justify-center gap-2 mb-4">
-                    {product.originalPrice && (
-                      <span className="text-sm text-gray-400 line-through">
-                        {product.originalPrice}
-                      </span>
-                    )}
-                    <span className="text-xl font-bold text-gray-900">
-                      {product.price}
-                    </span>
-                  </div>
-
-                  {/* Buy Now Button */}
-                  <div className="flex justify-center">
-                    <button
-                      onClick={() => handleGetQuotation(product)}
-                      className="bg-[#ffd701] text-black py-2 px-6 rounded-full font-semibold hover:bg-[#e6c200] transition-colors duration-200 flex items-center justify-center gap-2"
-                      style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
-                    >
-                      <span className="text-sm">Get Quotation</span>
-                      <ShoppingCart className="w-4 h-4" />
-                    </button>
-                  </div>
                 </div>
               </motion.div>
             )) : (
@@ -391,6 +383,171 @@ export default function ProductsPageSection() {
           </div>
         </div>
       </section>
+
+      {/* Product Details Popup */}
+      {isPopupOpen && selectedProduct && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={handleClosePopup}
+          ></div>
+          
+          {/* Modal Content */}
+          <motion.div 
+            className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            {/* Close Button */}
+            <button
+              onClick={handleClosePopup}
+              className="absolute top-4 right-4 z-10 p-2 bg-white/80 hover:bg-white rounded-full shadow-lg transition-all duration-200"
+            >
+              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Product Image */}
+              <div className="relative h-64 sm:h-80 lg:h-full bg-white">
+                <Image
+                  src={selectedProduct.image}
+                  alt={selectedProduct.name}
+                  fill
+                  className="object-contain rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback background when image fails to load */}
+                <div 
+                  className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 hidden items-center justify-center rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none"
+                  style={{ display: 'none' }}
+                >
+                  <span className="text-gray-500 text-lg font-semibold text-center px-4">
+                    {selectedProduct.name}
+                  </span>
+                </div>
+                
+                {/* Brand Badge */}
+                <div className="absolute top-4 left-4">
+                  <div className="bg-[#ffd701] text-black px-3 py-1 rounded-full font-bold text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    {selectedProduct.brand}
+                  </div>
+                </div>
+                
+                {/* New Badge */}
+                {selectedProduct.isNew && (
+                  <div className="absolute top-4 right-4">
+                    <div className="bg-green-500 text-white px-3 py-1 rounded-full font-bold text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                      NEW
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Product Details */}
+              <div className="p-6 lg:p-8">
+                {/* Product Name */}
+                <h2 className="text-2xl lg:text-3xl font-black text-gray-900 mb-4 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  {selectedProduct.name}
+                </h2>
+
+                {/* Rating */}
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        className={`w-4 h-4 ${i < Math.floor(selectedProduct.rating) ? 'text-[#ffd701]' : 'text-gray-300'}`}
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="text-gray-600 text-sm">({selectedProduct.reviews} reviews)</span>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-600 leading-relaxed mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  {selectedProduct.description}
+                </p>
+
+                {/* Key Highlights */}
+                <div className="mb-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    Key Features
+                  </h3>
+                  <ul className="space-y-2">
+                    {selectedProduct.highlights.map((highlight, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-[#ffd701] rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                          {highlight}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Specifications */}
+                <div className="mb-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    Specifications
+                  </h3>
+                  <div className="bg-gray-50 rounded-lg p-4 space-y-2">
+                    {Object.entries(selectedProduct.specifications).map(([key, value]) => (
+                      <div key={key} className="flex justify-between text-sm">
+                        <span className="text-gray-600 capitalize italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                          {key.replace(/([A-Z])/g, ' $1').trim()}:
+                        </span>
+                        <span className="text-gray-900 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                          {value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Price and Actions */}
+                <div className="border-t border-gray-200 pt-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <span className="text-2xl font-bold text-gray-900 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                        {selectedProduct.price}
+                      </span>
+                      {selectedProduct.originalPrice && (
+                        <span className="text-lg text-gray-400 line-through ml-2">
+                          {selectedProduct.originalPrice}
+                        </span>
+                      )}
+                    </div>
+                    <div className={`px-3 py-1 rounded-full text-sm font-semibold ${selectedProduct.inStock ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                      {selectedProduct.inStock ? 'In Stock' : 'Out of Stock'}
+                    </div>
+                  </div>
+                  
+                  <button
+                    onClick={() => handleGetQuotation(selectedProduct)}
+                    className="w-full bg-[#ffd701] hover:bg-[#e6c200] text-black py-3 px-6 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 italic shadow-lg hover:shadow-xl"
+                    style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
+                  >
+                    <span>Get Quotation via WhatsApp</span>
+                    <ShoppingCart className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }

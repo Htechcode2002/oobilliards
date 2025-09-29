@@ -69,11 +69,11 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-20 h-20 rounded-full border border-white/20"></div>
-        <div className="absolute top-32 right-20 w-16 h-16 rounded-full border border-white/15"></div>
-        <div className="absolute bottom-20 left-32 w-12 h-12 rounded-full border border-white/10"></div>
-        <div className="absolute bottom-32 right-16 w-24 h-24 rounded-full border border-white/20"></div>
+      <div className="absolute inset-0 opacity-5 overflow-hidden">
+        <div className="absolute top-10 left-4 sm:left-10 w-16 sm:w-20 h-16 sm:h-20 rounded-full border border-white/20"></div>
+        <div className="absolute top-32 right-4 sm:right-20 w-12 sm:w-16 h-12 sm:h-16 rounded-full border border-white/15"></div>
+        <div className="absolute bottom-20 left-4 sm:left-32 w-10 sm:w-12 h-10 sm:h-12 rounded-full border border-white/10"></div>
+        <div className="absolute bottom-32 right-4 sm:right-16 w-16 sm:w-24 h-16 sm:h-24 rounded-full border border-white/20"></div>
       </div>
 
       <div className="relative z-10">
@@ -198,7 +198,7 @@ export default function Footer() {
               <div className="text-white/60 text-sm font-kanit">
                 © {currentYear} O&apos;O+ Billiards Group. All rights reserved.
               </div>
-              <div className="flex space-x-6 text-sm font-kanit">
+              <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-kanit justify-center md:justify-start">
                 <a href="/privacy" className="text-white/60 hover:text-[#ffd701] transition-colors duration-300">
                   Privacy Policy
                 </a>

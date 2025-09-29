@@ -243,10 +243,9 @@ export default function AboutPageContent() {
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                 Our Journey from <span className="text-[#ffd701] relative">
                   Passion
-                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#ffd701] to-[#ccaa4c] rounded-full"></div>
+                  <div className="absolute  left-0 right-0 h-1 bg-gradient-to-r from-[#ffd701] to-[#ccaa4c] rounded-full"></div>
                 </span> to Professionalism
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-[#ffd701] to-[#ccaa4c] rounded-full mx-auto"></div>
             </motion.div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

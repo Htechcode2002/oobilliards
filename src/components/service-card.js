@@ -79,11 +79,6 @@ export default function ServiceCard({
           {isGradient ? (
             <div className={`w-full h-full bg-gradient-to-br ${gradientFrom} ${gradientTo} flex items-center justify-center overflow-hidden`}>
               <div className="text-white text-6xl font-bold">{emoji}</div>
-                <div className="absolute bottom-0 right-[-6%] transform translate-y-1/2 p-3 rounded-full shadow-lg z-20" style={{ backgroundColor: '#ffd701' }}>
-                <div className="w-8 h-8 flex items-center justify-center">
-                  {icon}
-                </div>
-              </div>
             </div>
           ) : (
             <>
@@ -93,11 +88,6 @@ export default function ServiceCard({
                   alt={alt}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-              </div>
-              <div className="absolute bottom-0 right-[10%] transform translate-y-1/2 p-3 rounded-full shadow-lg z-20" style={{ backgroundColor: '#ffd701' }}>
-                <div className="w-8 h-8 flex items-center justify-center">
-                  {icon}
-                </div>
               </div>
             </>
           )}
@@ -112,9 +102,9 @@ export default function ServiceCard({
         <div className="text-gray-600 mb-4 text-sm leading-relaxed font-normal min-h-[120px] flex flex-col justify-between" style={{ fontFamily: 'Arial, sans-serif' }}>
           <div dangerouslySetInnerHTML={{ __html: description }}></div>
         </div>
-        <button className="text-black font-semibold text-sm flex items-center italic transition-colors duration-300 hover:scale-105 transform" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }} onMouseEnter={(e) => e.target.style.color = '#ffd701'} onMouseLeave={(e) => e.target.style.color = 'black'}>
-          WhatsApp for Details
-          <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button className="bg-[#ffd701] text-black font-semibold text-sm px-6 py-3 rounded-full flex items-center justify-center italic transition-all duration-300 hover:bg-[#e6c200] hover:scale-105 transform shadow-md hover:shadow-lg" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+          Get Started
+          <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>

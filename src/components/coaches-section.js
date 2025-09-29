@@ -45,12 +45,15 @@ export default function CoachesSection() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1); // 1 for next, -1 for prev
 
   const nextCoach = () => {
+    setDirection(1);
     setCurrentIndex((prev) => (prev + 1) % coaches.length);
   };
 
   const prevCoach = () => {
+    setDirection(-1);
     setCurrentIndex((prev) => (prev - 1 + coaches.length) % coaches.length);
   };
 
@@ -87,7 +90,7 @@ export default function CoachesSection() {
             <div className="relative">
               {/* COACHES - Main background text */}
               <span 
-                className="text-[6rem] md:text-[10rem] font-bold leading-none select-none tracking-normal"
+                className="text-[5rem] md:text-[8rem] font-bold leading-none select-none tracking-normal"
                 style={{
                   color: 'rgba(255, 255, 255, 0.05)',
                   WebkitTextStroke: '2px rgba(255, 255, 255, 0.2)',
@@ -173,12 +176,12 @@ export default function CoachesSection() {
               <motion.div
                 key={`mobile-${coaches[currentIndex].id}-${currentIndex}`}
                 className="flex flex-col items-center"
-                initial={{ opacity: 0, x: 100 }}
+                initial={{ opacity: 0, x: direction * -100 }}
                 animate={{ 
                   opacity: 1, 
                   x: 0
                 }}
-                exit={{ opacity: 0, x: -100 }}
+                exit={{ opacity: 0, x: direction * 100 }}
                 transition={{ duration: 0.5 }}
               >
                 {/* Coach Image */}

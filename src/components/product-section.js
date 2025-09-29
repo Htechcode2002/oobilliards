@@ -57,7 +57,7 @@ export default function ProductSection() {
           {/* Background Decorative Text */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <span 
-              className="text-[6rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
+              className="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
               style={{
                 color: 'transparent',
                 WebkitTextStroke: '1.5px #bdc3c7',
@@ -68,7 +68,7 @@ export default function ProductSection() {
                 fontStyle: 'italic',
               }}
             >
-              STORE
+              PRODUCTS
             </span>
           </div>
           
@@ -83,7 +83,7 @@ export default function ProductSection() {
             <div className="text-center">
               <div >
                 <span 
-                  className="text-[#9ACD32] text-sm font-semibold uppercase tracking-wide"
+                  className="text-[#ffd701] text-sm font-semibold uppercase tracking-wide"
                   style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
                 >
                   Online Store
@@ -104,7 +104,7 @@ export default function ProductSection() {
           {products.map((product, index) => (
             <motion.div
               key={product.id}
-              className="bg-white overflow-hidden border border-gray-200 transition-all duration-300 group relative p-2 sm:p-4"
+              className="bg-white overflow-hidden border border-gray-200 transition-all duration-300 group relative rounded-lg p-3 sm:p-4 hover:shadow-lg cursor-pointer"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -151,13 +151,13 @@ export default function ProductSection() {
               </div>
 
               {/* Product Image */}
-              <div className="relative h-48 sm:h-64 bg-gray-100 overflow-hidden">
+              <div className="relative h-32 sm:h-40 bg-white overflow-hidden rounded-lg">
 
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover"
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'flex';
@@ -174,41 +174,11 @@ export default function ProductSection() {
                 </div>
               </div>
 
-              {/* Product Info */}
-              <div className="p-3 sm:p-6 text-center">
-                {/* Product Name */}
-                <h3 className="text-lg font-bold text-gray-900 mb-2 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+              {/* Product Name */}
+              <div className="pt-3 text-center">
+                <h3 className="text-sm sm:text-lg font-bold text-gray-900 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                   {product.name}
                 </h3>
-
-                {/* Description */}
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  {product.description}
-                </p>
-
-                {/* Price */}
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  {product.originalPrice && (
-                    <span className="text-sm text-gray-400 line-through">
-                      {product.originalPrice}
-                    </span>
-                  )}
-                  <span className="text-xl font-bold text-gray-900">
-                    {product.price}
-                  </span>
-                </div>
-
-                {/* Buy Now Button */}
-                <div className="flex justify-center">
-                  <button
-                    onClick={() => handleAddToCart(product)}
-                    className="bg-[#ffd701] text-black py-2 px-6 rounded-full font-semibold hover:bg-[#e6c200] transition-colors duration-200 flex items-center justify-center gap-2"
-                    style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
-                  >
-                    <span className="text-sm">Buy Now</span>
-                    <ShoppingCart className="w-4 h-4" />
-                  </button>
-                </div>
               </div>
             </motion.div>
           ))}

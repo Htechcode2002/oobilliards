@@ -13,7 +13,7 @@ export default function CoachingPrograms() {
           {/* Background Decorative Text */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <span 
-              className="text-[6rem] sm:text-[8rem] md:text-[10rem] lg:text-[14rem] font-bold leading-none select-none tracking-normal"
+              className="text-[5rem] sm:text-[8rem] md:text-[10rem] lg:text-[14rem] font-bold leading-none select-none tracking-normal"
               style={{
                 color: 'transparent',
                 WebkitTextStroke: '1.5px #bdc3c7',
@@ -31,9 +31,9 @@ export default function CoachingPrograms() {
           {/* Foreground Content - Short Title in Center */}
           <div className="relative z-10 flex items-center justify-center min-h-[300px] sm:min-h-[400px]">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 text-center italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-              Our <span style={{ color: '#ffd701' }}>billiards club</span> offers
+              Professional <span style={{ color: '#ffd701' }}>Billiards</span>
               <br />
-              high level <span style={{ color: '#ffd701' }}>Coaching Services</span>
+              <span style={{ color: '#ffd701' }}>Coaching Services</span>
             </h2>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function CoachingPrograms() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12 px-2 sm:px-4">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-6 lg:gap-8 mb-12 px-2 sm:px-4">
           <ServiceCard 
             image="/home/game/chinese8ball.png"
             alt="Chinese 8 Ball"

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade } from 'swiper/modules';
 
@@ -16,7 +16,7 @@ const customSwiperStyles = `
     position: relative;
   }
   .hero-swiper .swiper-slide {
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    transition: opacity 1s ease-out;
   }
   .hero-swiper .swiper-slide-active {
     opacity: 1;
@@ -98,21 +98,6 @@ export default function HeroBanner() {
     }, 3000);
   };
 
-  // Simple slide down animation variants - extremely slow start
-  const slideDownVariants = {
-    initial: { 
-      opacity: 0, 
-      y: -80
-    },
-    animate: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 3.0,
-        ease: [0.01, 0.04, 0.12, 1]
-      }
-    }
-  };
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -147,11 +132,11 @@ export default function HeroBanner() {
             <SwiperSlide key={index}>
               <motion.div 
                 className="relative w-full h-full"
-                initial={{ scale: 1.08 }}
-                animate={{ scale: 1.12 }}
+                initial={{ scale: 1.05 }}
+                animate={{ scale: 1.08 }}
                 transition={{ 
-                  duration: 8, 
-                  ease: [0.25, 0.46, 0.45, 0.94],
+                  duration: 6, 
+                  ease: "easeInOut",
                   repeat: Infinity,
                   repeatType: "reverse"
                 }}
@@ -238,14 +223,13 @@ export default function HeroBanner() {
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center pt-32 sm:pt-28 md:pt-24 lg:pt-20">
         <div className="text-center">
           {/* Circular Background with Text - Simple Slide Down Animation */}
-          <AnimatePresence mode="wait">
-            <motion.div 
-              key={animationKey}
-              className="relative flex items-center justify-center mb-6"
-              variants={slideDownVariants}
-              initial="initial"
-              animate="animate"
-            >
+          <motion.div 
+            key={animationKey}
+            className="relative flex items-center justify-center mb-6"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
               {/* Large Circle Background */}
               <div className="w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] lg:w-[580px] lg:h-[580px] rounded-full border-2 border-white/30 flex items-center justify-center relative">
                 
@@ -310,7 +294,6 @@ export default function HeroBanner() {
                 <div className="absolute top-1/3 -right-8 w-4 h-4 rounded-full bg-white/35"></div>
               </div>
             </motion.div>
-          </AnimatePresence>
 
         </div>
       </div>

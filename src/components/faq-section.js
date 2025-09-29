@@ -198,113 +198,150 @@ export default function FaqSection() {
 
       {/* FAQ Content */}
       <div className="relative z-10 bg-white">
-        <div className=" px-5 md:px-10 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-            
-            {/* Left Column - Introduction (40%) */}
-            <div className="lg:col-span-2 space-y-8">
+        <div className="px-5 md:px-10 py-12">
+          {/* FAQ Questions by Sections */}
+          <div className="max-w-5xl mx-auto space-y-8">
+            {categories.map((category, categoryIndex) => (
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  Every day help for <span className="text-[#ffd701]">our customers</span>
-                </h2>
-                <p className="text-gray-600 leading-relaxed mb-8">
-                  At O&apos;O+ Billiards Group, we&apos;re committed to providing exceptional service and support to all our customers. 
-                  Whether you&apos;re looking for information about our outlets, products, coaching programs, or booking procedures, 
-                  we&apos;re here to help make your billiards experience as smooth as possible.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                key={category.key}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+                viewport={{ once: true }}
                 className="space-y-4"
               >
-                {[
-                  "Professional Coaching Services",
-                  "Multiple Outlet Locations", 
-                  "Quality Equipment & Products",
-                  "Flexible Booking Options"
-                ].map((service, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-[#ffd701] rounded-full"></div>
-                    <span className="text-gray-700 font-medium">{service}</span>
-                  </div>
-                ))}
-              </motion.div>
+                {/* Section Header */}
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className={`w-1 h-8 ${category.color} rounded-full`}></div>
+                  <h3 className="text-xl font-bold text-gray-900 uppercase tracking-wide">
+                    {category.title}
+                  </h3>
+                </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  If you need <span className="text-[#ffd701]">more help</span>
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Can&apos;t find the answer you&apos;re looking for? Our customer support team is always ready to assist you with any questions or concerns.
-                </p>
-                <button className="bg-[#ffd701] hover:bg-[#e6c200] text-black px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center space-x-2">
-                  <span>Contact Support</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </motion.div>
-            </div>
-
-            {/* Right Column - FAQ Questions by Sections (60%) */}
-            <div className="lg:col-span-3 space-y-8">
-              {categories.map((category, categoryIndex) => (
-                <motion.div
-                  key={category.key}
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 + categoryIndex * 0.1 }}
-                  className="space-y-4"
-                >
-                  {/* Section Header */}
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className={`w-1 h-6 ${category.color} rounded-full`}></div>
-                    <h3 className="text-lg font-bold text-gray-900 uppercase tracking-wide">
-                      {category.title}
-                    </h3>
-                  </div>
-
-                  {/* Section Questions */}
-                  <Accordion type="single" collapsible className="space-y-3">
-                    {faqData[category.key].map((faq, index) => (
-                      <AccordionItem 
-                        key={faq.id} 
-                        value={faq.id}
-                        className="border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm"
-                      >
-                        <AccordionTrigger className="px-6 py-4 hover:bg-gray-50 text-left font-semibold text-gray-900 group">
-                          <div className="flex items-center space-x-4">
-                            <div className="w-8 h-8 bg-[#ffd701] rounded-full flex items-center justify-center flex-shrink-0">
-                              <svg className="w-4 h-4 text-black group-data-[state=open]:rotate-45 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                              </svg>
-                            </div>
-                            <span className="text-sm md:text-base">{faq.question}</span>
+                {/* Section Questions */}
+                <Accordion type="single" collapsible className="space-y-3">
+                  {faqData[category.key].map((faq, index) => (
+                    <AccordionItem 
+                      key={faq.id} 
+                      value={faq.id}
+                      className="border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm"
+                    >
+                      <AccordionTrigger className="px-6 py-4 hover:bg-gray-50 text-left font-semibold text-gray-900 group">
+                        <div className="flex items-center space-x-4">
+                          <div className="w-8 h-8 bg-[#ffd701] rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg className="w-4 h-4 text-black group-data-[state=open]:rotate-45 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
                           </div>
-                        </AccordionTrigger>
-                        <AccordionContent className="px-6 pb-6 pt-2">
-                          <div className="text-gray-600 leading-relaxed ml-12">
-                            {faq.answer}
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </motion.div>
-              ))}
-            </div>
+                          <span className="text-sm md:text-base">{faq.question}</span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="px-6 pb-6 pt-2">
+                        <div className="text-gray-600 leading-relaxed ml-12">
+                          {faq.answer}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </motion.div>
+            ))}
           </div>
+
+          {/* Customer Service Section - Moved to Bottom */}
+          <motion.section 
+            className="py-16 bg-gradient-to-br from-gray-50 to-white mt-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="max-w-6xl mx-auto px-5 md:px-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                {/* Left Side - Content */}
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                  className="space-y-8"
+                >
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                      Every day help for <span className="text-[#ffd701]">our customers</span>
+                    </h2>
+                    <p className="text-lg text-gray-600 leading-relaxed italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                      At O&apos;O+ Billiards Group, we&apos;re committed to providing exceptional service and support to all our customers. 
+                      Whether you&apos;re looking for information about our outlets, products, coaching programs, or booking procedures, 
+                      we&apos;re here to help make your billiards experience as smooth as possible.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                      "Professional Coaching Services",
+                      "Multiple Outlet Locations", 
+                      "Quality Equipment & Products",
+                      "Flexible Booking Options"
+                    ].map((service, index) => (
+                      <div key={index} className="flex items-center space-x-3">
+                        <div className="w-3 h-3 bg-[#ffd701] rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>{service}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                      If you need <span className="text-[#ffd701]">more help</span>
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                      Can&apos;t find the answer you&apos;re looking for? Our customer support team is always ready to assist you with any questions or concerns.
+                    </p>
+                    <button className="bg-[#ffd701] hover:bg-[#e6c200] text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-3 italic shadow-lg hover:shadow-xl" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                      <span>Contact Support</span>
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                </motion.div>
+
+                {/* Right Side - Image */}
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="relative"
+                >
+                  <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                    <img
+                      src="/home/coaching.jpg"
+                      alt="Customer Support - O'O+ Billiards Group"
+                      className="w-full h-[400px] object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                    
+                    {/* Image Badge */}
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="bg-white/95 backdrop-blur-sm p-4 rounded-xl">
+                        <p className="text-gray-900 font-bold italic text-sm" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                          &ldquo;Always here to help you enjoy the perfect billiards experience&rdquo;
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Floating Accent */}
+                  <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#ffd701] rounded-full opacity-20 blur-xl"></div>
+                  <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[#ccaa4c] rounded-full opacity-20 blur-xl"></div>
+                </motion.div>
+
+              </div>
+            </div>
+          </motion.section>
         </div>
       </div>
     </div>

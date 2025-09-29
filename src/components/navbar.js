@@ -58,7 +58,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <a href="/outlets">
-              <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 font-kanit font-semibold">
+              <button className="bg-white/20 hover:bg-[#ffd701] backdrop-blur-sm border border-white/30 hover:border-[#ffd701] text-white hover:text-black px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 font-kanit font-semibold">
                 Book a Table
               </button>
             </a>
@@ -89,57 +89,65 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            style={{ overflow: "hidden" }}
+            className="md:hidden fixed inset-0 z-50"
+            initial={{ y: "-100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
           >
-            <motion.div 
-              className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/30 backdrop-blur-sm border-t border-white/20"
-              initial={{ y: -20 }}
-              animate={{ y: 0 }}
-              exit={{ y: -20 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
+            <div className="bg-black/90 min-h-screen">
+              {/* Mobile Menu Header */}
+              <div className="bg-black/95 px-4 py-4 border-b border-white/20">
+                <div className="flex items-center justify-between">
+                  {/* Logo */}
+                  <Link href="/" onClick={() => setIsOpen(false)}>
+                    <Image
+                      src="/logo.png"
+                      alt="OOBilliards Logo"
+                      width={280}
+                      height={116}
+                      className="h-20 w-auto object-contain"
+                      priority
+                    />
+                  </Link>
+                  {/* Close button */}
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center justify-center p-2 rounded-md text-white/90 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white/50"
+                  >
+                    <X className="h-6 w-6" />
+                  </button>
+                </div>
+              </div>
+              
+              {/* Menu Content */}
+              <div className="px-4 py-8">
+              
+              <div className="space-y-1">
               {navItems.map((item, index) => (
-                <motion.a
+                <a
                   key={item.name}
                   href={item.href}
-                  className="text-white/90 block px-3 py-2 rounded-md text-base font-kanit relative group italic"
+                  className="text-white/90 block px-3 py-4 rounded-md text-lg font-kanit relative group italic hover:bg-white/10"
                   onClick={() => setIsOpen(false)}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ 
-                    duration: 0.3, 
-                    delay: index * 0.1,
-                    ease: "easeInOut" 
-                  }}
                 >
                   <span className="relative z-10 group-hover:text-[#ffd701] transition-colors duration-300">
                     {item.name}
                   </span>
                   {/* Underline */}
                   <span className="absolute bottom-1 left-3 right-3 bg-[#ffd701] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left will-change-transform" style={{height: '1px', transform: 'translateZ(0)'}}></span>
-                </motion.a>
+                </a>
               ))}
-              <motion.a 
+              <a 
                 href="/outlets"
-                        className="w-full mt-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 font-kanit font-semibold block text-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ 
-                  duration: 0.3, 
-                  delay: navItems.length * 0.1,
-                  ease: "easeInOut" 
-                }}
+                className="w-full mt-8 bg-white/20 hover:bg-[#ffd701] backdrop-blur-sm border border-white/30 hover:border-[#ffd701] text-white hover:text-black px-4 py-3 rounded-md text-lg font-medium transition-all duration-300 font-kanit font-semibold block text-center"
+                onClick={() => setIsOpen(false)}
               >
                 Book a Table
-              </motion.a>
-            </motion.div>
+              </a>
+              </div>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

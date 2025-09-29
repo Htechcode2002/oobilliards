@@ -12,7 +12,7 @@ export default function AboutUsSection() {
           {/* Background Decorative Text */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <span 
-              className="text-[6rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
+              className="text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
               style={{
                 color: 'transparent',
                 WebkitTextStroke: '1.5px #bdc3c7',
