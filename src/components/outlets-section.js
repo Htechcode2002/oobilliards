@@ -204,13 +204,13 @@ export default function OutletsSection() {
       </section>
 
       {/* Outlets List */}
-      <section className="relative z-10 py-16 bg-white">
+      <section className="relative z-10 py-16 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8">
             {outlets.map((outlet, index) => (
               <motion.div
                 key={outlet.id}
-                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-700"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -253,14 +253,14 @@ export default function OutletsSection() {
 
                     {/* Title and Location */}
                     <div className="mb-4">
-                      <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">
+                      <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
                         {outlet.name} | {outlet.location}
                       </h3>
                     </div>
 
                     {/* Description */}
                     <div className="mb-4">
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <p className="text-gray-300 text-sm leading-relaxed">
                         {outlet.description}
                       </p>
                     </div>
@@ -271,9 +271,9 @@ export default function OutletsSection() {
                       <div>
                         <div className="flex items-center gap-2 mb-2">
                           <Phone className="w-4 h-4 text-[#ffd701]" />
-                          <span className="text-gray-900 font-semibold text-sm">Contact</span>
+                          <span className="text-white font-semibold text-sm">Contact</span>
                         </div>
-                        <div className="text-gray-600 text-sm">
+                        <div className="text-gray-300 text-sm">
                           {outlet.contact.phone}
                         </div>
                       </div>
@@ -282,9 +282,9 @@ export default function OutletsSection() {
                       <div>
                         <div className="flex items-center gap-2 mb-2">
                           <Clock className="w-4 h-4 text-[#ffd701]" />
-                          <span className="text-gray-900 font-semibold text-sm">Hours</span>
+                          <span className="text-white font-semibold text-sm">Hours</span>
                         </div>
-                        <div className="text-gray-600 text-sm">
+                        <div className="text-gray-300 text-sm">
                           {outlet.hours.weekdays && (
                             <div>{outlet.hours.weekdays}</div>
                           )}
@@ -302,9 +302,9 @@ export default function OutletsSection() {
                     <div className="mb-6">
                       <div className="flex items-center gap-2 mb-2">
                         <Gamepad2 className="w-4 h-4 text-[#ffd701]" />
-                        <span className="text-gray-900 font-semibold text-sm">Available Tables</span>
+                        <span className="text-white font-semibold text-sm">Available Tables</span>
                       </div>
-                      <div className="text-gray-600 text-sm">
+                      <div className="text-gray-300 text-sm">
                         {outlet.tables.map((table, idx) => (
                           <div key={idx}>• {table}</div>
                         ))}

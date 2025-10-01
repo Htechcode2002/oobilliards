@@ -98,7 +98,7 @@ export default function StatisticsSection() {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-white relative overflow-hidden">
+    <section className="py-16 sm:py-20 bg-black relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Statistics Grid */}
         <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
@@ -125,7 +125,7 @@ export default function StatisticsSection() {
 
               {/* Number */}
               <motion.div
-                className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-2 italic"
+                className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-2 italic"
                 style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
                 initial={{ scale: 0, opacity: 0 }}
                 whileInView={{ 
@@ -161,7 +161,7 @@ export default function StatisticsSection() {
 
               {/* Label */}
               <motion.p
-                className="text-gray-700 font-medium text-sm sm:text-base italic"
+                className="text-gray-300 font-medium text-sm sm:text-base italic"
                 style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

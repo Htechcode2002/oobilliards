@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Poppins, Kanit } from 'next/font/google';
+import ScrollToTop from '@/components/scroll-to-top';
 
 // Premium font configuration for snooker website
 const poppins = Poppins({
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         className={`${poppins.variable} ${kanit.variable} antialiased`}
       >
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );

@@ -5,26 +5,55 @@ import Link from "next/link";
 
 export default function AboutUsSection() {
   return (
-    <section className="py-16 sm:py-20 bg-white relative overflow-hidden">
+    <section className="py-16 sm:py-20 bg-black relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header with Background Text Effect */}
         <div className="text-center mb-16 relative">
           {/* Background Decorative Text */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <span 
-              className="text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
-              style={{
-                color: 'transparent',
-                WebkitTextStroke: '1.5px #bdc3c7',
-                textStroke: '1.5px #bdc3c7',
-                fontFamily: 'Kanit, system-ui, sans-serif',
-                letterSpacing: '0.05em',
-                filter: 'blur(0.5px)',
-                fontStyle: 'italic',
-              }}
-            >
-              ABOUT US
-            </span>
+            <div className="relative">
+              {/* Base White Text */}
+              <span 
+                className="text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
+                style={{
+                  color: 'rgba(255, 255, 255, 0.15)',
+                  WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.3)',
+                  textStroke: '1.5px rgba(255, 255, 255, 0.3)',
+                  fontFamily: 'Kanit, system-ui, sans-serif',
+                  letterSpacing: '0.05em',
+                  filter: 'blur(0.5px)',
+                  fontStyle: 'italic',
+                }}
+              >
+                ABOUT US
+              </span>
+              
+              {/* Golden Flash Overlay */}
+              <motion.span 
+                className="absolute inset-0 text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
+                style={{
+                  fontFamily: 'Kanit, system-ui, sans-serif',
+                  letterSpacing: '0.05em',
+                  filter: 'blur(0.5px)',
+                  fontStyle: 'italic',
+                  color: 'rgba(255, 215, 1, 1)',
+                  WebkitTextStroke: '1.5px rgba(255, 215, 1, 0.8)',
+                  textStroke: '1.5px rgba(255, 215, 1, 0.8)',
+                  textShadow: '0 0 20px rgba(255, 215, 1, 0.8)',
+                }}
+                animate={{
+                  opacity: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                }}
+                transition={{
+                  duration: 13,
+                  repeat: Infinity,
+                  ease: "linear",
+                  times: [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1],
+                }}
+              >
+                ABOUT US
+              </motion.span>
+            </div>
           </div>
           
           {/* Foreground Content */}
@@ -45,7 +74,7 @@ export default function AboutUsSection() {
                 </span>
               </div>
               <h2 
-                className="text-4xl sm:text-5xl font-black text-gray-900 italic"
+                className="text-4xl sm:text-5xl font-black text-white italic"
                 style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
               >
                 Play Hard. <span className="text-[#ffd701]">Aim True.</span><br />
@@ -66,7 +95,7 @@ export default function AboutUsSection() {
           >
             <div className="space-y-6">
               <motion.p 
-                className="text-lg text-gray-600 leading-relaxed italic"
+                className="text-lg text-gray-300 leading-relaxed italic"
                 style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +108,7 @@ export default function AboutUsSection() {
               </motion.p>
               
               <motion.p 
-                className="text-lg text-gray-600 leading-relaxed italic"
+                className="text-lg text-gray-300 leading-relaxed italic"
                 style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +143,7 @@ export default function AboutUsSection() {
                     viewport={{ once: true }}
                   >
                     <div className="w-2 h-2 bg-[#ffd701] rounded-full mr-4 flex-shrink-0"></div>
-                    <span className="text-gray-700 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <span className="text-gray-300 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       {feature}
                     </span>
                   </motion.div>
@@ -141,7 +170,7 @@ export default function AboutUsSection() {
             </div>
           </motion.div>
 
-          {/* Right Side - Image */}
+          {/* Right Side - 3 Split Photos */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: 50 }}
@@ -149,13 +178,70 @@ export default function AboutUsSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="relative overflow-hidden rounded-lg shadow-2xl">
-              <img
-                src="/home/coaching.jpg"
-                alt="About O'O+ Billiards Group"
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            <div className="grid grid-cols-2 gap-4 h-96">
+              {/* Large photo on the left */}
+              <motion.div 
+                className="relative overflow-hidden rounded-lg shadow-xl"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src="/home/coaching.jpg"
+                  alt="Professional Coaching"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <div className="absolute bottom-4 left-4">
+                  <span className="text-white font-bold text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    Professional Coaching
+                  </span>
+                </div>
+              </motion.div>
+
+              {/* Two smaller photos on the right */}
+              <div className="flex flex-col gap-4">
+                <motion.div 
+                  className="relative overflow-hidden rounded-lg shadow-xl flex-1"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <img
+                    src="/home/tournament.jpg"
+                    alt="Tournament Events"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  <div className="absolute bottom-2 left-2">
+                    <span className="text-white font-bold text-xs italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                      Tournament Events
+                    </span>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="relative overflow-hidden rounded-lg shadow-xl flex-1"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <img
+                    src="/outlets/outlets.jpg"
+                    alt="Premium Venues"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  <div className="absolute bottom-2 left-2">
+                    <span className="text-white font-bold text-xs italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                      Premium Venues
+                    </span>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>

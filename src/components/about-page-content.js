@@ -89,10 +89,10 @@ export default function AboutPageContent() {
       </section>
 
         {/* Content Sections */}
-        <div className="relative z-10 bg-white">
+        <div className="relative z-10 bg-black">
         
         {/* Who We Are Section - Enhanced */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
           {/* Decorative Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div 
@@ -113,7 +113,7 @@ export default function AboutPageContent() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                 Who <span className="text-[#ffd701] relative">
                   We Are
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#ffd701] to-[#ccaa4c] rounded-full"></div>
@@ -173,13 +173,13 @@ export default function AboutPageContent() {
                 </div>
                 
                 {/* Main Title */}
-                <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 italic leading-tight" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                <h3 className="text-3xl md:text-4xl font-black text-white mb-6 italic leading-tight" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                   Where <span className="text-[#ffd701]">Excellence</span> Meets Passion
                 </h3>
                 
                 {/* Description */}
-                <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-                  <p className="text-lg md:text-xl text-gray-700 leading-relaxed italic font-medium" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                <div className="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700">
+                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed italic font-medium" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     O&apos;O+ Billiards Group is Malaysia&apos;s leading billiards entertainment and sports group, 
                     offering world-class venues, professional coaching programs, high-profile tournaments, 
                     and premium cue sports equipment under one brand.
@@ -190,25 +190,25 @@ export default function AboutPageContent() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-[#ffd701] rounded-full"></div>
-                    <span className="text-gray-700 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <span className="text-gray-300 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       World-Class Venues
                     </span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-[#ffd701] rounded-full"></div>
-                    <span className="text-gray-700 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <span className="text-gray-300 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       Expert Coaching
                     </span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-[#ffd701] rounded-full"></div>
-                    <span className="text-gray-700 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <span className="text-gray-300 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       Premium Equipment
                     </span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-[#ffd701] rounded-full"></div>
-                    <span className="text-gray-700 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <span className="text-gray-300 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       Professional Tournaments
                     </span>
                   </div>
@@ -219,7 +219,7 @@ export default function AboutPageContent() {
         </section>
 
         {/* Our Story Section - Enhanced */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
           {/* Decorative Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div 
@@ -240,7 +240,7 @@ export default function AboutPageContent() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                 Our Journey from <span className="text-[#ffd701] relative">
                   Passion
                   <div className="absolute  left-0 right-0 h-1 bg-gradient-to-r from-[#ffd701] to-[#ccaa4c] rounded-full"></div>
@@ -258,42 +258,42 @@ export default function AboutPageContent() {
                 className="space-y-8"
               >
                 {/* Story Cards */}
-                <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 relative">
+                <div className="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 relative">
                   <div className="absolute -left-4 top-8 w-8 h-8 bg-[#ffd701] rounded-full flex items-center justify-center">
                     <span className="text-black font-bold text-sm">1</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 italic ml-6" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  <h3 className="text-xl font-bold text-white mb-4 italic ml-6" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     The Beginning
                   </h3>
-                  <p className="text-gray-700 leading-relaxed ml-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  <p className="text-gray-300 leading-relaxed ml-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     The story of O&apos;O+ Billiards Group began with our founder&apos;s lifelong passion for snooker. 
                     From humble beginnings in local billiard halls, the dream was clear: to transform cue sports 
                     into a respected, professional, and inclusive sport in Malaysia.
                   </p>
                 </div>
                 
-                <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 relative">
+                <div className="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 relative">
                   <div className="absolute -left-4 top-8 w-8 h-8 bg-[#ffd701] rounded-full flex items-center justify-center">
                     <span className="text-black font-bold text-sm">2</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 italic ml-6" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  <h3 className="text-xl font-bold text-white mb-4 italic ml-6" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     Rapid Growth
                   </h3>
-                  <p className="text-gray-700 leading-relaxed ml-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  <p className="text-gray-300 leading-relaxed ml-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     The first outlet opened in Kuala Lumpur in November 2017, marking the start of a brand that 
                     has grown to six locations nationwide and will soon open its first international outlet in 
                     Ho Chi Minh City, Vietnam, in October 2025.
                   </p>
                 </div>
                 
-                <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 relative">
+                <div className="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 relative">
                   <div className="absolute -left-4 top-8 w-8 h-8 bg-[#ffd701] rounded-full flex items-center justify-center">
                     <span className="text-black font-bold text-sm">3</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 italic ml-6" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  <h3 className="text-xl font-bold text-white mb-4 italic ml-6" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     Unique Concepts
                   </h3>
-                  <p className="text-gray-700 leading-relaxed ml-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  <p className="text-gray-300 leading-relaxed ml-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     Each outlet is designed with a unique concept—ranging from world-class tournament venues to 
                     welcoming recreational spaces—embodying our founder&apos;s vision of creating a space where 
                     competition, leisure, and community come together.
@@ -341,7 +341,7 @@ export default function AboutPageContent() {
         </section>
 
         {/* Clients and Partners Banner */}
-        <section className="py-12 md:py-16 bg-gray-50">
+        <section className="py-12 md:py-16 bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 md:px-10">
             {/* Header */}
             <div className="text-center mb-8 md:mb-12">
@@ -350,10 +350,10 @@ export default function AboutPageContent() {
                   CHECK OUR BEST
                 </span>
               </div>
-              <h2 className="text-2xl md:text-4xl font-black text-gray-900 mb-3 md:mb-4 italic px-2" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+              <h2 className="text-2xl md:text-4xl font-black text-white mb-3 md:mb-4 italic px-2" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                 CLIENTS AND <span className="text-[#ffd701]">PARTNERS</span>
               </h2>
-              <p className="text-sm md:text-base text-gray-600 max-w-3xl mx-auto italic px-4" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+              <p className="text-sm md:text-base text-gray-300 max-w-3xl mx-auto italic px-4" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                 We are proud to work with leading brands and trusted partners in the billiards industry.
               </p>
             </div>
@@ -367,8 +367,8 @@ export default function AboutPageContent() {
                 viewport={{ once: true }}
                 className="text-center grayscale hover:grayscale-0 transition-all duration-300 p-4 md:p-0"
               >
-                <div className="text-gray-500 text-xs font-bold mb-1">PREMIUM</div>
-                <div className="text-gray-700 text-lg md:text-xl font-black">TENNIS</div>
+                <div className="text-gray-400 text-xs font-bold mb-1">PREMIUM</div>
+                <div className="text-gray-300 text-lg md:text-xl font-black">TENNIS</div>
               </motion.div>
 
               <motion.div
@@ -378,7 +378,7 @@ export default function AboutPageContent() {
                 viewport={{ once: true }}
                 className="text-center grayscale hover:grayscale-0 transition-all duration-300 p-4 md:p-0"
               >
-                <div className="text-gray-700 text-2xl md:text-3xl font-black">4GA</div>
+                <div className="text-gray-300 text-2xl md:text-3xl font-black">4GA</div>
               </motion.div>
 
               <motion.div
@@ -388,7 +388,7 @@ export default function AboutPageContent() {
                 viewport={{ once: true }}
                 className="text-center grayscale hover:grayscale-0 transition-all duration-300 p-4 md:p-0"
               >
-                <div className="text-gray-700 text-lg md:text-xl font-bold">△ BRAND</div>
+                <div className="text-gray-300 text-lg md:text-xl font-bold">△ BRAND</div>
               </motion.div>
 
               <motion.div
@@ -398,7 +398,7 @@ export default function AboutPageContent() {
                 viewport={{ once: true }}
                 className="text-center grayscale hover:grayscale-0 transition-all duration-300 p-4 md:p-0"
               >
-                <div className="text-gray-700 text-sm md:text-sm font-bold">○○ RACKET</div>
+                <div className="text-gray-300 text-sm md:text-sm font-bold">○○ RACKET</div>
               </motion.div>
 
               <motion.div
@@ -408,7 +408,7 @@ export default function AboutPageContent() {
                 viewport={{ once: true }}
                 className="text-center grayscale hover:grayscale-0 transition-all duration-300 p-4 md:p-0"
               >
-                <div className="text-gray-700 text-lg md:text-xl font-black">SP●RT</div>
+                <div className="text-gray-300 text-lg md:text-xl font-black">SP●RT</div>
               </motion.div>
 
               <motion.div
@@ -418,8 +418,8 @@ export default function AboutPageContent() {
                 viewport={{ once: true }}
                 className="text-center grayscale hover:grayscale-0 transition-all duration-300 p-4 md:p-0 col-span-2 md:col-span-1"
               >
-                <div className="text-gray-500 text-xs font-bold mb-1">⬡ T</div>
-                <div className="text-gray-700 text-sm font-bold">TENNIS</div>
+                <div className="text-gray-400 text-xs font-bold mb-1">⬡ T</div>
+                <div className="text-gray-300 text-sm font-bold">TENNIS</div>
               </motion.div>
             </div>
 
@@ -432,7 +432,7 @@ export default function AboutPageContent() {
               </Link>
               
               <Link href="/outlets" className="w-full sm:w-auto">
-                <button className="w-full border-2 border-gray-300 hover:border-[#ffd701] text-gray-700 hover:text-black px-6 md:px-8 py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 italic text-sm md:text-base" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                <button className="w-full border-2 border-gray-600 hover:border-[#ffd701] text-gray-300 hover:text-black px-6 md:px-8 py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 italic text-sm md:text-base" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                   Visit Outlets
                 </button>
               </Link>
@@ -877,10 +877,10 @@ export default function AboutPageContent() {
 
 
         {/* Partnerships Section */}
-        <section className="py-16">
+        <section className="py-16 bg-gray-900">
           <div className="max-w-7xl mx-auto px-5 md:px-10 text-center">
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 italic"
+              className="text-3xl md:text-4xl font-bold text-white mb-8 italic"
               style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -891,7 +891,7 @@ export default function AboutPageContent() {
             </motion.h2>
             
             <motion.p
-              className="text-lg text-gray-600 leading-relaxed italic mb-8 max-w-4xl mx-auto"
+              className="text-lg text-gray-300 leading-relaxed italic mb-8 max-w-4xl mx-auto"
               style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -89,12 +89,13 @@ export default function CoachesSection() {
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div className="relative">
               {/* COACHES - Main background text */}
+              {/* Base White Text */}
               <span 
-                className="text-[5rem] md:text-[8rem] font-bold leading-none select-none tracking-normal"
+                className="text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
                 style={{
-                  color: 'rgba(255, 255, 255, 0.05)',
-                  WebkitTextStroke: '2px rgba(255, 255, 255, 0.2)',
-                  textStroke: '2px rgba(255, 255, 255, 0.2)',
+                  color: 'rgba(255, 255, 255, 0.15)',
+                  WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.3)',
+                  textStroke: '1.5px rgba(255, 255, 255, 0.3)',
                   fontFamily: 'Kanit, system-ui, sans-serif',
                   letterSpacing: '0.05em',
                   fontStyle: 'italic',
@@ -102,6 +103,31 @@ export default function CoachesSection() {
               >
                 COACHES
               </span>
+              
+              {/* Golden Flash Overlay */}
+              <motion.span 
+                className="absolute inset-0 text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
+                style={{
+                  fontFamily: 'Kanit, system-ui, sans-serif',
+                  letterSpacing: '0.05em',
+                  fontStyle: 'italic',
+                  color: 'rgba(255, 215, 1, 1)',
+                  WebkitTextStroke: '1.5px rgba(255, 215, 1, 0.8)',
+                  textStroke: '1.5px rgba(255, 215, 1, 0.8)',
+                  textShadow: '0 0 20px rgba(255, 215, 1, 0.8)',
+                }}
+                animate={{
+                  opacity: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                }}
+                transition={{
+                  duration: 17,
+                  repeat: Infinity,
+                  ease: "linear",
+                  times: [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1],
+                }}
+              >
+                COACHES
+              </motion.span>
               
               {/* Our coaches and Meet our Coaches - In the middle of COACHES */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
@@ -205,7 +231,7 @@ export default function CoachesSection() {
                     {coaches[currentIndex].name}
                   </h3>
                   <p 
-                    className="text-[#9BCF53] font-medium text-lg"
+                    className="text-[#ffd701] font-medium text-lg"
                     style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
                   >
                     {coaches[currentIndex].position}
@@ -224,13 +250,18 @@ export default function CoachesSection() {
                   <motion.div
                     key={`${coach.id}-${currentIndex}`}
                     className="flex flex-col items-center"
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, x: direction * 100 }}
                     animate={{ 
                       opacity: 1, 
-                      y: 0,
+                      x: 0,
                       scale: 1
                     }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    transition={{ 
+                      duration: 0.6,
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30
+                    }}
                   >
                     {/* Coach Image */}
                     <Avatar 
@@ -263,7 +294,7 @@ export default function CoachesSection() {
                         {coach.name}
                       </h3>
                       <p 
-                        className={`text-[#9BCF53] font-medium ${
+                        className={`text-[#ffd701] font-medium ${
                           isCenter ? 'text-xl md:text-2xl' : 
                           isSecondary ? 'text-sm md:text-base' : 
                           'text-xs md:text-xs'

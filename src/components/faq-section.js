@@ -197,7 +197,7 @@ export default function FaqSection() {
       </section>
 
       {/* FAQ Content */}
-      <div className="relative z-10 bg-white">
+      <div className="relative z-10 bg-black">
         <div className="px-5 md:px-10 py-12">
           {/* FAQ Questions by Sections */}
           <div className="max-w-5xl mx-auto space-y-8">
@@ -213,7 +213,7 @@ export default function FaqSection() {
                 {/* Section Header */}
                 <div className="flex items-center space-x-3 mb-6">
                   <div className={`w-1 h-8 ${category.color} rounded-full`}></div>
-                  <h3 className="text-xl font-bold text-gray-900 uppercase tracking-wide">
+                  <h3 className="text-xl font-bold text-white uppercase tracking-wide">
                     {category.title}
                   </h3>
                 </div>
@@ -224,9 +224,9 @@ export default function FaqSection() {
                     <AccordionItem 
                       key={faq.id} 
                       value={faq.id}
-                      className="border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm"
+                      className="border border-gray-700 rounded-lg overflow-hidden bg-gray-800 shadow-sm"
                     >
-                      <AccordionTrigger className="px-6 py-4 hover:bg-gray-50 text-left font-semibold text-gray-900 group">
+                      <AccordionTrigger className="px-6 py-4 hover:bg-gray-700 text-left font-semibold text-white group">
                         <div className="flex items-center space-x-4">
                           <div className="w-8 h-8 bg-[#ffd701] rounded-full flex items-center justify-center flex-shrink-0">
                             <svg className="w-4 h-4 text-black group-data-[state=open]:rotate-45 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -237,7 +237,7 @@ export default function FaqSection() {
                         </div>
                       </AccordionTrigger>
                       <AccordionContent className="px-6 pb-6 pt-2">
-                        <div className="text-gray-600 leading-relaxed ml-12">
+                        <div className="text-gray-300 leading-relaxed ml-12">
                           {faq.answer}
                         </div>
                       </AccordionContent>
@@ -250,7 +250,7 @@ export default function FaqSection() {
 
           {/* Customer Service Section - Moved to Bottom */}
           <motion.section 
-            className="py-16 bg-gradient-to-br from-gray-50 to-white mt-16"
+            className="py-16 bg-gradient-to-br from-gray-900 to-black mt-16"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -268,10 +268,10 @@ export default function FaqSection() {
                   className="space-y-8"
                 >
                   <div>
-                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <h2 className="text-3xl md:text-4xl font-black text-white mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       Every day help for <span className="text-[#ffd701]">our customers</span>
                     </h2>
-                    <p className="text-lg text-gray-600 leading-relaxed italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <p className="text-lg text-gray-300 leading-relaxed italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       At O&apos;O+ Billiards Group, we&apos;re committed to providing exceptional service and support to all our customers. 
                       Whether you&apos;re looking for information about our outlets, products, coaching programs, or booking procedures, 
                       we&apos;re here to help make your billiards experience as smooth as possible.
@@ -287,16 +287,16 @@ export default function FaqSection() {
                     ].map((service, index) => (
                       <div key={index} className="flex items-center space-x-3">
                         <div className="w-3 h-3 bg-[#ffd701] rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>{service}</span>
+                        <span className="text-gray-300 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>{service}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  <div className="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700">
+                    <h3 className="text-xl font-bold text-white mb-4 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       If you need <span className="text-[#ffd701]">more help</span>
                     </h3>
-                    <p className="text-gray-600 leading-relaxed mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <p className="text-gray-300 leading-relaxed mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       Can&apos;t find the answer you&apos;re looking for? Our customer support team is always ready to assist you with any questions or concerns.
                     </p>
                     <button className="bg-[#ffd701] hover:bg-[#e6c200] text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-3 italic shadow-lg hover:shadow-xl" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
@@ -326,8 +326,8 @@ export default function FaqSection() {
                     
                     {/* Image Badge */}
                     <div className="absolute bottom-6 left-6 right-6">
-                      <div className="bg-white/95 backdrop-blur-sm p-4 rounded-xl">
-                        <p className="text-gray-900 font-bold italic text-sm" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                      <div className="bg-black/80 backdrop-blur-sm p-4 rounded-xl">
+                        <p className="text-white font-bold italic text-sm" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                           &ldquo;Always here to help you enjoy the perfect billiards experience&rdquo;
                         </p>
                       </div>

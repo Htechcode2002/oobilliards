@@ -50,26 +50,55 @@ export default function ProductSection() {
   };
 
   return (
-    <section className="py-16 relative overflow-hidden bg-white">
+    <section className="py-16 relative overflow-hidden bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header with Overlapping Text Effect */}
         <div className="text-center mb-16 relative">
           {/* Background Decorative Text */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <span 
-              className="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
-              style={{
-                color: 'transparent',
-                WebkitTextStroke: '1.5px #bdc3c7',
-                textStroke: '1.5px #bdc3c7',
-                fontFamily: 'Kanit, system-ui, sans-serif',
-                letterSpacing: '0.05em',
-                filter: 'blur(0.5px)',
-                fontStyle: 'italic',
-              }}
-            >
-              PRODUCTS
-            </span>
+            <div className="relative">
+              {/* Base White Text */}
+              <span 
+                className="text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
+                style={{
+                  color: 'rgba(255, 255, 255, 0.15)',
+                  WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.3)',
+                  textStroke: '1.5px rgba(255, 255, 255, 0.3)',
+                  fontFamily: 'Kanit, system-ui, sans-serif',
+                  letterSpacing: '0.05em',
+                  filter: 'blur(0.5px)',
+                  fontStyle: 'italic',
+                }}
+              >
+                PRODUCTS
+              </span>
+              
+              {/* Golden Flash Overlay */}
+              <motion.span 
+                className="absolute inset-0 text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
+                style={{
+                  fontFamily: 'Kanit, system-ui, sans-serif',
+                  letterSpacing: '0.05em',
+                  filter: 'blur(0.5px)',
+                  fontStyle: 'italic',
+                  color: 'rgba(255, 215, 1, 1)',
+                  WebkitTextStroke: '1.5px rgba(255, 215, 1, 0.8)',
+                  textStroke: '1.5px rgba(255, 215, 1, 0.8)',
+                  textShadow: '0 0 20px rgba(255, 215, 1, 0.8)',
+                }}
+                animate={{
+                  opacity: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  ease: "linear",
+                  times: [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1],
+                }}
+              >
+                PRODUCTS
+              </motion.span>
+            </div>
           </div>
           
           {/* Foreground Content */}
@@ -90,7 +119,7 @@ export default function ProductSection() {
                 </span>
               </div>
               <h2 
-                className="text-4xl sm:text-5xl font-black text-gray-900 italic"
+                className="text-4xl sm:text-5xl font-black text-white italic"
                 style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
               >
                 Recent Products
@@ -104,7 +133,7 @@ export default function ProductSection() {
           {products.map((product, index) => (
             <motion.div
               key={product.id}
-              className="bg-white overflow-hidden border border-gray-200 transition-all duration-300 group relative rounded-lg p-3 sm:p-4 hover:shadow-lg cursor-pointer"
+              className="bg-white overflow-hidden border border-gray-200 transition-all duration-300 group relative p-3 sm:p-4 hover:shadow-lg cursor-pointer"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -151,7 +180,7 @@ export default function ProductSection() {
               </div>
 
               {/* Product Image */}
-              <div className="relative h-32 sm:h-40 bg-white overflow-hidden rounded-lg">
+              <div className="relative h-32 sm:h-40 bg-white overflow-hidden">
 
                   <Image
                     src={product.image}
@@ -168,7 +197,7 @@ export default function ProductSection() {
                   className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 hidden items-center justify-center"
                   style={{ display: 'none' }}
                 >
-                  <span className="text-gray-500 text-sm font-semibold text-center px-4">
+                  <span className="text-gray-400 text-sm font-semibold text-center px-4">
                     {product.name}
                   </span>
                 </div>
@@ -176,7 +205,7 @@ export default function ProductSection() {
 
               {/* Product Name */}
               <div className="pt-3 text-center">
-                <h3 className="text-sm sm:text-lg font-bold text-gray-900 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                <h3 className="text-sm sm:text-lg font-bold text-black italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                   {product.name}
                 </h3>
               </div>

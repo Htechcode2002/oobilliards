@@ -6,41 +6,96 @@ import ServiceCard from "@/components/service-card";
 export default function CoachingPrograms() {
 
   return (
-    <section className="pt-4 pb-4 sm:pt-6 sm:pb-6 px-2 sm:px-4 lg:px-6 bg-gray-50 relative overflow-hidden">
-      <div className="max-w-full mx-auto">
+    <section className="pt-4 pb-4 sm:pt-6 sm:pb-6 px-2 sm:px-4 lg:px-6 bg-black relative">
+      <div className="max-w-full mx-auto overflow-hidden">
         {/* Header with Overlapping Text Effect */}
         <div className="text-center mb-12 relative">
           {/* Background Decorative Text */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <span 
-              className="text-[5rem] sm:text-[8rem] md:text-[10rem] lg:text-[14rem] font-bold leading-none select-none tracking-normal"
-              style={{
-                color: 'transparent',
-                WebkitTextStroke: '1.5px #bdc3c7',
-                textStroke: '1.5px #bdc3c7',
-                fontFamily: 'Kanit, system-ui, sans-serif',
-                letterSpacing: '0.05em',
-                filter: 'blur(0.5px)',
-                fontStyle: 'italic',
-              }}
-            >
-              COACHING
-            </span>
+            <div className="relative">
+                {/* Base White Text */}
+                <span 
+                  className="text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal whitespace-nowrap"
+                  style={{
+                    fontFamily: 'Kanit, system-ui, sans-serif',
+                    letterSpacing: '0.05em',
+                    filter: 'blur(0.5px)',
+                    fontStyle: 'italic',
+                    color: 'rgba(255, 255, 255, 0.15)',
+                    WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.3)',
+                    textStroke: '1.5px rgba(255, 255, 255, 0.3)',
+                  }}
+                >
+                  COACHING
+                </span>
+                
+                {/* Golden Flash Overlay */}
+                <motion.span 
+                  className="absolute inset-0 text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal whitespace-nowrap"
+                  style={{
+                    fontFamily: 'Kanit, system-ui, sans-serif',
+                    letterSpacing: '0.05em',
+                    filter: 'blur(0.5px)',
+                    fontStyle: 'italic',
+                    color: 'rgba(255, 255, 0, 1)',
+                    WebkitTextStroke: '2px rgba(255, 255, 0, 1)',
+                    textStroke: '2px rgba(255, 255, 0, 1)',
+                    textShadow: '0 0 35px rgba(255, 255, 0, 1), 0 0 50px rgba(255, 255, 0, 0.8)',
+                  }}
+                  animate={{
+                    opacity: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                  }}
+                  transition={{
+                    duration: 11,
+                    repeat: Infinity,
+                    ease: "linear",
+                    times: [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1],
+                  }}
+                >
+                  COACHING
+                </motion.span>
+              
+              {/* Flash Sparkles */}
+              <div className="absolute inset-0 pointer-events-none">
+                {[...Array(8)].map((_, i) => (
+                  <motion.div
+                    key={`flash-spark-${i}`}
+                    className="absolute w-1 h-1 bg-yellow-300 rounded-full"
+                    style={{
+                      left: `${20 + i * 8}%`,
+                      top: `${40 + (i % 3) * 8}%`,
+                      boxShadow: '0 0 6px #ffd701',
+                    }}
+                    animate={{
+                      opacity: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                      scale: [0, 1.5, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    }}
+                    transition={{
+                      duration: 11,
+                      repeat: Infinity,
+                      delay: i * 0.02,
+                      ease: "easeOut",
+                      times: [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1],
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
           
           {/* Foreground Content - Short Title in Center */}
           <div className="relative z-10 flex items-center justify-center min-h-[300px] sm:min-h-[400px]">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 text-center italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white text-center italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
               Professional <span style={{ color: '#ffd701' }}>Billiards</span>
               <br />
-              <span style={{ color: '#ffd701' }}>Coaching Services</span>
+              Coaching Services
             </h2>
           </div>
         </div>
 
         {/* Long Description Below */}
-        <div className="text-center mb-12 -mt-25 md:-mt-30">
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+        <div className="text-center mb-12 -mt-20 md:-mt-25">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
             Whether you&apos;re a beginner or aiming for competitive tournaments, our coaching 
             programs cover Snooker, Chinese 8 Ball, and American Pool. Available in one-to-one 
             or group formats, designed to improve skills and techniques effectively.

@@ -67,7 +67,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-black text-white relative overflow-hidden">
+    <footer className="bg-gray-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 overflow-hidden">
         <div className="absolute top-10 left-4 sm:left-10 w-16 sm:w-20 h-16 sm:h-20 rounded-full border border-white/20"></div>

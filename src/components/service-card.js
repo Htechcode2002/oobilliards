@@ -96,10 +96,10 @@ export default function ServiceCard({
       
       {/* Text Below */}
       <div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-3 italic cursor-pointer transition-colors duration-300" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }} onMouseEnter={(e) => e.target.style.color = '#ffd701'} onMouseLeave={(e) => e.target.style.color = ''}>
+        <h3 className="text-2xl font-bold text-white mb-3 italic cursor-pointer transition-colors duration-300" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }} onMouseEnter={(e) => e.target.style.color = '#ffd701'} onMouseLeave={(e) => e.target.style.color = 'white'}>
           {title}
         </h3>
-        <div className="text-gray-600 mb-4 text-sm leading-relaxed font-normal min-h-[120px] flex flex-col justify-between" style={{ fontFamily: 'Arial, sans-serif' }}>
+        <div className="text-gray-300 mb-4 text-sm leading-relaxed font-normal min-h-[120px] flex flex-col justify-between" style={{ fontFamily: 'Arial, sans-serif' }}>
           <div dangerouslySetInnerHTML={{ __html: description }}></div>
         </div>
         <button className="bg-[#ffd701] text-black font-semibold text-sm px-6 py-3 rounded-full flex items-center justify-center italic transition-all duration-300 hover:bg-[#e6c200] hover:scale-105 transform shadow-md hover:shadow-lg" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>

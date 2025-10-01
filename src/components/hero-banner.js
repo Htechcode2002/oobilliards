@@ -261,7 +261,7 @@ export default function HeroBanner() {
                     <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white leading-none font-kanit italic">
                       <span className="block text-white">BILLIARDS</span>
                       <span className="block text-white whitespace-nowrap -mt-3 sm:-mt-4 md:-mt-5 lg:-mt-6 xl:-mt-8" style={{
-                        color: 'transparent',
+                        color: 'rgba(255, 255, 255, 0.15)',
                         WebkitTextStroke: '3px #ffffff',
                         textStroke: '3px #ffffff',
                       }}>SPORT CLUB</span>
