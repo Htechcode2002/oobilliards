@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 export default function OutletsPage() {
   return (
     <div className="min-h-screen">
-      <Navbar />
+      <Navbar /> 
       <OutletsSection />
       <Footer />
     </div>
