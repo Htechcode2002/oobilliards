@@ -5,12 +5,12 @@ import Link from "next/link";
 
 export default function AboutPageContent() {
   const milestones = [
-    { date: "Nov 2017", event: "First outlet @ One Shamelin Mall, KL" },
-    { date: "Sept 2022", event: "Seremban outlet opens" },
-    { date: "Mar 2023", event: "Viva Home outlet opens" },
-    { date: "Jul 2024", event: "Scott Garden outlet opens – one of the biggest in KL" },
-    { date: "Jan 2025", event: "USJ outlet opens at 91 Sports Arena + Group HQ established" },
-    { date: "Oct 2025", event: "Vietnam outlet (Ho Chi Minh City) opening soon" }
+    { date: "Nov 2017", event: "First outlet @ One Shamelin Mall, KL", image: "/outlets/shamelin.JPG" },
+    { date: "Sept 2022", event: "Seremban outlet opens", image: "/outlets/seremban.jpg" },
+    { date: "Mar 2023", event: "Viva Home outlet opens", image: "/outlets/vivahome.jpg" },
+    { date: "Jul 2024", event: "Scott Garden outlet opens – one of the biggest in KL", image: "/outlets/scottgarden.jpg" },
+    { date: "Jan 2025", event: "USJ outlet opens at 91 Sports Arena + Group HQ established", image: "/outlets/usj.jpg" },
+    { date: "Oct 2025", event: "Vietnam outlet (Ho Chi Minh City) opening soon", image: "/outlets/outlets.jpg", comingSoon: true }
   ];
 
   const values = [
@@ -133,8 +133,8 @@ export default function AboutPageContent() {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img 
-                    src="/home/tournament.jpg" 
-                    alt="O'O+ Billiards Group - Premium Billiards Experience"
+                    src="/about/team.jpg" 
+                    alt="O'O+ Billiards Group - Professional Team"
                     className="w-full h-[500px] object-cover"
                   />
                   {/* Image Overlay */}
@@ -144,7 +144,7 @@ export default function AboutPageContent() {
                   <div className="absolute bottom-6 left-6 right-6">
                     <div className="bg-white/95 backdrop-blur-sm p-4 rounded-xl">
                       <p className="text-gray-900 font-bold italic text-sm" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                        &ldquo;Elevating Malaysian billiards to international standards&rdquo;
+                        &ldquo;Our professional in-house coaching team&rdquo;
                       </p>
                     </div>
                   </div>
@@ -311,8 +311,8 @@ export default function AboutPageContent() {
               >
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                   <img
-                    src="/home/coaching.jpg"
-                    alt="Professional Billiards"
+                    src="/about/passion.jpg"
+                    alt="Professional Billiards Venue"
                     className="w-full h-[500px] object-cover"
                   />
                   {/* Gradient Overlay */}
@@ -321,10 +321,10 @@ export default function AboutPageContent() {
                   {/* Bottom Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                     <h3 className="text-2xl font-bold mb-2 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                      Professional Excellence
+                      World-Class Facilities
                     </h3>
                     <p className="text-white/90 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                      Every detail crafted for the ultimate billiards experience
+                      Premium venues designed for passionate players
                     </p>
                   </div>
                   
@@ -442,13 +442,15 @@ export default function AboutPageContent() {
 
         {/* Vision, Mission & Core Values Section - Premium Design */}
         <section className="py-20 relative overflow-hidden">
-          {/* Background Image with Overlay */}
-          <div className="absolute inset-0">
-            <img 
-              src="/home/tournament.jpg" 
-              alt="Vision Mission Core Values Background"
-              className="w-full h-full object-cover"
-            />
+          {/* Sticky Background Image with Overlay - Only for this section */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div 
+              className="absolute inset-0 bg-fixed bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: "url('/home/tournament.jpg')",
+                backgroundAttachment: 'fixed'
+              }}
+            ></div>
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/80"></div>
             
             {/* Floating Particles/Dots Effect */}
@@ -739,7 +741,7 @@ export default function AboutPageContent() {
                       {/* Mobile: Background Image */}
                       <div className="absolute inset-0 z-0 lg:hidden">
                         <img
-                          src="/outlets/outlets.jpg"
+                          src={milestone.image}
                           alt={milestone.event.includes('outlet') ? milestone.event.split(' outlet')[0] + ' Outlet' : 'O\'O+ Billiards'}
                           className="w-full h-full object-cover"
                         />
@@ -816,7 +818,7 @@ export default function AboutPageContent() {
                     >
                       <div className="relative overflow-hidden rounded-2xl shadow-2xl group">
                         <img
-                          src="/outlets/outlets.jpg"
+                          src={milestone.image}
                           alt={milestone.event.includes('outlet') ? milestone.event.split(' outlet')[0] + ' Outlet' : 'O\'O+ Billiards'}
                           className="w-full h-64 object-cover transition-transform duration-500 md:group-hover:scale-110"
                         />

@@ -14,6 +14,7 @@ export default function OutletsSection() {
       location: "Kuala Lumpur",
       description: "The very first O'O+ Billiard's outlet, opened in November 2017, equipped with professional snooker tables, ideal for both casual players and competitive tournaments.",
       openDate: "November 2017",
+      image: "/outlets/shamelin.JPG",
       tables: [
         "3 Rasson Snooker Tables",
         "15 Earl Snooker Tables", 
@@ -35,6 +36,7 @@ export default function OutletsSection() {
       location: "Negeri Sembilan",
       description: "Opened in September 2022, the first outlet outside Kuala Lumpur, bringing professional billiards facilities to Negeri Sembilan.",
       openDate: "September 2022",
+      image: "/outlets/seremban.jpg",
       tables: [
         "2 Rasson Snooker Tables",
         "9 Earl Snooker Tables"
@@ -54,6 +56,7 @@ export default function OutletsSection() {
       location: "Kuala Lumpur",
       description: "Opened in March 2023, located in the heart of Kuala Lumpur, offering multiple game formats for both casual and competitive players.",
       openDate: "March 2023",
+      image: "/outlets/vivahome.jpg",
       tables: [
         "2 Rasson Snooker Tables",
         "11 Earl Snooker Tables",
@@ -75,6 +78,7 @@ export default function OutletsSection() {
       location: "Kuala Lumpur",
       description: "Opened in July 2024, one of the biggest billiards halls in Kuala Lumpur with a variety of game formats and professional facilities.",
       openDate: "July 2024",
+      image: "/outlets/scottgarden.jpg",
       tables: [
         "10 Rasson Snooker Tables",
         "13 Earl Snooker Tables",
@@ -97,6 +101,7 @@ export default function OutletsSection() {
       location: "91 Sports Arena, Subang Jaya",
       description: "Opened in January 2025, the largest outlet in Subang Jaya, located above Giant USJ1 within 91 Sports Arena. Offers coaching programs, tournaments, and multiple table types.",
       openDate: "January 2025",
+      image: "/outlets/usj.jpg",
       tables: [
         "14 Aplus American Pool Tables",
         "8 Duya Chinese 8 Ball Tables",
@@ -118,6 +123,7 @@ export default function OutletsSection() {
       location: "Vietnam",
       description: "Opening in October 2025, our first international outlet in Vietnam, bringing O'O+ Billiards' signature facilities and experiences to Ho Chi Minh City.",
       openDate: "October 2025",
+      image: "/outlets/outlets.jpg",
       tables: [
         "To be confirmed after official launch"
       ],
@@ -219,25 +225,52 @@ export default function OutletsSection() {
                 <div className="flex flex-col lg:flex-row">
                   {/* Left Side - Image */}
                   <div className="lg:w-1/2 h-64 lg:h-auto relative bg-gray-200">
-                    <Image
-                      src="/outlets/outlets.jpg"
-                      alt={outlet.name}
-                      fill
-                      className="object-cover"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
-                    />
-                    {/* Fallback background when image fails to load */}
-                    <div 
-                      className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-500 hidden items-center justify-center"
-                      style={{ display: 'none' }}
-                    >
-                      <span className="text-white text-lg font-semibold text-center px-4">
-                        {outlet.name}
-                      </span>
-                    </div>
+                    {outlet.comingSoon ? (
+                      /* Coming Soon Display */
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-900 to-black flex items-center justify-center">
+                        <div className="text-center p-8">
+                          <div className="mb-6">
+                            <div className="w-20 h-20 mx-auto mb-4 bg-[#ffd701] rounded-full flex items-center justify-center">
+                              <svg className="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                              </svg>
+                            </div>
+                          </div>
+                          <h3 className="text-2xl font-bold text-white mb-2 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                            Coming Soon
+                          </h3>
+                          <p className="text-[#ffd701] font-semibold text-lg mb-2 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                            October 2025
+                          </p>
+                          <p className="text-gray-300 text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                            Our first international outlet
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      /* Regular Image Display */
+                      <>
+                        <Image
+                          src={outlet.image}
+                          alt={outlet.name}
+                          fill
+                          className="object-cover"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.nextSibling.style.display = 'flex';
+                          }}
+                        />
+                        {/* Fallback background when image fails to load */}
+                        <div 
+                          className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-500 hidden items-center justify-center"
+                          style={{ display: 'none' }}
+                        >
+                          <span className="text-white text-lg font-semibold text-center px-4">
+                            {outlet.name}
+                          </span>
+                        </div>
+                      </>
+                    )}
                   </div>
 
                   {/* Right Side - Information */}

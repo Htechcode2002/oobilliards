@@ -51,7 +51,7 @@ export default function ProductSidebar({ onFilterChange, isOpen, onClose }) {
   return (
     <>
       {/* Desktop Sidebar */}
-      <div className="hidden lg:block w-80 bg-white px-6 py-16 min-h-screen">
+      <div className="hidden lg:block w-80 bg-gray-900 px-6 py-16 min-h-screen border-r border-gray-700">
       {/* Cart Section */}
       <motion.div 
         className="mb-8"
@@ -61,9 +61,9 @@ export default function ProductSidebar({ onFilterChange, isOpen, onClose }) {
       >
         <div className="flex items-center gap-2 mb-4">
             <div className="w-3 h-3 bg-[#ffd701] rounded-full"></div>
-          <h3 className="font-bold text-gray-900 uppercase tracking-wide">CART</h3>
+          <h3 className="font-bold text-white uppercase tracking-wide">CART</h3>
         </div>
-        <p className="text-gray-600 text-sm">No products in the cart.</p>
+        <p className="text-gray-400 text-sm">No products in the cart.</p>
       </motion.div>
 
       {/* Search Section */}
@@ -79,9 +79,9 @@ export default function ProductSidebar({ onFilterChange, isOpen, onClose }) {
             placeholder="Search products..."
             value={searchTerm}
             onChange={handleSearchChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffd701] focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-600 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffd701] focus:border-transparent placeholder-gray-400"
           />
-          <Search className="absolute right-3 top-2.5 w-5 h-5 text-gray-400" />
+          <Search className="absolute right-3 top-2.5 w-5 h-5 text-gray-500" />
         </div>
       </motion.div>
 
@@ -94,12 +94,12 @@ export default function ProductSidebar({ onFilterChange, isOpen, onClose }) {
       >
         <div className="flex items-center gap-2 mb-4">
             <div className="w-3 h-3 bg-[#ffd701] rounded-full"></div>
-            <h3 className="font-bold text-gray-900 uppercase tracking-wide">SORT BY</h3>
+            <h3 className="font-bold text-white uppercase tracking-wide">SORT BY</h3>
           </div>
           <select
             value={sortBy}
             onChange={handleSortChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffd701] focus:border-transparent text-sm"
+            className="w-full px-4 py-2 border border-gray-600 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffd701] focus:border-transparent text-sm"
           >
             {sortOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -118,7 +118,7 @@ export default function ProductSidebar({ onFilterChange, isOpen, onClose }) {
         >
           <div className="flex items-center gap-2 mb-4">
             <div className="w-3 h-3 bg-[#ffd701] rounded-full"></div>
-          <h3 className="font-bold text-gray-900 uppercase tracking-wide">PRODUCT CATEGORIES</h3>
+          <h3 className="font-bold text-white uppercase tracking-wide">PRODUCT CATEGORIES</h3>
         </div>
         <ul className="space-y-2">
           {categories.map((category) => (
@@ -130,7 +130,7 @@ export default function ProductSidebar({ onFilterChange, isOpen, onClose }) {
                   onChange={() => handleCategoryChange(category)}
                     className="text-[#ffd701] focus:ring-[#ffd701] border-gray-300 rounded"
                 />
-                <span className="text-gray-700 text-sm">{category}</span>
+                <span className="text-gray-300 text-sm">{category}</span>
               </label>
             </li>
           ))}
@@ -150,7 +150,7 @@ export default function ProductSidebar({ onFilterChange, isOpen, onClose }) {
           
           {/* Modal Content */}
           <motion.div 
-            className="fixed left-0 top-0 bottom-0 w-80 bg-white overflow-y-auto"
+            className="fixed left-0 top-0 bottom-0 w-80 bg-gray-900 overflow-y-auto"
             style={{
               boxShadow: '4px 0 20px rgba(0, 0, 0, 0.1), 8px 0 40px rgba(0, 0, 0, 0.05)'
             }}
@@ -160,16 +160,16 @@ export default function ProductSidebar({ onFilterChange, isOpen, onClose }) {
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
           >
             {/* Header */}
-            <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+            <div className="sticky top-0 bg-gray-900 border-b border-gray-700 px-6 py-4 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Filter className="w-5 h-5 text-[#ffd701]" />
-                <h2 className="font-bold text-gray-900 uppercase tracking-wide">Filters</h2>
+                <h2 className="font-bold text-white uppercase tracking-wide">Filters</h2>
               </div>
               <button
                 onClick={onClose}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                className="p-2 hover:bg-gray-800 rounded-full transition-colors"
               >
-                <X className="w-5 h-5 text-gray-600" />
+                <X className="w-5 h-5 text-gray-400" />
               </button>
             </div>
 
@@ -182,9 +182,9 @@ export default function ProductSidebar({ onFilterChange, isOpen, onClose }) {
                     placeholder="Search products..."
                     value={searchTerm}
                     onChange={handleSearchChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ffd701] focus:border-transparent text-base"
+                    className="w-full px-4 py-3 border border-gray-600 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ffd701] focus:border-transparent text-base placeholder-gray-400"
                   />
-                  <Search className="absolute right-3 top-3.5 w-5 h-5 text-gray-400" />
+                  <Search className="absolute right-3 top-3.5 w-5 h-5 text-gray-500" />
                 </div>
               </div>
 
@@ -192,12 +192,12 @@ export default function ProductSidebar({ onFilterChange, isOpen, onClose }) {
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-3 h-3 bg-[#ffd701] rounded-full"></div>
-                  <h3 className="font-bold text-gray-900 uppercase tracking-wide">SORT BY</h3>
+                  <h3 className="font-bold text-white uppercase tracking-wide">SORT BY</h3>
                 </div>
                 <select
                   value={sortBy}
                   onChange={handleSortChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ffd701] focus:border-transparent text-base"
+                  className="w-full px-4 py-3 border border-gray-600 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ffd701] focus:border-transparent text-base"
                 >
                   {sortOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -211,18 +211,18 @@ export default function ProductSidebar({ onFilterChange, isOpen, onClose }) {
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-3 h-3 bg-[#ffd701] rounded-full"></div>
-                  <h3 className="font-bold text-gray-900 uppercase tracking-wide">PRODUCT CATEGORIES</h3>
+                  <h3 className="font-bold text-white uppercase tracking-wide">PRODUCT CATEGORIES</h3>
                 </div>
                 <div className="space-y-3">
                   {categories.map((category) => (
-                    <label key={category} className="flex items-center gap-3 cursor-pointer hover:text-[#ffd701] transition-colors p-2 hover:bg-gray-50 rounded-lg">
+                    <label key={category} className="flex items-center gap-3 cursor-pointer hover:text-[#ffd701] transition-colors p-2 hover:bg-gray-800 rounded-lg">
                       <input
                         type="checkbox"
                         checked={selectedCategories.includes(category)}
                         onChange={() => handleCategoryChange(category)}
                         className="w-4 h-4 text-[#ffd701] focus:ring-[#ffd701] border-gray-300 rounded"
                       />
-                      <span className="text-gray-700 text-base">{category}</span>
+                      <span className="text-gray-300 text-base">{category}</span>
                     </label>
                   ))}
                 </div>

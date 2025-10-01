@@ -257,7 +257,7 @@ export default function ProductsPageSection() {
       </section>
 
       {/* Products Grid */}
-      <section className="relative z-10 bg-white">
+      <section className="relative z-10 bg-black">
         <div className="flex">
           <ProductSidebar 
             onFilterChange={handleFilterChange}
@@ -267,7 +267,7 @@ export default function ProductsPageSection() {
           <div className="flex-1 py-16 px-4 sm:px-6 lg:px-8">
             {/* Mobile Filter Button and Products Count */}
             <div className="flex items-center justify-between mb-6">
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 Showing {filteredProducts.length} of {products.length} products
               </p>
               
@@ -287,7 +287,7 @@ export default function ProductsPageSection() {
             {filteredProducts.length > 0 ? filteredProducts.map((product, index) => (
               <motion.div
                 key={product.id}
-                className="bg-white overflow-hidden border border-gray-200 transition-all duration-300 group relative cursor-pointer hover:shadow-lg rounded-lg p-3 sm:p-4"
+                className="bg-gray-800 overflow-hidden border border-gray-700 transition-all duration-300 group relative cursor-pointer hover:shadow-lg rounded-lg p-3 sm:p-4"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -368,15 +368,15 @@ export default function ProductsPageSection() {
 
                 {/* Product Name */}
                 <div className="pt-3 text-center">
-                  <h3 className="text-sm sm:text-lg font-bold text-gray-900 group-hover:text-[#ffd701] transition-colors duration-300 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  <h3 className="text-sm sm:text-lg font-bold text-white group-hover:text-[#ffd701] transition-colors duration-300 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     {product.name}
                   </h3>
                 </div>
               </motion.div>
             )) : (
               <div className="col-span-full text-center py-12">
-                <p className="text-gray-500 text-lg">No products found matching your criteria.</p>
-                <p className="text-gray-400 text-sm mt-2">Try adjusting your search or filters.</p>
+                <p className="text-gray-400 text-lg">No products found matching your criteria.</p>
+                <p className="text-gray-500 text-sm mt-2">Try adjusting your search or filters.</p>
               </div>
             )}
             </div>
@@ -395,7 +395,7 @@ export default function ProductsPageSection() {
           
           {/* Modal Content */}
           <motion.div 
-            className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            className="relative bg-gray-800 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -404,9 +404,9 @@ export default function ProductsPageSection() {
             {/* Close Button */}
             <button
               onClick={handleClosePopup}
-              className="absolute top-4 right-4 z-10 p-2 bg-white/80 hover:bg-white rounded-full shadow-lg transition-all duration-200"
+              className="absolute top-4 right-4 z-10 p-2 bg-gray-700/80 hover:bg-gray-700 rounded-full shadow-lg transition-all duration-200"
             >
-              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -454,7 +454,7 @@ export default function ProductsPageSection() {
               {/* Product Details */}
               <div className="p-6 lg:p-8">
                 {/* Product Name */}
-                <h2 className="text-2xl lg:text-3xl font-black text-gray-900 mb-4 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                <h2 className="text-2xl lg:text-3xl font-black text-white mb-4 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                   {selectedProduct.name}
                 </h2>
 
@@ -472,24 +472,24 @@ export default function ProductsPageSection() {
                       </svg>
                     ))}
                   </div>
-                  <span className="text-gray-600 text-sm">({selectedProduct.reviews} reviews)</span>
+                  <span className="text-gray-400 text-sm">({selectedProduct.reviews} reviews)</span>
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-600 leading-relaxed mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                <p className="text-gray-300 leading-relaxed mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                   {selectedProduct.description}
                 </p>
 
                 {/* Key Highlights */}
                 <div className="mb-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  <h3 className="text-lg font-bold text-white mb-3 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     Key Features
                   </h3>
                   <ul className="space-y-2">
                     {selectedProduct.highlights.map((highlight, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <div className="w-2 h-2 bg-[#ffd701] rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-700 text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                        <span className="text-gray-300 text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                           {highlight}
                         </span>
                       </li>
@@ -499,16 +499,16 @@ export default function ProductsPageSection() {
 
                 {/* Specifications */}
                 <div className="mb-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  <h3 className="text-lg font-bold text-white mb-3 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     Specifications
                   </h3>
-                  <div className="bg-gray-50 rounded-lg p-4 space-y-2">
+                  <div className="bg-gray-700 rounded-lg p-4 space-y-2">
                     {Object.entries(selectedProduct.specifications).map(([key, value]) => (
                       <div key={key} className="flex justify-between text-sm">
-                        <span className="text-gray-600 capitalize italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                        <span className="text-gray-400 capitalize italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                           {key.replace(/([A-Z])/g, ' $1').trim()}:
                         </span>
-                        <span className="text-gray-900 font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                        <span className="text-white font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                           {value}
                         </span>
                       </div>
@@ -517,10 +517,10 @@ export default function ProductsPageSection() {
                 </div>
 
                 {/* Price and Actions */}
-                <div className="border-t border-gray-200 pt-6">
+                <div className="border-t border-gray-600 pt-6">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <span className="text-2xl font-bold text-gray-900 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                      <span className="text-2xl font-bold text-white italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                         {selectedProduct.price}
                       </span>
                       {selectedProduct.originalPrice && (

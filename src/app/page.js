@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
       <HeroBanner />
       <CoachingPrograms />
-      <CoachesSection />
+      {/* <CoachesSection /> */}
       <AboutUsSection />
       <StatisticsSection />
       <EventsPromotions />
