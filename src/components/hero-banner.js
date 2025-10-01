@@ -1,230 +1,51 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade } from 'swiper/modules';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-
-// Custom styles for instant responsive fade effect
-const customSwiperStyles = `
-  .hero-swiper {
-    position: relative;
-  }
-  .hero-swiper .swiper-slide {
-    transition: opacity 1s ease-out;
-  }
-  .hero-swiper .swiper-slide-active {
-    opacity: 1;
-    transform: scale(1);
-    z-index: 2;
-  }
-  .hero-swiper .swiper-slide:not(.swiper-slide-active) {
-    opacity: 0;
-    z-index: 1;
-  }
-  .hero-swiper .swiper-slide img {
-    transition: none;
-    filter: brightness(1) saturate(1.1);
-  }
-`;
+import Link from "next/link";
 
 export default function HeroBanner() {
-  // State for content animation trigger
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [animationKey, setAnimationKey] = useState(0);
-  const swiperRef = useRef(null);
-
-  // Hero banner images array
-  const heroImages = [
-    {
-      src: "/banner.webp",
-      alt: "OOBilliards Banner 1"
-    },
-    {
-      src: "/banner2.jpg", // You can add more images here
-      alt: "OOBilliards Banner 2"
-    },
-    {
-      src: "/banner.webp", // You can add more images here
-      alt: "OOBilliards Banner 3"
-    }
-  ];
-
-  // Handle autoplay time left to trigger animation before slide starts
-  const handleAutoplayTimeLeft = (swiper, time, progress) => {
-    // Trigger animation when there's 200ms left before slide change
-    if (time <= 200 && !isAnimating) {
-      setIsAnimating(true);
-      setAnimationKey(prev => prev + 1);
-      
-      // Reset animation state after animation completes
-      setTimeout(() => {
-        setIsAnimating(false);
-      }, 3000);
-    }
-  };
-
-  // Handle manual navigation button clicks
-  const handleManualNavigation = (direction) => {
-    if (!swiperRef.current || isAnimating) return;
-    
-    console.log('Manual navigation clicked:', direction, 'swiperRef.current:', swiperRef.current);
-    
-    // Stop autoplay temporarily
-    swiperRef.current.autoplay.stop();
-    
-    // Trigger content animation
-    setIsAnimating(true);
-    setAnimationKey(prev => prev + 1);
-    
-    // Navigate to next/prev slide with a small delay
-    setTimeout(() => {
-      if (direction === 'next') {
-        swiperRef.current.slideNext();
-      } else {
-        swiperRef.current.slidePrev();
-      }
-    }, 50);
-    
-    // Reset animation state and restart autoplay
-    setTimeout(() => {
-      setIsAnimating(false);
-      swiperRef.current.autoplay.start();
-    }, 3000);
+  // Hero banner image
+  const heroImage = {
+    src: "/banner.jpg",
+    alt: "OOBilliards Banner"
   };
 
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Custom CSS for blur transition */}
-      <style jsx>{customSwiperStyles}</style>
-      {/* Background Image Swiper with Animation */}
+      {/* Background Image with Animation */}
       <div className="absolute inset-0 z-0">
-        <Swiper
-          modules={[Autoplay, EffectFade]}
-          effect="fade"
-          fadeEffect={{
-            crossFade: true,
+        <motion.div 
+          className="relative w-full h-full"
+          initial={{ scale: 1.05 }}
+          animate={{ scale: 1.08 }}
+          transition={{ 
+            duration: 6, 
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "reverse"
           }}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-          }}
-          loop={true}
-          speed={1500}
-          allowTouchMove={true}
-          simulateTouch={true}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-            console.log('Swiper initialized:', swiper);
-          }}
-          onAutoplayTimeLeft={handleAutoplayTimeLeft}
-          onSlideChange={() => console.log('Slide changed')}
-          className="w-full h-full hero-swiper"
         >
-          {heroImages.map((image, index) => (
-            <SwiperSlide key={index}>
-              <motion.div 
-                className="relative w-full h-full"
-                initial={{ scale: 1.05 }}
-                animate={{ scale: 1.08 }}
-                transition={{ 
-                  duration: 6, 
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                  repeatType: "reverse"
-                }}
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                  priority={index === 0}
-                  quality={90}
-                />
-              </motion.div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          <Image
+            src={heroImage.src}
+            alt={heroImage.alt}
+            fill
+            className="object-cover"
+            priority={true}
+            quality={90}
+          />
+        </motion.div>
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/50 z-10"></div>
       </div>
 
-      {/* Navigation Arrows - Desktop: sides, Mobile: bottom center */}
-      {/* Desktop Left Arrow */}
-      <div className="hidden md:block absolute left-16 top-1/2 transform -translate-y-1/2 z-30">
-        <button 
-          onClick={(e) => {
-            e.preventDefault();
-            console.log('Left button clicked, swiperRef.current:', swiperRef.current);
-            handleManualNavigation('prev');
-          }}
-          className="w-12 h-12 rounded-full border-2 border-white/40 hover:border-[#ffd701] flex items-center justify-center text-white/70 hover:text-[#ffd701] transition-all duration-300 cursor-pointer"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Desktop Right Arrow */}
-      <div className="hidden md:block absolute right-16 top-1/2 transform -translate-y-1/2 z-30">
-        <button 
-          onClick={(e) => {
-            e.preventDefault();
-            console.log('Right button clicked, swiperRef.current:', swiperRef.current);
-            handleManualNavigation('next');
-          }}
-          className="w-12 h-12 rounded-full border-2 border-white/40 hover:border-[#ffd701] flex items-center justify-center text-white/70 hover:text-[#ffd701] transition-all duration-300 cursor-pointer"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Mobile Navigation Arrows - Bottom Center */}
-      <div className="md:hidden absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-4">
-        <button 
-          onClick={(e) => {
-            e.preventDefault();
-            console.log('Left button clicked (mobile), swiperRef.current:', swiperRef.current);
-            handleManualNavigation('prev');
-          }}
-          className="w-12 h-12 rounded-full border-2 border-white/40 hover:border-[#ffd701] flex items-center justify-center text-white/70 hover:text-[#ffd701] transition-all duration-300 cursor-pointer"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        
-        <button 
-          onClick={(e) => {
-            e.preventDefault();
-            console.log('Right button clicked (mobile), swiperRef.current:', swiperRef.current);
-            handleManualNavigation('next');
-          }}
-          className="w-12 h-12 rounded-full border-2 border-white/40 hover:border-[#ffd701] flex items-center justify-center text-white/70 hover:text-[#ffd701] transition-all duration-300 cursor-pointer"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
 
       {/* Content */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center pt-32 sm:pt-28 md:pt-24 lg:pt-20">
         <div className="text-center">
-          {/* Circular Background with Text - Simple Slide Down Animation */}
+          {/* Circular Background with Text */}
           <motion.div 
-            key={animationKey}
             className="relative flex items-center justify-center mb-6"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -264,26 +85,28 @@ export default function HeroBanner() {
                         color: 'rgba(255, 255, 255, 0.15)',
                         WebkitTextStroke: '3px #ffffff',
                         textStroke: '3px #ffffff',
-                      }}>SPORT CLUB</span>
+                      }}>EMPIRE</span>
                     </h1>
                   </div>
                   
                   {/* Description Text */}
                   <div className="mt-4 px-8">
                     <p className="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl font-kanit font-normal leading-relaxed">
-                      Experience the finest billiards facilities<br />
-                      with professional coaching and premium equipment
+                      Malaysia's Billiards Empire<br />
+                      Professional Training • Tournament Venues • Premium Experience
                     </p>
                   </div>
                   
-                  {/* Read More Button */}
+                  {/* Book Now Button */}
                   <div className="mt-6">
-                    <button 
-                      className="px-8 py-3 text-black font-kanit font-medium text-sm sm:text-base md:text-lg rounded-full hover:opacity-90 transition-opacity duration-300"
-                      style={{ backgroundColor: '#ffd701' }}
-                    >
-                      Read More
-                    </button>
+                    <Link href="/outlets">
+                      <button 
+                        className="px-8 py-3 text-black font-kanit font-medium text-sm sm:text-base md:text-lg rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                        style={{ backgroundColor: '#ffd701' }}
+                      >
+                        Book Now
+                      </button>
+                    </Link>
                   </div>
                 </div>
                 

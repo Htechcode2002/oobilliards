@@ -26,7 +26,7 @@ export default function OutletsSection() {
       },
       contact: {
         phone: "+6011-35041123",
-        whatsapp: "60113504112"
+        whatsapp: "+60113504112"
       },
       isOpen: true
     },
@@ -46,7 +46,7 @@ export default function OutletsSection() {
       },
       contact: {
         phone: "+6011-16683556",
-        whatsapp: "60111668355"
+        whatsapp: "+60111668355"
       },
       isOpen: true
     },
@@ -68,7 +68,7 @@ export default function OutletsSection() {
       },
       contact: {
         phone: "+6011-11102935",
-        whatsapp: "60111110293"
+        whatsapp: "+60111110293"
       },
       isOpen: true
     },
@@ -91,7 +91,7 @@ export default function OutletsSection() {
       },
       contact: {
         phone: "+6013-8938896",
-        whatsapp: "60138938896"
+        whatsapp: "+60138938896"
       },
       isOpen: true
     },
@@ -113,7 +113,7 @@ export default function OutletsSection() {
       },
       contact: {
         phone: "+6013-8078896",
-        whatsapp: "60138078896"
+        whatsapp: "+60138078896"
       },
       isOpen: true
     },

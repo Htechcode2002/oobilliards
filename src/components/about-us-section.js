@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function AboutUsSection() {
   return (
-    <section className="py-16 sm:py-20 bg-black relative overflow-hidden">
+    <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header with Background Text Effect */}
         <div className="text-center mb-16 relative">
@@ -170,7 +170,7 @@ export default function AboutUsSection() {
             </div>
           </motion.div>
 
-          {/* Right Side - 3 Split Photos */}
+          {/* Right Side - Single Photo */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: 50 }}
@@ -178,71 +178,35 @@ export default function AboutUsSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="grid grid-cols-2 gap-4 h-96">
-              {/* Large photo on the left */}
-              <motion.div 
-                className="relative overflow-hidden rounded-lg shadow-xl"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <img
-                  src="/home/coaching.jpg"
-                  alt="Professional Coaching"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                <div className="absolute bottom-4 left-4">
-                  <span className="text-white font-bold text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                    Professional Coaching
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* Two smaller photos on the right */}
-              <div className="flex flex-col gap-4">
-                <motion.div 
-                  className="relative overflow-hidden rounded-lg shadow-xl flex-1"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  <img
-                    src="/home/tournament.jpg"
-                    alt="Tournament Events"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                  <div className="absolute bottom-2 left-2">
-                    <span className="text-white font-bold text-xs italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                      Tournament Events
-                    </span>
-                  </div>
-                </motion.div>
-
-                <motion.div 
-                  className="relative overflow-hidden rounded-lg shadow-xl flex-1"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <img
-                    src="/outlets/outlets.jpg"
-                    alt="Premium Venues"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                  <div className="absolute bottom-2 left-2">
-                    <span className="text-white font-bold text-xs italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                      Premium Venues
-                    </span>
-                  </div>
-                </motion.div>
+            <motion.div 
+              className="relative overflow-hidden rounded-2xl shadow-2xl h-[500px]"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <img
+                src="/about/team.jpg"
+                alt="O'O+ In-House Coaching Team"
+                className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div className="absolute bottom-6 left-6 right-6">
+                <h3 className="text-white font-bold text-xl mb-2 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  Professional In-House Coaching Team
+                </h3>
+                <p className="text-white/90 text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  Expert coaches dedicated to elevating your billiards skills
+                </p>
               </div>
-            </div>
+              
+              {/* Decorative Element */}
+              <div className="absolute top-6 right-6 bg-[#ffd701] p-3 rounded-full">
+                <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

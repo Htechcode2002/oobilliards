@@ -94,12 +94,54 @@ export default function CoachingPrograms() {
         </div>
 
         {/* Long Description Below */}
-        <div className="text-center mb-12 -mt-20 md:-mt-25">
+        <div className="text-center mb-8 -mt-20 md:-mt-25">
           <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
             Whether you&apos;re a beginner or aiming for competitive tournaments, our coaching 
             programs cover Snooker, Chinese 8 Ball, and American Pool. Available in one-to-one 
             or group formats, designed to improve skills and techniques effectively.
           </p>
+        </div>
+
+        {/* Coaching Format Info */}
+        <div className="text-center mb-12">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 max-w-4xl mx-auto border border-gray-700/30">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="text-center">
+                <h3 className="text-xl font-bold text-[#ffd701] mb-3 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  Available Formats
+                </h3>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-2 h-2 bg-[#ffd701] rounded-full"></div>
+                    <span className="text-gray-300 font-medium" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>One-to-One Coaching</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-2 h-2 bg-[#ffd701] rounded-full"></div>
+                    <span className="text-gray-300 font-medium" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>Group Coaching</span>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center">
+                <h3 className="text-xl font-bold text-[#ffd701] mb-3 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  Suitable For
+                </h3>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-2 h-2 bg-[#ffd701] rounded-full"></div>
+                    <span className="text-gray-300 font-medium" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>Beginners</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-2 h-2 bg-[#ffd701] rounded-full"></div>
+                    <span className="text-gray-300 font-medium" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>Intermediate Players</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-2 h-2 bg-[#ffd701] rounded-full"></div>
+                    <span className="text-gray-300 font-medium" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>Competitive Players</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Services Grid */}
@@ -108,7 +150,7 @@ export default function CoachingPrograms() {
             image="/home/game/chinese8ball.png"
             alt="Chinese 8 Ball"
             title="Chinese 8 Ball"
-            description="Learn the popular Chinese 8 Ball format with specialized techniques and strategies for competitive play and tournaments.<br/><br/><div style='text-align: left;'>• Format: Group Coaching<br/>• Suitable For: Beginners | Intermediate</div>"
+            description="Learn the popular Chinese 8 Ball format with specialized techniques and strategies for competitive play and tournaments."
             buttonColor="blue"
             delay={0}
             icon={
@@ -122,7 +164,7 @@ export default function CoachingPrograms() {
             image="/home/game/pool.jpg"
             alt="American Pool"
             title="American Pool"
-            description="Master American Pool techniques including 9-ball, 8-ball, and straight pool for advanced competitive gameplay and skill development.<br/><br/><div style='text-align: left;'>• Format: One-to-One<br/>• Suitable For: Beginners | Intermediate | Competitive</div>"
+            description="Master American Pool techniques including 9-ball, 8-ball, and straight pool for advanced competitive gameplay and skill development."
             buttonColor="green"
             delay={0.1}
             icon={
@@ -136,7 +178,7 @@ export default function CoachingPrograms() {
             image="/home/game/snooker.jpg"
             alt="Snooker"
             title="Snooker"
-            description="Professional snooker coaching with emphasis on technique, positioning, and strategic play for precision control and advanced gameplay.<br/><br/><div style='text-align: left;'>• Format: One-to-One<br/>• Suitable For: Intermediate | Competitive</div>"
+            description="Professional snooker coaching with emphasis on technique, positioning, and strategic play for precision control and advanced gameplay."
             buttonColor="purple"
             delay={0.2}
             icon={
@@ -150,7 +192,7 @@ export default function CoachingPrograms() {
             image="/home/game/chinese9ball.jpg"
             alt="Chinese 9 Ball"
             title="Chinese 9 Ball"
-            description="Specialized coaching for Chinese 9 Ball with focus on break shots, safety play, and tournament competition strategies.<br/><br/><div style='text-align: left;'>• Format: Group Coaching<br/>• Suitable For: Competitive Players</div>"
+            description="Specialized coaching for Chinese 9 Ball with focus on break shots, safety play, and tournament competition strategies."
             buttonColor="orange"
             delay={0.3}
             icon={

@@ -9,39 +9,39 @@ export default function ProductSection() {
   const products = [
     {
       id: 1,
-      name: "Training Bag",
-      price: "$13.49",
+      name: "DUYA II Table (RED)",
+      price: "Get Quotation",
       originalPrice: null,
       rating: 5,
-      image: "/home/product.jpg",
-      description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem ..."
+      image: "/products/duya2.jpg",
+      description: "DUYA II is a high-end competition table featuring a modern, technological design with a fully alloy base and LED under-lighting."
     },
     {
       id: 2,
-      name: "Tennis Racket",
-      price: "$17.99",
+      name: "DUYA Lambo Gold",
+      price: "Get Quotation",
       originalPrice: null,
-      rating: 4,
-      image: "/home/product.jpg",
-      description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem ..."
+      rating: 5,
+      image: "/products/duyalambogold.jpg",
+      description: "DUYA Lambo Gold represents the pinnacle of luxury billiards tables with premium gold finishing and exceptional craftsmanship."
     },
     {
       id: 3,
-      name: "Artificial Court Grass",
-      price: "$9.99",
-      originalPrice: "$13.99",
-      rating: 4,
-      image: "/home/product.jpg",
-      description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem ..."
+      name: "APLUS Premier Classic Model (7-ft Traditional Table)",
+      price: "Get Quotation",
+      originalPrice: null,
+      rating: 5,
+      image: null,
+      description: "APLUS Premier Classic Model features traditional 7-foot design with premium craftsmanship for authentic billiards experience."
     },
     {
       id: 4,
-      name: "Modern Trainer Sneakers",
-      price: "$125.00",
+      name: "Classic APLUS \"English Pool / Pub-Style\" Table (8 ft)",
+      price: "Get Quotation",
       originalPrice: null,
       rating: 5,
-      image: "/home/product.jpg",
-      description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem ..."
+      image: null,
+      description: "Classic APLUS English Pool table with authentic pub-style design, perfect for 8-ball and 9-ball games."
     }
   ];
 
@@ -131,14 +131,14 @@ export default function ProductSection() {
         {/* Products Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           {products.map((product, index) => (
-            <motion.div
-              key={product.id}
-              className="bg-white overflow-hidden border border-gray-200 transition-all duration-300 group relative p-3 sm:p-4 hover:shadow-lg cursor-pointer"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
+            <Link key={product.id} href="/product">
+              <motion.div
+                className="bg-white overflow-hidden border border-gray-200 transition-all duration-300 group relative p-3 sm:p-4 hover:shadow-lg cursor-pointer h-64 sm:h-72 flex flex-col"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
               {/* Animated Border Lines */}
               <div className="absolute inset-0 pointer-events-none">
                 {/* Top Border - from left */}
@@ -180,36 +180,45 @@ export default function ProductSection() {
               </div>
 
               {/* Product Image */}
-              <div className="relative h-32 sm:h-40 bg-white overflow-hidden">
-
+              <div className="relative h-44 sm:h-52 bg-white overflow-hidden">
+                {product.image ? (
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
                     className="object-contain group-hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
-                {/* Fallback background when image fails to load */}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                ) : null}
+                {/* Fallback background when no image or image fails to load */}
                 <div 
-                  className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 hidden items-center justify-center"
-                  style={{ display: 'none' }}
+                  className={`absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 ${!product.image ? 'flex' : 'hidden'} items-center justify-center`}
+                  style={{ display: !product.image ? 'flex' : 'none' }}
                 >
-                  <span className="text-gray-400 text-sm font-semibold text-center px-4">
-                    {product.name}
-                  </span>
+                  <div className="text-center px-4">
+                    <div className="w-16 h-16 mx-auto mb-2 bg-gray-400 rounded-full flex items-center justify-center">
+                      <svg className="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <span className="text-gray-500 text-xs font-medium text-center">
+                      Coming Soon
+                    </span>
+                  </div>
                 </div>
               </div>
 
               {/* Product Name */}
-              <div className="pt-3 text-center">
-                <h3 className="text-sm sm:text-lg font-bold text-black italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+              <div className="pt-3 text-center flex-shrink-0">
+                <h3 className="text-sm sm:text-base font-bold text-black italic leading-tight" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                   {product.name}
                 </h3>
               </div>
             </motion.div>
+            </Link>
           ))}
         </div>
 

@@ -7,23 +7,25 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
-    company: [
-      { name: "About Us", href: "/about" },
-      { name: "Our Story", href: "/story" },
-      { name: "Team", href: "/team" },
-      { name: "Careers", href: "/careers" }
+    quickLinks: [
+      { name: "Home", href: "/" },
+      { name: "About", href: "/about" },
+      { name: "Outlets", href: "/outlets" },
+      { name: "Products", href: "/product" },
+      { name: "FAQ", href: "/faq" }
     ],
     services: [
-      { name: "Pool Tables", href: "/services/pool-tables" },
-      { name: "Professional Coaching", href: "/services/coaching" },
-      { name: "Tournament Hosting", href: "/services/tournaments" },
-      { name: "Equipment Rental", href: "/services/rental" }
+      { name: "DUYA Tables", href: "/product" },
+      { name: "APLUS Tables", href: "/product" },
+      { name: "Professional Coaching", href: "/" },
+      { name: "Tournament Venues", href: "/" }
     ],
-    support: [
-      { name: "Contact Us", href: "/contact" },
-      { name: "FAQ", href: "/faq" },
-      { name: "Booking", href: "/booking" },
-      { name: "Support", href: "/support" }
+    outlets: [
+      { name: "One Shamelin Mall", href: "/outlets" },
+      { name: "Seremban Outlet", href: "/outlets" },
+      { name: "Viva Home Outlet", href: "/outlets" },
+      { name: "Scott Garden Outlet", href: "/outlets" },
+      { name: "USJ Outlet", href: "/outlets" }
     ]
   };
 
@@ -87,13 +89,13 @@ export default function Footer() {
                 <Image
                   src="/logo.png"
                   alt="OOBilliards Logo"
-                  width={200}
-                  height={83}
-                  className="h-16 w-auto object-contain"
+                  width={280}
+                  height={116}
+                  className="h-24 w-auto object-contain"
                 />
               </div>
-              <p className="text-white/70 font-kanit text-sm leading-relaxed mb-6">
-                Experience the finest billiards facilities with professional coaching, premium equipment, and a welcoming community for players of all skill levels.
+              <p className="text-white/70 font-kanit text-sm leading-relaxed mb-6 italic">
+                Malaysia's leading billiards entertainment and sports group, offering world-class venues, professional coaching programs, and premium cue sports equipment under one brand.
               </p>
               
               {/* Contact Info */}
@@ -103,32 +105,32 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  123 Billiards Street, Game City
+                  Malaysia • 6 Outlets Nationwide
                 </div>
                 <div className="flex items-center text-white/80">
                   <svg className="w-4 h-4 mr-3 text-[#ffd701]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  +1 (555) 123-4567
+                  +6011-35041123
                 </div>
                 <div className="flex items-center text-white/80">
                   <svg className="w-4 h-4 mr-3 text-[#ffd701]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
-                  info@oobilliards.com
+                  WhatsApp: +60113504112
                 </div>
               </div>
             </div>
 
-            {/* Company Links */}
+            {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-kanit font-semibold mb-6 text-[#ffd701]">Company</h3>
+              <h3 className="text-lg font-kanit font-semibold mb-6 text-[#ffd701] italic">Quick Links</h3>
               <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
+                {footerLinks.quickLinks.map((link) => (
                   <li key={link.name}>
                     <a 
                       href={link.href} 
-                      className="text-white/70 hover:text-[#ffd701] transition-colors duration-300 font-kanit text-sm"
+                      className="text-white/70 hover:text-[#ffd701] transition-colors duration-300 font-kanit text-sm italic"
                     >
                       {link.name}
                     </a>
@@ -137,15 +139,15 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Services Links */}
+            {/* Products & Services */}
             <div>
-              <h3 className="text-lg font-kanit font-semibold mb-6 text-[#ffd701]">Services</h3>
+              <h3 className="text-lg font-kanit font-semibold mb-6 text-[#ffd701] italic">Products & Services</h3>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
                   <li key={link.name}>
                     <a 
                       href={link.href} 
-                      className="text-white/70 hover:text-[#ffd701] transition-colors duration-300 font-kanit text-sm"
+                      className="text-white/70 hover:text-[#ffd701] transition-colors duration-300 font-kanit text-sm italic"
                     >
                       {link.name}
                     </a>
@@ -154,15 +156,15 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Support Links */}
+            {/* Our Outlets */}
             <div>
-              <h3 className="text-lg font-kanit font-semibold mb-6 text-[#ffd701]">Support</h3>
+              <h3 className="text-lg font-kanit font-semibold mb-6 text-[#ffd701] italic">Our Outlets</h3>
               <ul className="space-y-3 mb-6">
-                {footerLinks.support.map((link) => (
+                {footerLinks.outlets.map((link) => (
                   <li key={link.name}>
                     <a 
                       href={link.href} 
-                      className="text-white/70 hover:text-[#ffd701] transition-colors duration-300 font-kanit text-sm"
+                      className="text-white/70 hover:text-[#ffd701] transition-colors duration-300 font-kanit text-sm italic"
                     >
                       {link.name}
                     </a>
@@ -172,7 +174,7 @@ export default function Footer() {
 
               {/* Social Media Links */}
               <div>
-                <h4 className="text-sm font-kanit font-medium mb-4 text-white">Follow Us</h4>
+                <h4 className="text-sm font-kanit font-medium mb-4 text-white italic">Follow Us</h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((social) => (
                     <motion.a
@@ -194,20 +196,9 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-white/60 text-sm font-kanit">
-                © {currentYear} O&apos;O+ Billiards Group. All rights reserved.
-              </div>
-              <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-kanit justify-center md:justify-start">
-                <a href="/privacy" className="text-white/60 hover:text-[#ffd701] transition-colors duration-300">
-                  Privacy Policy
-                </a>
-                <a href="/terms" className="text-white/60 hover:text-[#ffd701] transition-colors duration-300">
-                  Terms of Service
-                </a>
-                <a href="/cookies" className="text-white/60 hover:text-[#ffd701] transition-colors duration-300">
-                  Cookie Policy
-                </a>
+            <div className="text-center">
+              <div className="text-white/60 text-sm font-kanit italic">
+                © {currentYear} O&apos;O+ Billiards Group. All rights reserved. | Malaysia&apos;s Leading Billiards Empire
               </div>
             </div>
           </div>
