@@ -46,7 +46,7 @@ export default function ProductSidebar({ onFilterChange, isOpen, onClose }) {
         sortBy
       });
     }
-  }, [searchTerm, selectedCategories, sortBy]);
+  }, [searchTerm, selectedCategories, sortBy, onFilterChange]);
 
   return (
     <>

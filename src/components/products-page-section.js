@@ -17,7 +17,7 @@ export default function ProductsPageSection() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const products = [
+  const products = useMemo(() => [
     {
       id: 1,
       name: "DUYA II Table (RED)",
@@ -113,7 +113,7 @@ export default function ProductsPageSection() {
         "8-ft standard size"
       ]
     }
-  ];
+  ], []);
 
   const handleGetQuotation = (product) => {
     const message = encodeURIComponent(`Hi! I'm interested in the ${product.name}. Could you please provide me with a quotation and more details?`);

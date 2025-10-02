@@ -92,7 +92,7 @@ export default function HeroBanner() {
                   {/* Description Text */}
                   <div className="mt-4 px-8">
                     <p className="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl font-kanit font-normal leading-relaxed">
-                      Malaysia's Billiards Empire<br />
+                      Malaysia&apos;s Billiards Empire<br />
                       Professional Training • Tournament Venues • Premium Experience
                     </p>
                   </div>

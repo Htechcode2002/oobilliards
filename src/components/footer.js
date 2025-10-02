@@ -95,7 +95,7 @@ export default function Footer() {
                 />
               </div>
               <p className="text-white/70 font-kanit text-sm leading-relaxed mb-6 italic">
-                Malaysia's leading billiards entertainment and sports group, offering world-class venues, professional coaching programs, and premium cue sports equipment under one brand.
+                Malaysia&apos;s leading billiards entertainment and sports group, offering world-class venues, professional coaching programs, and premium cue sports equipment under one brand.
               </p>
               
               {/* Contact Info */}
