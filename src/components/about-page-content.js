@@ -9,7 +9,7 @@ export default function AboutPageContent() {
     { date: "Sept 2022", event: "Seremban outlet opens", image: "/outlets/seremban.jpg" },
     { date: "Mar 2023", event: "Viva Home outlet opens", image: "/outlets/vivahome.jpg" },
     { date: "Jul 2024", event: "Scott Garden outlet opens – one of the biggest in KL", image: "/outlets/scottgarden.jpg" },
-    { date: "Jan 2025", event: "USJ outlet opens at 91 Sports Arena + Group HQ established", image: "/outlets/usj.png" },
+    { date: "Jan 2025", event: "USJ outlet opens at 91 Sports Arena + Group HQ established", image: "/outlets/usj.PNG" },
     { date: "Oct 2025", event: "Vietnam outlet (Ho Chi Minh City) opening soon", image: "/outlets/vietnam.jpg", comingSoon: true }
   ];
 

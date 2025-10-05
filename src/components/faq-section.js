@@ -144,7 +144,7 @@ export default function FaqSection() {
   ];
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative overflow-x-hidden">
       {/* Full Page Background Image */}
       <div 
         className="fixed inset-0 z-0"
@@ -198,7 +198,7 @@ export default function FaqSection() {
 
       {/* FAQ Content */}
       <div className="relative z-10 bg-black">
-        <div className="px-5 md:px-10 py-12">
+        <div className="px-4 sm:px-5 md:px-10 py-12">
           {/* FAQ Questions by Sections */}
           <div className="max-w-5xl mx-auto space-y-8">
             {categories.map((category, categoryIndex) => (
@@ -226,18 +226,18 @@ export default function FaqSection() {
                       value={faq.id}
                       className="border border-gray-700 rounded-lg overflow-hidden bg-gray-800 shadow-sm"
                     >
-                      <AccordionTrigger className="px-6 py-4 hover:bg-gray-700 text-left font-semibold text-white group">
-                        <div className="flex items-center space-x-4">
-                          <div className="w-8 h-8 bg-[#ffd701] rounded-full flex items-center justify-center flex-shrink-0">
-                            <svg className="w-4 h-4 text-black group-data-[state=open]:rotate-45 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <AccordionTrigger className="px-4 sm:px-6 py-4 hover:bg-gray-700 text-left font-semibold text-white group">
+                        <div className="flex items-center space-x-3 sm:space-x-4">
+                          <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#ffd701] rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg className="w-3 h-3 sm:w-4 sm:h-4 text-black group-data-[state=open]:rotate-45 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                             </svg>
                           </div>
-                          <span className="text-sm md:text-base">{faq.question}</span>
+                          <span className="text-xs sm:text-sm md:text-base break-words">{faq.question}</span>
                         </div>
                       </AccordionTrigger>
-                      <AccordionContent className="px-6 pb-6 pt-2">
-                        <div className="text-gray-300 leading-relaxed ml-12">
+                      <AccordionContent className="px-4 sm:px-6 pb-6 pt-2">
+                        <div className="text-gray-300 leading-relaxed ml-8 sm:ml-12 break-words">
                           {faq.answer}
                         </div>
                       </AccordionContent>
@@ -256,8 +256,8 @@ export default function FaqSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="max-w-6xl mx-auto px-5 md:px-10">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="max-w-6xl mx-auto px-4 sm:px-5 md:px-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
                 
                 {/* Left Side - Content */}
                 <motion.div
@@ -292,16 +292,16 @@ export default function FaqSection() {
                     ))}
                   </div>
 
-                  <div className="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700">
-                    <h3 className="text-xl font-bold text-white mb-4 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                  <div className="bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-700">
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-4 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       If you need <span className="text-[#ffd701]">more help</span>
                     </h3>
-                    <p className="text-gray-300 leading-relaxed mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <p className="text-gray-300 leading-relaxed mb-6 italic text-sm sm:text-base" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       Can&apos;t find the answer you&apos;re looking for? Our customer support team is always ready to assist you with any questions or concerns.
                     </p>
-                    <button className="bg-[#ffd701] hover:bg-[#e6c200] text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-3 italic shadow-lg hover:shadow-xl" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <button className="bg-[#ffd701] hover:bg-[#e6c200] text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-3 italic shadow-lg hover:shadow-xl w-full sm:w-auto justify-center" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       <span>Contact Support</span>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </button>
@@ -320,14 +320,14 @@ export default function FaqSection() {
                     <img
                       src="/home/coaching.jpg"
                       alt="Customer Support - O'O+ Billiards Group"
-                      className="w-full h-[400px] object-cover"
+                      className="w-full h-[300px] sm:h-[400px] object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                     
                     {/* Image Badge */}
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <div className="bg-black/80 backdrop-blur-sm p-4 rounded-xl">
-                        <p className="text-white font-bold italic text-sm" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
+                      <div className="bg-black/80 backdrop-blur-sm p-3 sm:p-4 rounded-xl">
+                        <p className="text-white font-bold italic text-xs sm:text-sm" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                           &ldquo;Always here to help you enjoy the perfect billiards experience&rdquo;
                         </p>
                       </div>

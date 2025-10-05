@@ -101,7 +101,7 @@ export default function OutletsSection() {
       location: "91 Sports Arena, Subang Jaya",
       description: "Opened in January 2025, the largest outlet in Subang Jaya, located above Giant USJ1 within 91 Sports Arena. Offers coaching programs, tournaments, and multiple table types.",
       openDate: "January 2025",
-      image: "/outlets/usj.png",
+      image: "/outlets/usj.PNG",
       tables: [
         "14 Aplus American Pool Tables",
         "8 Duya Chinese 8 Ball Tables",
