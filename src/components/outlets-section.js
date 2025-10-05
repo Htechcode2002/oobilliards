@@ -14,7 +14,7 @@ export default function OutletsSection() {
       location: "Kuala Lumpur",
       description: "The very first O'O+ Billiard's outlet, opened in November 2017, equipped with professional snooker tables, ideal for both casual players and competitive tournaments.",
       openDate: "November 2017",
-      image: "/outlets/shamelin.JPG",
+      image: "/outlets/shamelin.jpg",
       tables: [
         "3 Rasson Snooker Tables",
         "15 Earl Snooker Tables", 
