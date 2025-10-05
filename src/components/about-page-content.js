@@ -9,8 +9,8 @@ export default function AboutPageContent() {
     { date: "Sept 2022", event: "Seremban outlet opens", image: "/outlets/seremban.jpg" },
     { date: "Mar 2023", event: "Viva Home outlet opens", image: "/outlets/vivahome.jpg" },
     { date: "Jul 2024", event: "Scott Garden outlet opens – one of the biggest in KL", image: "/outlets/scottgarden.jpg" },
-    { date: "Jan 2025", event: "USJ outlet opens at 91 Sports Arena + Group HQ established", image: "/outlets/usj.jpg" },
-    { date: "Oct 2025", event: "Vietnam outlet (Ho Chi Minh City) opening soon", image: "/outlets/outlets.jpg", comingSoon: true }
+    { date: "Jan 2025", event: "USJ outlet opens at 91 Sports Arena + Group HQ established", image: "/outlets/usj.png" },
+    { date: "Oct 2025", event: "Vietnam outlet (Ho Chi Minh City) opening soon", image: "/outlets/vietnam.jpg", comingSoon: true }
   ];
 
   const values = [
@@ -341,15 +341,11 @@ export default function AboutPageContent() {
         </section>
 
         {/* Clients and Partners Banner */}
-        <section className="py-12 md:py-16 bg-gray-900">
+        <section className="py-12 md:py-16 bg-gray-700">
           <div className="max-w-7xl mx-auto px-4 md:px-10">
             {/* Header */}
             <div className="text-center mb-8 md:mb-12">
-              <div className="bg-blue-600 text-white px-4 py-2 md:px-6 rounded-full inline-block mb-3 md:mb-4">
-                <span className="font-bold text-xs md:text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                  CHECK OUR BEST
-                </span>
-              </div>
+
               <h2 className="text-2xl md:text-4xl font-black text-white mb-3 md:mb-4 italic px-2" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                 CLIENTS AND <span className="text-[#ffd701]">PARTNERS</span>
               </h2>
@@ -358,17 +354,20 @@ export default function AboutPageContent() {
               </p>
             </div>
 
-            {/* Mobile Optimized Logo Grid */}
-            <div className="grid grid-cols-2 md:flex md:flex-wrap md:justify-center md:items-center gap-6 md:gap-12 lg:gap-16 mb-8 md:mb-0">
+            {/* Brand Logo Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12 lg:gap-16 mb-8 md:mb-0">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="text-center grayscale hover:grayscale-0 transition-all duration-300 p-4 md:p-0"
+                className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
-                <div className="text-gray-400 text-xs font-bold mb-1">PREMIUM</div>
-                <div className="text-gray-300 text-lg md:text-xl font-black">TENNIS</div>
+                <img 
+                  src="/about/brand/duya.png" 
+                  alt="DUYA" 
+                  className="max-h-20 md:max-h-24 w-auto object-contain brightness-110 contrast-110"
+                />
               </motion.div>
 
               <motion.div
@@ -376,9 +375,13 @@ export default function AboutPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-center grayscale hover:grayscale-0 transition-all duration-300 p-4 md:p-0"
+                className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
-                <div className="text-gray-300 text-2xl md:text-3xl font-black">4GA</div>
+                <img 
+                  src="/about/brand/joy.png" 
+                  alt="JOY" 
+                  className="max-h-20 md:max-h-24 w-auto object-contain brightness-110 contrast-110"
+                />
               </motion.div>
 
               <motion.div
@@ -386,9 +389,13 @@ export default function AboutPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="text-center grayscale hover:grayscale-0 transition-all duration-300 p-4 md:p-0"
+                className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
-                <div className="text-gray-300 text-lg md:text-xl font-bold">△ BRAND</div>
+                <img 
+                  src="/about/brand/rasson.png" 
+                  alt="RASSON" 
+                  className="max-h-20 md:max-h-24 w-auto object-contain brightness-110 contrast-110"
+                />
               </motion.div>
 
               <motion.div
@@ -396,9 +403,13 @@ export default function AboutPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="text-center grayscale hover:grayscale-0 transition-all duration-300 p-4 md:p-0"
+                className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
-                <div className="text-gray-300 text-sm md:text-sm font-bold">○○ RACKET</div>
+                <img 
+                  src="/about/brand/aramith.png" 
+                  alt="ARAMITH" 
+                  className="max-h-20 md:max-h-24 w-auto object-contain brightness-110 contrast-110"
+                />
               </motion.div>
 
               <motion.div
@@ -406,9 +417,13 @@ export default function AboutPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
                 viewport={{ once: true }}
-                className="text-center grayscale hover:grayscale-0 transition-all duration-300 p-4 md:p-0"
+                className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
-                <div className="text-gray-300 text-lg md:text-xl font-black">SP●RT</div>
+                <img 
+                  src="/about/brand/wiraka.png" 
+                  alt="WIRAKA" 
+                  className="max-h-20 md:max-h-24 w-auto object-contain brightness-110 contrast-110"
+                />
               </motion.div>
 
               <motion.div
@@ -416,10 +431,13 @@ export default function AboutPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 viewport={{ once: true }}
-                className="text-center grayscale hover:grayscale-0 transition-all duration-300 p-4 md:p-0 col-span-2 md:col-span-1"
+                className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
-                <div className="text-gray-400 text-xs font-bold mb-1">⬡ T</div>
-                <div className="text-gray-300 text-sm font-bold">TENNIS</div>
+                <img 
+                  src="/about/brand/acurra.png" 
+                  alt="ACURRA" 
+                  className="max-h-20 md:max-h-24 w-auto object-contain brightness-110 contrast-110"
+                />
               </motion.div>
             </div>
 
@@ -432,7 +450,7 @@ export default function AboutPageContent() {
               </Link>
               
               <Link href="/outlets" className="w-full sm:w-auto">
-                <button className="w-full border-2 border-gray-600 hover:border-[#ffd701] text-gray-300 hover:text-black px-6 md:px-8 py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 italic text-sm md:text-base" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                <button className="w-full border-2 border-gray-600 hover:border-gray-500 hover:bg-gray-800 text-gray-300 hover:text-white px-6 md:px-8 py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 italic text-sm md:text-base" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                   Visit Outlets
                 </button>
               </Link>

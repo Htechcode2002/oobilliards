@@ -45,7 +45,7 @@ export default function AboutUsSection() {
                   opacity: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 }}
                 transition={{
-                  duration: 13,
+                  duration: 10,
                   repeat: Infinity,
                   ease: "linear",
                   times: [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1],

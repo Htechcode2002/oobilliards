@@ -180,7 +180,7 @@ export default function ProductsPageSection() {
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: `url('/outlets/outlets.jpg')`,
+          backgroundImage: `url('/products/banner.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'bottom',
           backgroundRepeat: 'no-repeat',

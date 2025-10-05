@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, MapPin, Clock, Gamepad2 } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, Gamepad2, Navigation } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -101,7 +101,7 @@ export default function OutletsSection() {
       location: "91 Sports Arena, Subang Jaya",
       description: "Opened in January 2025, the largest outlet in Subang Jaya, located above Giant USJ1 within 91 Sports Arena. Offers coaching programs, tournaments, and multiple table types.",
       openDate: "January 2025",
-      image: "/outlets/usj.jpg",
+      image: "/outlets/usj.png",
       tables: [
         "14 Aplus American Pool Tables",
         "8 Duya Chinese 8 Ball Tables",
@@ -123,19 +123,24 @@ export default function OutletsSection() {
       location: "Vietnam",
       description: "Opening in October 2025, our first international outlet in Vietnam, bringing O'O+ Billiards' signature facilities and experiences to Ho Chi Minh City.",
       openDate: "October 2025",
-      image: "/outlets/outlets.jpg",
+      image: "/outlets/vietnam.jpg",
+      address: "34 Đ. Lê Văn Quới, Bình Trị Đông A, Bình Tân, Hồ Chí Minh 762000, Vietnam",
       tables: [
-        "To be confirmed after official launch"
+        "10 Rasson Snooker Tables",
+        "15 Earl Snooker Tables", 
+        "8 Duya Chinese 8 Ball Tables",
+        "5 Joy Chinese 8 Ball Tables",
+        "3 Rasson American Pool Tables"
       ],
       hours: {
-        daily: "To be confirmed"
+        daily: "Open Daily: 11:00 AM – 4:00 AM"
       },
       contact: {
-        phone: "To be confirmed",
-        whatsapp: ""
+        phone: "+84-28-1234-5678",
+        whatsapp: "+842812345678"
       },
       isOpen: false,
-      comingSoon: true
+      comingSoon: false
     }
   ];
 
@@ -146,14 +151,34 @@ export default function OutletsSection() {
     }
   };
 
-  const handleMapClick = (outletName) => {
-    const searchQuery = encodeURIComponent(outletName);
-    window.open(`https://www.google.com/maps/search/?api=1&query=${searchQuery}`, '_blank');
+  const handleMapClick = (outletId) => {
+    const mapUrls = {
+      1: "http://google.com/maps?rlz=1C1VDKB_zh-CNMY1157MY1157&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg70gEHNDkwajBqN6gCCLACAfEFV3HVLPlccYs&um=1&ie=UTF-8&fb=1&gl=my&sa=X&geocode=KS-D8ehvNswxMfmT7MYJQf05&daddr=Taman,+Taman+Shamelin+Perkasa,+55300+Kuala+Lumpur,+Federal+Territory+of+Kuala+Lumpur",
+      2: "https://www.google.com/maps/dir//1st+Floor,+Lot+3258,+Jalan+Dato+Sheikh+Ahmad,+Bandar+Seremban,+70000+Seremban,+Negeri+Sembilan/@2.7238228,101.8562042,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31cdddcacbccf395:0xd0574dda180db38c!2m2!1d101.9386062!2d2.7238256?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D",
+      3: "https://www.google.com/maps/dir//32-5,+Third+Floor,+Viva+Shopping+Mall.85,+Jalan+Loke+Yew+Cheras,+Maluri,+55200+Wilayah+Persekutuan,+Wilayah+Persekutuan+Kuala+Lumpur/@3.1230634,101.6370601,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31cc37378fd7e06b:0xf46c2e3286dace56!2m2!1d101.7194621!2d3.1230666?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D",
+      4: "http://google.com/maps?rlz=1C1VDKB_zh-CNMY1157MY1157&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBBzgxMmowajSoAgCwAgA&um=1&ie=UTF-8&fb=1&gl=my&sa=X&geocode=KR8J4jkkS8wxMWZAVZRSYev1&daddr=Lot+G-01-01A,+Ground+Floor,+Jln+Klang+Lama,+The+Scott+Garden,+58100+Kuala+Lumpur,+Wilayah+Persekutuan+Kuala+Lumpur",
+      5: "https://www.google.com/maps/dir//Lot+T2,T3,T4,+Giant+USJ+1,+1,+Persiaran+Subang+Permai,+Usj+1,+47500+Subang+Jaya,+Selangor/@3.0590089,101.5125797,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31cc4d58a4b0c415:0x358376bf40d00d88!2m2!1d101.5949817!2d3.0590121?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D",
+      6: "https://www.google.com/maps/dir/2.2946733,102.1903724/OO%2B+Billiards+International+Arena+H%E1%BB%93+Ch%C3%AD+Minh,+34+%C4%90.+L%C3%AA+V%C4%83n+Qu%E1%BB%9Bi,+B%C3%ACnh+Tr%E1%BB%8B+%C4%90%C3%B4ng+A,+B%C3%ACnh+T%C3%A2n,+H%E1%BB%93+Ch%C3%AD+Minh+762000%E8%B6%8A%E5%8D%97/@7.9995178,97.5349262,6z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x31752d2f7a13b599:0x685b0d9233d0b0f!2m2!1d106.6076726!2d10.7745939?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D"
+    };
+    const url = mapUrls[outletId];
+    if (url) {
+      window.open(url, '_blank');
+    }
   };
 
-  const handleWazeClick = (outletName) => {
-    const searchQuery = encodeURIComponent(outletName);
-    window.open(`https://waze.com/ul?q=${searchQuery}`, '_blank');
+  const handleWazeClick = (outletId) => {
+    const wazeUrls = {
+      1: "https://waze.com/ul/hw283g0kge", // Shamelin Mall
+      2: "https://waze.com/ul/hw22rrxvk5", // Seremban
+      3: "https://waze.com/ul/hw283f8tc5", // Viva Home
+      4: "https://waze.com/ul/hw2839emt4", // Scott Garden
+      5: "https://waze.com/ul/hw281rughn", // USJ
+      // 6: Vietnam - 暂时没有Waze链接
+    };
+    const url = wazeUrls[outletId];
+    if (url) {
+      window.open(url, '_blank');
+    }
   };
 
   return (
@@ -345,26 +370,34 @@ export default function OutletsSection() {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-3">
+                    <div className="flex flex-col sm:flex-row gap-3">
                       {outlet.contact.whatsapp && (
                         <button
                           onClick={() => handleWhatsAppClick(outlet.contact.whatsapp, outlet.name)}
                           className="flex-1 bg-[#25d366] text-white py-3 px-4 rounded-md hover:bg-[#20bc59] transition-colors duration-200 flex items-center justify-center gap-2"
                         >
-                          <MessageCircle className="w-4 h-4" />
+                          <i className="fa-brands fa-whatsapp w-4 h-4"></i>
                           <span className="font-medium text-sm">WhatsApp</span>
                         </button>
                       )}
                       
                       <button 
-                        onClick={() => handleMapClick(outlet.name)}
+                        onClick={() => handleMapClick(outlet.id)}
                         className="flex-1 bg-[#ffd701] text-black py-3 px-4 rounded-md hover:bg-[#e6c200] transition-colors duration-200 flex items-center justify-center gap-2"
                       >
-                        <MapPin className="w-4 h-4" />
-                        <span className="font-medium text-sm">
-                          {outlet.isOpen ? 'Get Directions' : 'Coming Soon'}
-                        </span>
+                        <i className="fa-solid fa-location-dot w-4 h-4"></i>
+                        <span className="font-medium text-sm">Google Maps</span>
                       </button>
+                      
+                      {outlet.id <= 5 && (
+                        <button 
+                          onClick={() => handleWazeClick(outlet.id)}
+                          className="flex-1 bg-[#33a1ff] text-white py-3 px-4 rounded-md hover:bg-[#2a8ce6] transition-colors duration-200 flex items-center justify-center gap-2"
+                        >
+                          <i className="fa-brands fa-waze w-4 h-4"></i>
+                          <span className="font-medium text-sm">Waze</span>
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
