@@ -15,7 +15,7 @@ export default function CoachingPrograms() {
             <div className="relative">
                 {/* Base White Text */}
                 <span 
-                  className="text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal whitespace-nowrap"
+                  className="text-[3.4rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem] font-bold leading-none select-none tracking-normal whitespace-nowrap"
                   style={{
                     fontFamily: 'Kanit, system-ui, sans-serif',
                     letterSpacing: '0.05em',
@@ -31,16 +31,16 @@ export default function CoachingPrograms() {
                 
                 {/* Golden Flash Overlay */}
                 <motion.span 
-                  className="absolute inset-0 text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal whitespace-nowrap"
+                  className="absolute inset-0 text-[3.4rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem] font-bold leading-none select-none tracking-normal whitespace-nowrap"
                   style={{
                     fontFamily: 'Kanit, system-ui, sans-serif',
                     letterSpacing: '0.05em',
                     filter: 'blur(0.5px)',
                     fontStyle: 'italic',
-                    color: 'rgba(255, 255, 0, 1)',
-                    WebkitTextStroke: '2px rgba(255, 255, 0, 1)',
-                    textStroke: '2px rgba(255, 255, 0, 1)',
-                    textShadow: '0 0 35px rgba(255, 255, 0, 1), 0 0 50px rgba(255, 255, 0, 0.8)',
+                    color: 'rgba(255, 215, 1, 1)',
+                    WebkitTextStroke: '1.5px rgba(255, 215, 1, 0.8)',
+                    textStroke: '1.5px rgba(255, 215, 1, 0.8)',
+                    textShadow: '0 0 20px rgba(255, 215, 1, 0.8)',
                   }}
                   animate={{
                     opacity: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -55,31 +55,6 @@ export default function CoachingPrograms() {
                   COACHING
                 </motion.span>
               
-              {/* Flash Sparkles */}
-              <div className="absolute inset-0 pointer-events-none">
-                {[...Array(8)].map((_, i) => (
-                  <motion.div
-                    key={`flash-spark-${i}`}
-                    className="absolute w-1 h-1 bg-yellow-300 rounded-full"
-                    style={{
-                      left: `${20 + i * 8}%`,
-                      top: `${40 + (i % 3) * 8}%`,
-                      boxShadow: '0 0 6px #ffd701',
-                    }}
-                    animate={{
-                      opacity: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                      scale: [0, 1.5, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    }}
-                    transition={{
-                      duration: 11,
-                      repeat: Infinity,
-                      delay: i * 0.02,
-                      ease: "easeOut",
-                      times: [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1],
-                    }}
-                  />
-                ))}
-              </div>
             </div>
           </div>
           

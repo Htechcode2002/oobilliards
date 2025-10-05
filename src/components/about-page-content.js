@@ -462,14 +462,20 @@ export default function AboutPageContent() {
         <section className="py-20 relative overflow-hidden">
           {/* Sticky Background Image with Overlay - Only for this section */}
           <div className="absolute inset-0 overflow-hidden">
+            {/* Background Image - Hidden on mobile, shown on desktop */}
             <div 
-              className="absolute inset-0 bg-fixed bg-cover bg-center bg-no-repeat"
+              className="absolute inset-0 bg-fixed bg-cover bg-center bg-no-repeat hidden md:block"
               style={{
                 backgroundImage: "url('/home/tournament.jpg')",
                 backgroundAttachment: 'fixed'
               }}
             ></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/80"></div>
+            
+            {/* Black background for mobile */}
+            <div className="absolute inset-0 bg-black md:hidden"></div>
+            
+            {/* Gradient overlay for desktop */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/80 hidden md:block"></div>
             
             {/* Floating Particles/Dots Effect */}
             <div className="absolute inset-0 overflow-hidden">

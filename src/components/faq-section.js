@@ -144,7 +144,7 @@ export default function FaqSection() {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden">
+    <div className="relative" style={{ minHeight: '100vh' }}>
       {/* Full Page Background Image */}
       <div 
         className="fixed inset-0 z-0"
@@ -268,10 +268,10 @@ export default function FaqSection() {
                   className="space-y-8"
                 >
                   <div>
-                    <h2 className="text-3xl md:text-4xl font-black text-white mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-6 italic break-words" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       Every day help for <span className="text-[#ffd701]">our customers</span>
                     </h2>
-                    <p className="text-lg text-gray-300 leading-relaxed italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <p className="text-base sm:text-lg text-gray-300 leading-relaxed italic break-words" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       At O&apos;O+ Billiards Group, we&apos;re committed to providing exceptional service and support to all our customers. 
                       Whether you&apos;re looking for information about our outlets, products, coaching programs, or booking procedures, 
                       we&apos;re here to help make your billiards experience as smooth as possible.
@@ -299,9 +299,9 @@ export default function FaqSection() {
                     <p className="text-gray-300 leading-relaxed mb-6 italic text-sm sm:text-base" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       Can&apos;t find the answer you&apos;re looking for? Our customer support team is always ready to assist you with any questions or concerns.
                     </p>
-                    <button className="bg-[#ffd701] hover:bg-[#e6c200] text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-3 italic shadow-lg hover:shadow-xl w-full sm:w-auto justify-center" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                      <span>Contact Support</span>
-                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button className="bg-[#ffd701] hover:bg-[#e6c200] text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-bold text-sm sm:text-base transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 sm:space-x-3 italic shadow-lg hover:shadow-xl w-full sm:w-auto justify-center max-w-full" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                      <span className="truncate">Contact Support</span>
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </button>
@@ -318,7 +318,7 @@ export default function FaqSection() {
                 >
                   <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                     <img
-                      src="/home/coaching.jpg"
+                      src="/faq/contact.jpg"
                       alt="Customer Support - O'O+ Billiards Group"
                       className="w-full h-[300px] sm:h-[400px] object-cover"
                     />

@@ -59,7 +59,7 @@ export default function ProductSection() {
             <div className="relative">
               {/* Base White Text */}
               <span 
-                className="text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
+                className="text-[3.4rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem] font-bold leading-none select-none tracking-normal"
                 style={{
                   color: 'rgba(255, 255, 255, 0.15)',
                   WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.3)',
@@ -75,7 +75,7 @@ export default function ProductSection() {
               
               {/* Golden Flash Overlay */}
               <motion.span 
-                className="absolute inset-0 text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
+                className="absolute inset-0 text-[3.4rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem] font-bold leading-none select-none tracking-normal"
                 style={{
                   fontFamily: 'Kanit, system-ui, sans-serif',
                   letterSpacing: '0.05em',
