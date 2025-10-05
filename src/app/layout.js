@@ -19,20 +19,20 @@ export const metadata = {
   title: "OOBilliards - Premium Billiards Equipment",
   description: "Feel The Joy, One Ball At A Time! Professional billiards tables and equipment.",
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: '/metalogo.png',
+    shortcut: '/metalogo.png',
+    apple: '/metalogo.png',
   },
   openGraph: {
     title: "OOBilliards - Premium Billiards Equipment",
     description: "Feel The Joy, One Ball At A Time! Professional billiards tables and equipment.",
-    images: ['/logo.png'],
+    images: ['/metalogo.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: "OOBilliards - Premium Billiards Equipment",
     description: "Feel The Joy, One Ball At A Time! Professional billiards tables and equipment.",
-    images: ['/logo.png'],
+    images: ['/metalogo.png'],
   },
 };
 
