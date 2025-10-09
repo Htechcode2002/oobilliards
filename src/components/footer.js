@@ -32,7 +32,7 @@ export default function Footer() {
   const socialLinks = [
     { 
       name: "Facebook", 
-      href: "#", 
+      href: "https://www.facebook.com/share/1FeA1XNBiy/?mibextid=wwXIfr", 
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -41,28 +41,19 @@ export default function Footer() {
     },
     { 
       name: "Instagram", 
-      href: "#", 
+      href: "https://www.instagram.com/oo_snooker?igsh=MWlncWk2MDczbXkzaA%3D%3D&utm_source=qr", 
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.621 5.367 11.988 11.988 11.988s11.987-5.367 11.987-11.988C24.014 5.367 18.647.001 12.017.001zM8.449 16.988c-2.508 0-4.54-2.033-4.54-4.54s2.032-4.54 4.54-4.54c2.508 0 4.54 2.032 4.54 4.54s-2.032 4.54-4.54 4.54z"/>
+          <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
         </svg>
       )
     },
     { 
-      name: "Twitter", 
-      href: "#", 
+      name: "TikTok", 
+      href: "https://www.tiktok.com/@oosnooker?_r=1&_d=eh0f7la31e648l&sec_uid=MS4wLjABAAAAmo9UKIlOWObeu5BtLiX_gKtG0mpWv_R7xmPHkS15jHi8dPJ2ziXcgo4LkkUsMAWE&share_author_id=6597732250212433921&sharer_language=zh&source=h5_t&u_code=e2cfe5h3gi50em&item_author_type=2&utm_source=whatsapp&tt_from=whatsapp&enable_checksum=1&utm_medium=ios&share_link_id=24EEBD75-0FFF-4279-838F-E54B8A6E86DA&user_id=7112419096864162821&sec_user_id=MS4wLjABAAAAh0LnLKq10TFNC7kXdlgzMgU63uPRqXpUWjMs1NJ05Cu56Yvcs7-Abw6bEObxmTn9&social_share_type=5&ug_btm=b6880,b5836&utm_campaign=client_share&share_app_id=1180", 
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-        </svg>
-      )
-    },
-    { 
-      name: "YouTube", 
-      href: "#", 
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
         </svg>
       )
     }
@@ -85,15 +76,43 @@ export default function Footer() {
             
             {/* Company Logo and Description */}
             <div className="lg:col-span-1">
-              <div className="mb-6">
+              <div className="mb-6 flex items-center gap-3">
+                {/* Main Logo */}
                 <Image
                   src="/logo.png"
                   alt="OOBilliards Logo"
-                  width={280}
-                  height={116}
-                  className="h-24 w-auto object-contain"
+                  width={140}
+                  height={58}
+                  className="h-16 w-auto object-contain flex-shrink-0"
                 />
+                
+                {/* Additional Small Logos */}
+                <div className="relative w-14 h-14 flex-shrink-0">
+                  <Image
+                    src="/logo/1.png"
+                    alt="Logo 1"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="relative w-15 h-15 flex-shrink-0">
+                  <Image
+                    src="/logo/2.png"
+                    alt="Logo 2"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="relative w-14 h-14 flex-shrink-0">
+                  <Image
+                    src="/logo/3.png"
+                    alt="Logo 3"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
+              
               <p className="text-white/70 font-kanit text-sm leading-relaxed mb-6 italic">
                 Malaysia&apos;s leading billiards entertainment and sports group, offering world-class venues, professional coaching programs, and premium cue sports equipment under one brand.
               </p>
@@ -107,18 +126,15 @@ export default function Footer() {
                   </svg>
                   Malaysia • 6 Outlets Nationwide
                 </div>
-                <div className="flex items-center text-white/80">
+                <a 
+                  href="/outlets" 
+                  className="flex items-center text-white/80 hover:text-[#ffd701] transition-colors duration-300"
+                >
                   <svg className="w-4 h-4 mr-3 text-[#ffd701]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  +6011-35041123
-                </div>
-                <div className="flex items-center text-white/80">
-                  <svg className="w-4 h-4 mr-3 text-[#ffd701]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                  WhatsApp: +60113504112
-                </div>
+                  Contact Us
+                </a>
               </div>
             </div>
 
@@ -180,6 +196,8 @@ export default function Footer() {
                     <motion.a
                       key={social.name}
                       href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-10 h-10 bg-white/10 hover:bg-[#ffd701] rounded-full flex items-center justify-center text-white/70 hover:text-black transition-all duration-300"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
@@ -196,9 +214,9 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="text-center">
+            <div className="text-center space-y-2">
               <div className="text-white/60 text-sm font-kanit italic">
-                © {currentYear} O&apos;O+ Billiards Group. All rights reserved. | Malaysia&apos;s Leading Billiards Empire
+                © {currentYear} ZX SOLUTIONS (M) SDN BHD 202201042960 (1488657-K). All rights reserved. | Malaysia&apos;s Leading Billiards Empire
               </div>
             </div>
           </div>

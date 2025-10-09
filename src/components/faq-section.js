@@ -296,15 +296,9 @@ export default function FaqSection() {
                     <h3 className="text-lg sm:text-xl font-bold text-white mb-4 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       If you need <span className="text-[#ffd701]">more help</span>
                     </h3>
-                    <p className="text-gray-300 leading-relaxed mb-6 italic text-sm sm:text-base" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    <p className="text-gray-300 leading-relaxed italic text-sm sm:text-base" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                       Can&apos;t find the answer you&apos;re looking for? Our customer support team is always ready to assist you with any questions or concerns.
                     </p>
-                    <button className="bg-[#ffd701] hover:bg-[#e6c200] text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-bold text-sm sm:text-base transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 sm:space-x-3 italic shadow-lg hover:shadow-xl w-full sm:w-auto justify-center max-w-full" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                      <span className="truncate">Contact Support</span>
-                      <svg className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
                   </div>
                 </motion.div>
 

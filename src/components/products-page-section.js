@@ -23,22 +23,29 @@ export default function ProductsPageSection() {
       name: "DUYA II Table (RED)",
       brand: "DUYA",
       priceValue: 15000, // for sorting purposes
-      image: "/products/duya2.jpg",
+      image: "/products/duya2.png",
       category: "Tables",
-      description: "DUYA II is a high-end competition table featuring a modern, technological design with a fully alloy base and LED under-lighting, engineered for top performance and aesthetic appeal.",
+      description: "Luminous \"Sports car-grade shell with high magnetism\", applying automotive injection molding process",
       specifications: {
-        dimensions: "Standard tournament size",
-        slateThickness: "Approx. 4.5 cm",
-        frameMaterial: "Alloy",
-        cushionMaterial: "High-resilience rubber",
-        pocketType: "Tournament-standard leather",
-        accessories: "Cue set, balls, table brush",
+        outerDimensions: "2820mm × 1550mm",
+        innerDimensions: "2540mm × 1260mm",
+        cushion: "DUYA Julong Magnesium-aluminum alloy one-piece steel cushion",
+        slate: "Natural slate at 4.5cm",
+        rubber: "DRAGON RIDGE one-piece rubber edge",
+        stand: "The sportscar looks metal chassis",
+        pocket: "SAINT CICADA Easy-to-replace alloy pocket",
+        rail: "Bamboo rail",
+        light: "Base luminous LED",
+        lightCover: "Acrylic insert board",
+        ballReturn: "Duya Customized Ball-return",
+        design: "Sports car-grade shell with high magnetism"
       },
       highlights: [
-        "Fully alloy materials with alloy base design",
-        "Natural slate top layer; approx. 4.5 cm thickness (to be confirmed)",
-        "High-precision cushions & alloy rails for consistent rebounds",
-        "Accessories included: cues, table brush, ball set (to be confirmed)",
+        "Sports car-grade shell with high magnetism design",
+        "Natural slate at 4.5cm thickness",
+        "DUYA Julong Magnesium-aluminum alloy one-piece steel cushion",
+        "Base luminous LED lighting",
+        "SAINT CICADA Easy-to-replace alloy pocket"
       ]
     },
     {
@@ -46,23 +53,29 @@ export default function ProductsPageSection() {
       name: "DUYA Lambo Gold",
       brand: "DUYA",
       priceValue: 18000, // for sorting purposes
-      image: "/products/duyalambogold.jpg",
+      image: "/products/duyalambogold.png",
       category: "Tables",
-      description: "DUYA Lambo Gold combines top-tier performance with a luxurious gold finish, ideal for premium venues or players seeking both style and substance.",
+      description: "Drawing inspiration from Lamborghini's fluidic surface design, the all-alloy chassis is made from aerospace-grade aluminum.",
       specifications: {
-        dimensions: "Standard tournament size",
-        slateThickness: "To be confirmed",
-        frameMaterial: "Alloy & premium wood finish",
-        cushionMaterial: "High-resilience rubber",
-        pocketType: "Tournament-standard leather",
-        accessories: "Cue set, balls, table brush"
+        outerDimensions: "2820mm × 1550mm",
+        innerDimensions: "2540mm × 1260mm",
+        cushion: "\"Julong Pro\" alloy one-piece steel cushion, Aerospace-grade aluminum material",
+        slate: "Natural slate at 5.0 cm",
+        rubber: "DRAGON RIDGE II one-piece rubber edge",
+        stand: "Drawing inspiration from Lamborghini's fluidic surface design, the all-alloy chassis is made from aerospace-grade aluminum",
+        pocket: "SAINT CICADA alloy pocket",
+        rail: "Carbon fiber cover",
+        lightCover: "Acrylic insert board",
+        ballReturn: "Lambo Gold Customized Ball-return",
+        light: "Base luminous LED",
+        design: "Luminous \"Sports car-grade shell with high magnetism\", applying automotive injection molding process"
       },
       highlights: [
-        "Stylish gold finish treatment",
-        "High-standard construction & long-term durability",
-        "Slate/top material finish to be confirmed",
-        "Tournament-grade performance",
-        "Luxury aesthetic appeal"
+        "Lamborghini-inspired fluidic surface design with aerospace-grade aluminum chassis",
+        "Natural slate at 5.0 cm thickness",
+        "\"Julong Pro\" alloy one-piece steel cushion with aerospace-grade aluminum",
+        "Carbon fiber cover rail",
+        "Base luminous LED lighting with acrylic insert board"
       ]
     },
     {
@@ -70,23 +83,27 @@ export default function ProductsPageSection() {
       name: "APLUS Premier Classic Model (7-ft Traditional Table)",
       brand: "APLUS",
       priceValue: 12000, // for sorting purposes
-      image: null,
+      image: "/products/apluspremier.png",
       category: "Tables",
-      description: "A classic 7-ft pool table blending traditional design with durability, perfect for pubs, clubs, and homes seeking professional-grade performance in a compact size.",
+      description: "The Aplus Premier 7ft competition table is the perfect choice for home training when space doesn't allow for a full-sized 9ft table. This table features a central ball return system that channels balls neatly into a collection tray, enhancing both aesthetics and convenience for 8-ball, 9-ball, and 10-ball pool games.",
       specifications: {
-        dimensions: "7-ft standard size",
-        slateThickness: "3-piece natural slate",
-        frameMaterial: "Wood / Plywood",
-        cushionMaterial: "Tournament-grade rubber",
-        pocketType: "Drop / Leather pockets",
-        accessories: "Cue set, balls, table brush",
+        overallDimensions: "234 x 135 x 81 cm",
+        playingArea: "198.1 x 99 cm",
+        color: "Black",
+        centerPockets: "11.5 cm (4.5\")",
+        cornerPockets: "10.5 cm (4.13\")",
+        frame: "Steel and plywood frame for enhanced stability and warp resistance",
+        slate: "Premium black-green natural slate with a flatness of up to 99.99%, built to international tournament standards",
+        rails: "Nickel-plated aluminum alloy edges for added aesthetics and sturdiness",
+        rubberCushions: "Premier K55 Taiwan rubber cushions, ensuring smooth and accurate ball movement",
+        accessories: "Durable, rust-resistant ADC nickel-plated aluminum accessories with high-grade ADC aluminum alloy cast corners"
       },
       highlights: [
-        "3-piece natural slate top for consistent gameplay",
-        "Solid wood or plywood frame with durable rails",
-        "Traditional style pockets",
-        "Perfect for pubs and clubs",
-        "Compact 7-ft size"
+        "Genuine Aplus Billiards Product - ISO 9001:2015 certified",
+        "Premium black-green natural slate with 99.99% flatness",
+        "Central ball return system for enhanced convenience",
+        "Premier K55 Taiwan rubber cushions for accurate ball movement",
+        "Perfect for home training with compact 7ft size"
       ]
     },
     {
@@ -254,11 +271,11 @@ export default function ProductsPageSection() {
             </div>
             
             {/* Products Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 w-full max-w-full">
             {filteredProducts.length > 0 ? filteredProducts.map((product, index) => (
               <motion.div
                 key={product.id}
-                className="bg-gray-800 overflow-hidden border border-gray-700 transition-all duration-300 group relative cursor-pointer hover:shadow-lg rounded-lg p-3 sm:p-4"
+                className="bg-gray-800 overflow-hidden border border-gray-700 transition-all duration-300 group relative cursor-pointer hover:shadow-lg rounded-lg p-3 sm:p-4 w-full"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -308,16 +325,16 @@ export default function ProductsPageSection() {
                 {/* Product Image */}
                 <div className="relative h-48 sm:h-64 bg-white overflow-hidden rounded-lg">
                   {product.image ? (
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-contain group-hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
-                    />
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-contain transition-transform duration-300"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
                   ) : null}
                   {/* Fallback background when no image or image fails to load */}
                   <div 
@@ -337,10 +354,10 @@ export default function ProductsPageSection() {
                   </div>
                   
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                      <span className="text-gray-900 font-semibold text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                        Click to view details
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center overflow-hidden">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg max-w-[90%]">
+                      <span className="text-gray-900 font-semibold text-xs sm:text-sm italic whitespace-nowrap" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                        View details
                       </span>
                     </div>
                   </div>
@@ -467,13 +484,13 @@ export default function ProductsPageSection() {
                   <h3 className="text-lg font-bold text-white mb-3 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     Specifications
                   </h3>
-                  <div className="bg-gray-700 rounded-lg p-4 space-y-2">
+                  <div className="bg-gray-700 rounded-lg p-4 space-y-3">
                     {Object.entries(selectedProduct.specifications).map(([key, value]) => (
-                      <div key={key} className="flex justify-between text-sm">
-                        <span className="text-gray-400 capitalize italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                      <div key={key} className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-4 text-sm border-b border-gray-600 last:border-b-0 pb-3 last:pb-0">
+                        <span className="text-gray-400 capitalize italic font-semibold min-w-fit sm:min-w-[180px] flex-shrink-0" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                           {key.replace(/([A-Z])/g, ' $1').trim()}:
                         </span>
-                        <span className="text-white font-medium italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                        <span className="text-white font-medium italic break-words sm:text-right flex-1" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                           {value}
                         </span>
                       </div>
@@ -488,7 +505,7 @@ export default function ProductsPageSection() {
             <div className="sticky bottom-0 left-0 right-0 bg-gray-800 border-t border-gray-600 p-4">
               <button
                 onClick={() => handleGetQuotation(selectedProduct)}
-                className="w-full bg-[#ffd701] hover:bg-[#e6c200] text-black py-3 px-6 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 italic shadow-lg hover:shadow-xl"
+                className="w-full bg-[#ffd701] hover:bg-[#e6c200] text-black py-3 px-6 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center gap-3 italic shadow-lg hover:shadow-xl"
                 style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
               >
                 <span>Get Quotation via WhatsApp</span>

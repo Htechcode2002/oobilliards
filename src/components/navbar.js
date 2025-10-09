@@ -59,7 +59,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <a href="/outlets">
               <button className="bg-white/20 hover:bg-[#ffd701] backdrop-blur-sm border border-white/30 hover:border-[#ffd701] text-white hover:text-black px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 font-kanit font-semibold">
-                Book a Table
+                Contact Us
               </button>
             </a>
           </div>
@@ -143,7 +143,7 @@ export default function Navbar() {
                 className="w-full mt-8 bg-white/20 hover:bg-[#ffd701] backdrop-blur-sm border border-white/30 hover:border-[#ffd701] text-white hover:text-black px-4 py-3 rounded-md text-lg font-medium transition-all duration-300 font-kanit font-semibold block text-center"
                 onClick={() => setIsOpen(false)}
               >
-                Book a Table
+                Contact Us
               </a>
               </div>
               </div>

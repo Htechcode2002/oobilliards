@@ -13,7 +13,7 @@ export default function ProductSection() {
       price: "Get Quotation",
       originalPrice: null,
       rating: 5,
-      image: "/products/duya2.jpg",
+      image: "/products/duya2.png",
       description: "DUYA II is a high-end competition table featuring a modern, technological design with a fully alloy base and LED under-lighting."
     },
     {
@@ -22,7 +22,7 @@ export default function ProductSection() {
       price: "Get Quotation",
       originalPrice: null,
       rating: 5,
-      image: "/products/duyalambogold.jpg",
+      image: "/products/duyalambogold.png",
       description: "DUYA Lambo Gold represents the pinnacle of luxury billiards tables with premium gold finishing and exceptional craftsmanship."
     },
     {
@@ -31,7 +31,7 @@ export default function ProductSection() {
       price: "Get Quotation",
       originalPrice: null,
       rating: 5,
-      image: null,
+      image: "/products/apluspremier.png",
       description: "APLUS Premier Classic Model features traditional 7-foot design with premium craftsmanship for authentic billiards experience."
     },
     {

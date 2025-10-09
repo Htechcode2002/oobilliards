@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, MapPin, Clock, Gamepad2, Navigation } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, Gamepad2, Navigation, Share2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -15,6 +15,10 @@ export default function OutletsSection() {
       description: "The very first O'O+ Billiard's outlet, opened in November 2017, equipped with professional snooker tables, ideal for both casual players and competitive tournaments.",
       openDate: "November 2017",
       image: "/outlets/shamelin.jpg",
+      brands: [
+        { name: "Rasson", logo: "/about/brand/rasson.png" },
+        { name: "Wiraka", logo: "/about/brand/wiraka.png" }
+      ],
       tables: [
         "3 Rasson Snooker Tables",
         "15 Earl Snooker Tables", 
@@ -28,6 +32,11 @@ export default function OutletsSection() {
         phone: "+6011-35041123",
         whatsapp: "+60113504112"
       },
+      socialMedia: {
+        facebook: "https://www.facebook.com/share/1FeA1XNBiy/?mibextid=wwXIfr",
+        instagram: "https://www.instagram.com/oo_snooker?igsh=MWlncWk2MDczbXkzaA%3D%3D&utm_source=qr",
+        tiktok: "https://www.tiktok.com/@oosnooker?_r=1&_d=eh0f7la31e648l&sec_uid=MS4wLjABAAAAmo9UKIlOWObeu5BtLiX_gKtG0mpWv_R7xmPHkS15jHi8dPJ2ziXcgo4LkkUsMAWE&share_author_id=6597732250212433921&sharer_language=zh&source=h5_t&u_code=e2cfe5h3gi50em&item_author_type=2&utm_source=whatsapp&tt_from=whatsapp&enable_checksum=1&utm_medium=ios&share_link_id=24EEBD75-0FFF-4279-838F-E54B8A6E86DA&user_id=7112419096864162821&sec_user_id=MS4wLjABAAAAh0LnLKq10TFNC7kXdlgzMgU63uPRqXpUWjMs1NJ05Cu56Yvcs7-Abw6bEObxmTn9&social_share_type=5&ug_btm=b6880,b5836&utm_campaign=client_share&share_app_id=1180"
+      },
       isOpen: true
     },
     {
@@ -37,6 +46,9 @@ export default function OutletsSection() {
       description: "Opened in September 2022, the first outlet outside Kuala Lumpur, bringing professional billiards facilities to Negeri Sembilan.",
       openDate: "September 2022",
       image: "/outlets/seremban.jpg",
+      brands: [
+        { name: "Rasson", logo: "/about/brand/rasson.png" }
+      ],
       tables: [
         "2 Rasson Snooker Tables",
         "9 Earl Snooker Tables"
@@ -48,6 +60,11 @@ export default function OutletsSection() {
         phone: "+6011-16683556",
         whatsapp: "+60111668355"
       },
+      socialMedia: {
+        facebook: "https://www.facebook.com/share/1FeA1XNBiy/?mibextid=wwXIfr",
+        instagram: "https://www.instagram.com/oo_snooker?igsh=MWlncWk2MDczbXkzaA%3D%3D&utm_source=qr",
+        tiktok: "https://www.tiktok.com/@oosnooker?_r=1&_d=eh0f7la31e648l&sec_uid=MS4wLjABAAAAmo9UKIlOWObeu5BtLiX_gKtG0mpWv_R7xmPHkS15jHi8dPJ2ziXcgo4LkkUsMAWE&share_author_id=6597732250212433921&sharer_language=zh&source=h5_t&u_code=e2cfe5h3gi50em&item_author_type=2&utm_source=whatsapp&tt_from=whatsapp&enable_checksum=1&utm_medium=ios&share_link_id=24EEBD75-0FFF-4279-838F-E54B8A6E86DA&user_id=7112419096864162821&sec_user_id=MS4wLjABAAAAh0LnLKq10TFNC7kXdlgzMgU63uPRqXpUWjMs1NJ05Cu56Yvcs7-Abw6bEObxmTn9&social_share_type=5&ug_btm=b6880,b5836&utm_campaign=client_share&share_app_id=1180"
+      },
       isOpen: true
     },
     {
@@ -57,6 +74,9 @@ export default function OutletsSection() {
       description: "Opened in March 2023, located in the heart of Kuala Lumpur, offering multiple game formats for both casual and competitive players.",
       openDate: "March 2023",
       image: "/outlets/vivahome.jpg",
+      brands: [
+        { name: "Rasson", logo: "/about/brand/rasson.png" }
+      ],
       tables: [
         "2 Rasson Snooker Tables",
         "11 Earl Snooker Tables",
@@ -70,6 +90,11 @@ export default function OutletsSection() {
         phone: "+6011-11102935",
         whatsapp: "+60111110293"
       },
+      socialMedia: {
+        facebook: "https://www.facebook.com/share/1FeA1XNBiy/?mibextid=wwXIfr",
+        instagram: "https://www.instagram.com/oo_snooker?igsh=MWlncWk2MDczbXkzaA%3D%3D&utm_source=qr",
+        tiktok: "https://www.tiktok.com/@oosnooker?_r=1&_d=eh0f7la31e648l&sec_uid=MS4wLjABAAAAmo9UKIlOWObeu5BtLiX_gKtG0mpWv_R7xmPHkS15jHi8dPJ2ziXcgo4LkkUsMAWE&share_author_id=6597732250212433921&sharer_language=zh&source=h5_t&u_code=e2cfe5h3gi50em&item_author_type=2&utm_source=whatsapp&tt_from=whatsapp&enable_checksum=1&utm_medium=ios&share_link_id=24EEBD75-0FFF-4279-838F-E54B8A6E86DA&user_id=7112419096864162821&sec_user_id=MS4wLjABAAAAh0LnLKq10TFNC7kXdlgzMgU63uPRqXpUWjMs1NJ05Cu56Yvcs7-Abw6bEObxmTn9&social_share_type=5&ug_btm=b6880,b5836&utm_campaign=client_share&share_app_id=1180"
+      },
       isOpen: true
     },
     {
@@ -79,6 +104,10 @@ export default function OutletsSection() {
       description: "Opened in July 2024, one of the biggest billiards halls in Kuala Lumpur with a variety of game formats and professional facilities.",
       openDate: "July 2024",
       image: "/outlets/scottgarden.jpg",
+      brands: [
+        { name: "Rasson", logo: "/about/brand/rasson.png" },
+        { name: "Joy", logo: "/about/brand/joy.png" }
+      ],
       tables: [
         "10 Rasson Snooker Tables",
         "13 Earl Snooker Tables",
@@ -93,6 +122,11 @@ export default function OutletsSection() {
         phone: "+6013-8938896",
         whatsapp: "+60138938896"
       },
+      socialMedia: {
+        facebook: "https://www.facebook.com/share/19PJ4HSCAe/?mibextid=wwXIfr",
+        instagram: "https://www.instagram.com/ooplus.scottgarden?igsh=d2JncDdtcHp2c2J5&utm_source=qr",
+        tiktok: "https://www.tiktok.com/@oosnooker?_r=1&_d=eh0f7la31e648l&sec_uid=MS4wLjABAAAAmo9UKIlOWObeu5BtLiX_gKtG0mpWv_R7xmPHkS15jHi8dPJ2ziXcgo4LkkUsMAWE&share_author_id=6597732250212433921&sharer_language=zh&source=h5_t&u_code=e2cfe5h3gi50em&item_author_type=2&utm_source=whatsapp&tt_from=whatsapp&enable_checksum=1&utm_medium=ios&share_link_id=24EEBD75-0FFF-4279-838F-E54B8A6E86DA&user_id=7112419096864162821&sec_user_id=MS4wLjABAAAAh0LnLKq10TFNC7kXdlgzMgU63uPRqXpUWjMs1NJ05Cu56Yvcs7-Abw6bEObxmTn9&social_share_type=5&ug_btm=b6880,b5836&utm_campaign=client_share&share_app_id=1180"
+      },
       isOpen: true
     },
     {
@@ -102,6 +136,11 @@ export default function OutletsSection() {
       description: "Opened in January 2025, the largest outlet in Subang Jaya, located above Giant USJ1 within 91 Sports Arena. Offers coaching programs, tournaments, and multiple table types.",
       openDate: "January 2025",
       image: "/outlets/usj.PNG",
+      brands: [
+        { name: "Aplus", logo: "/about/brand/aplus.png" },
+        { name: "Duya", logo: "/about/brand/duya.png" },
+        { name: "Rasson", logo: "/about/brand/rasson.png" }
+      ],
       tables: [
         "14 Aplus American Pool Tables",
         "8 Duya Chinese 8 Ball Tables",
@@ -115,6 +154,11 @@ export default function OutletsSection() {
         phone: "+6013-8078896",
         whatsapp: "+60138078896"
       },
+      socialMedia: {
+        facebook: "https://www.facebook.com/share/14KrDXyvXX6/?mibextid=wwXIfr",
+        instagram: "https://www.instagram.com/ooplusbilliards.usj?igsh=MWxjN3FseTBpa2k3bg==",
+        tiktok: "https://www.tiktok.com/@oosnooker?_r=1&_d=eh0f7la31e648l&sec_uid=MS4wLjABAAAAmo9UKIlOWObeu5BtLiX_gKtG0mpWv_R7xmPHkS15jHi8dPJ2ziXcgo4LkkUsMAWE&share_author_id=6597732250212433921&sharer_language=zh&source=h5_t&u_code=e2cfe5h3gi50em&item_author_type=2&utm_source=whatsapp&tt_from=whatsapp&enable_checksum=1&utm_medium=ios&share_link_id=24EEBD75-0FFF-4279-838F-E54B8A6E86DA&user_id=7112419096864162821&sec_user_id=MS4wLjABAAAAh0LnLKq10TFNC7kXdlgzMgU63uPRqXpUWjMs1NJ05Cu56Yvcs7-Abw6bEObxmTn9&social_share_type=5&ug_btm=b6880,b5836&utm_campaign=client_share&share_app_id=1180"
+      },
       isOpen: true
     },
     {
@@ -125,6 +169,11 @@ export default function OutletsSection() {
       openDate: "October 2025",
       image: "/outlets/vietnam.jpg",
       address: "34 Đ. Lê Văn Quới, Bình Trị Đông A, Bình Tân, Hồ Chí Minh 762000, Vietnam",
+      brands: [
+        { name: "Rasson", logo: "/about/brand/rasson.png" },
+        { name: "Duya", logo: "/about/brand/duya.png" },
+        { name: "Joy", logo: "/about/brand/joy.png" }
+      ],
       tables: [
         "10 Rasson Snooker Tables",
         "15 Earl Snooker Tables", 
@@ -294,6 +343,7 @@ export default function OutletsSection() {
                             {outlet.name}
                           </span>
                         </div>
+                        
                       </>
                     )}
                   </div>
@@ -322,6 +372,31 @@ export default function OutletsSection() {
                         {outlet.description}
                       </p>
                     </div>
+
+                    {/* Brand Logos */}
+                    {outlet.brands && outlet.brands.length > 0 && (
+                      <div className="mb-6 bg-gradient-to-r from-white/15 via-white/8 to-transparent border-l-2 border-white/40 pl-4 py-3 rounded-r-lg">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="text-white font-bold text-sm uppercase tracking-wider">Table Brands</span>
+                        </div>
+                        <div className="flex gap-3 flex-wrap">
+                          {outlet.brands.map((brand, idx) => (
+                            <div 
+                              key={idx}
+                              className="relative w-14 h-14 sm:w-16 sm:h-16 hover:scale-110 transition-transform duration-300"
+                              title={brand.name}
+                            >
+                              <Image
+                                src={brand.logo}
+                                alt={brand.name}
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
 
                     {/* Contact and Hours Info */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
@@ -356,17 +431,62 @@ export default function OutletsSection() {
                       </div>
                     </div>
 
-                    {/* Tables Info */}
-                    <div className="mb-6">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Gamepad2 className="w-4 h-4 text-[#ffd701]" />
-                        <span className="text-white font-semibold text-sm">Available Tables</span>
+                    {/* Tables Info and Social Media */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                      {/* Tables Info */}
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <Gamepad2 className="w-4 h-4 text-[#ffd701]" />
+                          <span className="text-white font-semibold text-sm">Available Tables</span>
+                        </div>
+                        <div className="text-gray-300 text-sm">
+                          {outlet.tables.map((table, idx) => (
+                            <div key={idx}>• {table}</div>
+                          ))}
+                        </div>
                       </div>
-                      <div className="text-gray-300 text-sm">
-                        {outlet.tables.map((table, idx) => (
-                          <div key={idx}>• {table}</div>
-                        ))}
-                      </div>
+
+                      {/* Social Media */}
+                      {outlet.socialMedia && (
+                        <div>
+                          <div className="flex items-center gap-2 mb-2">
+                            <Share2 className="w-4 h-4 text-[#ffd701]" />
+                            <span className="text-white font-semibold text-sm">Social Media</span>
+                          </div>
+                          <div className="flex gap-3">
+                            {outlet.socialMedia.facebook && (
+                              <a
+                                href={outlet.socialMedia.facebook}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-300 hover:text-[#1877f2] transition-colors duration-200"
+                              >
+                                <i className="fa-brands fa-facebook text-2xl"></i>
+                              </a>
+                            )}
+                            {outlet.socialMedia.instagram && (
+                              <a
+                                href={outlet.socialMedia.instagram}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-300 hover:text-[#E1306C] transition-colors duration-200"
+                              >
+                                <i className="fa-brands fa-instagram text-2xl"></i>
+                              </a>
+                            )}
+                            {outlet.socialMedia.tiktok && (
+                              <a
+                                href={outlet.socialMedia.tiktok}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-300 hover:text-[#000000] transition-colors duration-200"
+                              >
+                                <i className="fa-brands fa-tiktok text-2xl"></i>
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     {/* Action Buttons */}
