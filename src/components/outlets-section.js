@@ -618,17 +618,13 @@ export default function OutletsSection() {
         .outlet-swiper .swiper-button-next,
         .outlet-swiper .swiper-button-prev {
           color: #ffd701 !important;
-          background: rgba(0, 0, 0, 0.5);
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
           transition: all 0.3s ease;
         }
         
         .outlet-swiper .swiper-button-next:hover,
         .outlet-swiper .swiper-button-prev:hover {
-          background: rgba(0, 0, 0, 0.8);
-          transform: scale(1.1);
+          transform: scale(1.2);
+          filter: drop-shadow(0 0 8px rgba(255, 215, 1, 0.6));
         }
         
         .outlet-swiper .swiper-button-next::after,
