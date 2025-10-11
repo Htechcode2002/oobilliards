@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Poppins, Kanit } from 'next/font/google';
 import ScrollToTop from '@/components/scroll-to-top';
+import AnnouncementDialog from '@/components/announcement-dialog';
 
 // Premium font configuration for snooker website
 const poppins = Poppins({
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
       >
         {children}
         <ScrollToTop />
+        <AnnouncementDialog />
       </body>
     </html>
   );

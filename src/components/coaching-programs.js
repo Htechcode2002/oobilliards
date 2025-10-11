@@ -6,7 +6,7 @@ import ServiceCard from "@/components/service-card";
 export default function CoachingPrograms() {
 
   return (
-    <section className="pt-4 pb-4 sm:pt-6 sm:pb-6 px-2 sm:px-4 lg:px-6 bg-black relative">
+    <section className="pt-4 pb-4 sm:pt-6 sm:pb-6 px-2 sm:px-4 lg:px-6 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
       <div className="max-w-full mx-auto overflow-hidden">
         {/* Header with Overlapping Text Effect */}
         <div className="text-center mb-12 relative">

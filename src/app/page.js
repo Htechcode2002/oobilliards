@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar";
 import HeroBanner from "@/components/hero-banner";
+import OutletsCarousel from "@/components/outlets-carousel";
 import CoachingPrograms from "@/components/coaching-programs";
 import CoachesSection from "@/components/coaches-section";
 import AboutUsSection from "@/components/about-us-section";
@@ -13,6 +14,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
       <HeroBanner />
+      <OutletsCarousel />
       <CoachingPrograms />
       {/* <CoachesSection /> */}
       <AboutUsSection />

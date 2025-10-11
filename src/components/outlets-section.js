@@ -4,6 +4,11 @@ import { motion } from "framer-motion";
 import { Phone, MessageCircle, MapPin, Clock, Gamepad2, Navigation, Share2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation as SwiperNavigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function OutletsSection() {
 
@@ -14,10 +19,19 @@ export default function OutletsSection() {
       location: "Kuala Lumpur",
       description: "The very first O'O+ Billiard's outlet, opened in November 2017, equipped with professional snooker tables, ideal for both casual players and competitive tournaments.",
       openDate: "November 2017",
-      image: "/outlets/shamelin.jpg",
+      image: "/outlets/shamelin/shamelin.jpg",
+      images: [
+        "/outlets/shamelin/shamelin.jpg",
+        "/outlets/shamelin/DSC08668.JPG",
+        "/outlets/shamelin/DSC08681.JPG",
+        "/outlets/shamelin/DSC08695.JPG",
+        "/outlets/shamelin/DSC08704.JPG",
+        "/outlets/shamelin/DSC08709.JPG"
+      ],
       brands: [
-        { name: "Rasson", logo: "/about/brand/rasson.png" },
-        { name: "Wiraka", logo: "/about/brand/wiraka.png" }
+        { name: "Earl", logo: "/about/brand/earl.png" },      // 15 tables
+        { name: "Wiraka", logo: "/about/brand/wiraka.png" },  // 7 tables
+        { name: "Rasson", logo: "/about/brand/rasson.png" }   // 3 tables
       ],
       tables: [
         "3 Rasson Snooker Tables",
@@ -45,9 +59,18 @@ export default function OutletsSection() {
       location: "Negeri Sembilan",
       description: "Opened in September 2022, the first outlet outside Kuala Lumpur, bringing professional billiards facilities to Negeri Sembilan.",
       openDate: "September 2022",
-      image: "/outlets/seremban.jpg",
+      image: "/outlets/seremban/seremban.jpg",
+      images: [
+        "/outlets/seremban/seremban.jpg",
+        "/outlets/seremban/1cc2c157-7dde-4b48-91a8-e153c83a6536.jpg",
+        "/outlets/seremban/1f709055-255d-47d9-abc9-c2942b8bec38.jpg",
+        "/outlets/seremban/2a3825cf-0f7a-448a-9553-3c954fa9fbe8.jpg",
+        "/outlets/seremban/9fa502ef-1df7-4808-b208-73423c602a32.jpg",
+        "/outlets/seremban/c925a89a-dd79-4530-acce-c7277de40d6d.jpg"
+      ],
       brands: [
-        { name: "Rasson", logo: "/about/brand/rasson.png" }
+        { name: "Earl", logo: "/about/brand/earl.png" },     // 9 tables
+        { name: "Rasson", logo: "/about/brand/rasson.png" }  // 2 tables
       ],
       tables: [
         "2 Rasson Snooker Tables",
@@ -73,9 +96,21 @@ export default function OutletsSection() {
       location: "Kuala Lumpur",
       description: "Opened in March 2023, located in the heart of Kuala Lumpur, offering multiple game formats for both casual and competitive players.",
       openDate: "March 2023",
-      image: "/outlets/vivahome.jpg",
+      image: "/outlets/vivahome/vivahome.jpg",
+      images: [
+        "/outlets/vivahome/vivahome.jpg",
+        "/outlets/vivahome/04dee5af-53e8-400f-b423-84aef6815343.jpg",
+        "/outlets/vivahome/41a3cd6c-c7b2-46d1-a9f2-614f2d45037a.jpg",
+        "/outlets/vivahome/4a899528-a58e-4f8e-b88e-8f2cded53f94.jpg",
+        "/outlets/vivahome/733a81d9-227c-45c7-9b82-76f46e040960.jpg",
+        "/outlets/vivahome/7b3b575c-a51c-4597-b4ef-f7fbd2456ad4.jpg",
+        "/outlets/vivahome/ce2972a9-cca5-4570-bfcf-964b45f0358e.jpg",
+        "/outlets/vivahome/e575c09e-8948-40ea-a98d-45b76d4916d4.jpg",
+        "/outlets/vivahome/e83a9f36-b0b3-4285-9059-93ea1139ed65.jpg"
+      ],
       brands: [
-        { name: "Rasson", logo: "/about/brand/rasson.png" }
+        { name: "Earl", logo: "/about/brand/earl.png" },     // 16 tables (11+5)
+        { name: "Rasson", logo: "/about/brand/rasson.png" }  // 2 tables
       ],
       tables: [
         "2 Rasson Snooker Tables",
@@ -103,10 +138,20 @@ export default function OutletsSection() {
       location: "Kuala Lumpur",
       description: "Opened in July 2024, one of the biggest billiards halls in Kuala Lumpur with a variety of game formats and professional facilities.",
       openDate: "July 2024",
-      image: "/outlets/scottgarden.jpg",
+      image: "/outlets/scottgarden/scottgarden.jpg",
+      images: [
+        "/outlets/scottgarden/scottgarden.jpg",
+        "/outlets/scottgarden/0a6513de-3eab-4f50-8d10-08f8d5a93be0.jpg",
+        "/outlets/scottgarden/21d2aaa7-9b75-4d76-8ba8-c23e33ae900b.jpg",
+        "/outlets/scottgarden/2db3bc52-d1ba-449d-8f4e-c0d4fbdad6cd.jpg",
+        "/outlets/scottgarden/98ef52d8-b813-44bf-930e-582854249714.jpg",
+        "/outlets/scottgarden/f17328f2-122a-4c1c-9626-e25fd9a885fe.jpg",
+        "/outlets/scottgarden/f48a22f8-f97b-49a6-99f7-ceece95dd7ec.jpg"
+      ],
       brands: [
-        { name: "Rasson", logo: "/about/brand/rasson.png" },
-        { name: "Joy", logo: "/about/brand/joy.png" }
+        { name: "Earl", logo: "/about/brand/earl.png" },     // 17 tables (13+4)
+        { name: "Rasson", logo: "/about/brand/rasson.png" }, // 14 tables (10+4)
+        { name: "Joy", logo: "/about/brand/joy.png" }        // 9 tables
       ],
       tables: [
         "10 Rasson Snooker Tables",
@@ -135,11 +180,21 @@ export default function OutletsSection() {
       location: "91 Sports Arena, Subang Jaya",
       description: "Opened in January 2025, the largest outlet in Subang Jaya, located above Giant USJ1 within 91 Sports Arena. Offers coaching programs, tournaments, and multiple table types.",
       openDate: "January 2025",
-      image: "/outlets/usj.PNG",
+      image: "/outlets/usj/usj.PNG",
+      images: [
+        "/outlets/usj/usj.PNG",
+        "/outlets/usj/IMG_3579.PNG",
+        "/outlets/usj/IMG_3581.PNG",
+        "/outlets/usj/IMG_3582.PNG",
+        "/outlets/usj/IMG_3583.PNG",
+        "/outlets/usj/IMG_3584.PNG",
+        "/outlets/usj/IMG_3585.PNG"
+      ],
       brands: [
-        { name: "Aplus", logo: "/about/brand/aplus.png" },
-        { name: "Duya", logo: "/about/brand/duya.png" },
-        { name: "Rasson", logo: "/about/brand/rasson.png" }
+        { name: "Aplus", logo: "/about/brand/aplus.png" },  // 14 tables
+        { name: "Earl", logo: "/about/brand/earl.png" },    // 13 tables
+        { name: "Duya", logo: "/about/brand/duya.png" },    // 8 tables
+        { name: "Rasson", logo: "/about/brand/rasson.png" } // 1 table
       ],
       tables: [
         "14 Aplus American Pool Tables",
@@ -167,12 +222,16 @@ export default function OutletsSection() {
       location: "Vietnam",
       description: "Opening in October 2025, our first international outlet in Vietnam, bringing O'O+ Billiards' signature facilities and experiences to Ho Chi Minh City.",
       openDate: "October 2025",
-      image: "/outlets/vietnam.jpg",
+      image: "/outlets/vietnam/vietnam.jpg",
+      images: [
+        "/outlets/vietnam/vietnam.jpg"
+      ],
       address: "34 Đ. Lê Văn Quới, Bình Trị Đông A, Bình Tân, Hồ Chí Minh 762000, Vietnam",
       brands: [
-        { name: "Rasson", logo: "/about/brand/rasson.png" },
-        { name: "Duya", logo: "/about/brand/duya.png" },
-        { name: "Joy", logo: "/about/brand/joy.png" }
+        { name: "Earl", logo: "/about/brand/earl.png" },     // 15 tables
+        { name: "Rasson", logo: "/about/brand/rasson.png" }, // 13 tables (10+3)
+        { name: "Duya", logo: "/about/brand/duya.png" },     // 8 tables
+        { name: "Joy", logo: "/about/brand/joy.png" }        // 5 tables
       ],
       tables: [
         "10 Rasson Snooker Tables",
@@ -297,7 +356,7 @@ export default function OutletsSection() {
                 viewport={{ once: true }}
               >
                 <div className="flex flex-col lg:flex-row">
-                  {/* Left Side - Image */}
+                  {/* Left Side - Image Swiper */}
                   <div className="lg:w-1/2 h-64 lg:h-auto relative bg-gray-200">
                     {outlet.comingSoon ? (
                       /* Coming Soon Display */
@@ -321,8 +380,31 @@ export default function OutletsSection() {
                           </p>
                         </div>
                       </div>
+                    ) : outlet.images && outlet.images.length > 1 ? (
+                      /* Swiper for multiple images */
+                      <Swiper
+                        modules={[SwiperNavigation, Pagination]}
+                        navigation
+                        pagination={{ clickable: true }}
+                        loop={true}
+                        className="h-full w-full outlet-swiper"
+                      >
+                        {outlet.images.map((img, imgIndex) => (
+                          <SwiperSlide key={imgIndex}>
+                            <div className="relative w-full h-full">
+                              <Image
+                                src={img}
+                                alt={`${outlet.name} - Image ${imgIndex + 1}`}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                              />
+                            </div>
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
                     ) : (
-                      /* Regular Image Display */
+                      /* Single Image Display */
                       <>
                         <Image
                           src={outlet.image}
@@ -343,7 +425,6 @@ export default function OutletsSection() {
                             {outlet.name}
                           </span>
                         </div>
-                        
                       </>
                     )}
                   </div>
@@ -526,6 +607,55 @@ export default function OutletsSection() {
           </div>
         </div>
       </section>
+
+      {/* Custom Swiper Styles */}
+      <style jsx global>{`
+        .outlet-swiper {
+          width: 100%;
+          height: 100%;
+        }
+        
+        .outlet-swiper .swiper-button-next,
+        .outlet-swiper .swiper-button-prev {
+          color: #ffd701 !important;
+          background: rgba(0, 0, 0, 0.5);
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          transition: all 0.3s ease;
+        }
+        
+        .outlet-swiper .swiper-button-next:hover,
+        .outlet-swiper .swiper-button-prev:hover {
+          background: rgba(0, 0, 0, 0.8);
+          transform: scale(1.1);
+        }
+        
+        .outlet-swiper .swiper-button-next::after,
+        .outlet-swiper .swiper-button-prev::after {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        
+        .outlet-swiper .swiper-pagination-bullet {
+          background: #fff !important;
+          opacity: 0.5 !important;
+          width: 10px;
+          height: 10px;
+          transition: all 0.3s ease;
+        }
+        
+        .outlet-swiper .swiper-pagination-bullet-active {
+          background: #ffd701 !important;
+          opacity: 1 !important;
+          width: 30px;
+          border-radius: 5px;
+        }
+        
+        .outlet-swiper .swiper-pagination {
+          bottom: 10px !important;
+        }
+      `}</style>
     </div>
   );
 }

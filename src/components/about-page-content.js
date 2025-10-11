@@ -5,12 +5,12 @@ import Link from "next/link";
 
 export default function AboutPageContent() {
   const milestones = [
-    { date: "Nov 2017", event: "First outlet @ One Shamelin Mall, KL", image: "/outlets/shamelin.JPG" },
-    { date: "Sept 2022", event: "Seremban outlet opens", image: "/outlets/seremban.jpg" },
-    { date: "Mar 2023", event: "Viva Home outlet opens", image: "/outlets/vivahome.jpg" },
-    { date: "Jul 2024", event: "Scott Garden outlet opens – one of the biggest in KL", image: "/outlets/scottgarden.jpg" },
-    { date: "Jan 2025", event: "USJ outlet opens at 91 Sports Arena + Group HQ established", image: "/outlets/usj.PNG" },
-    { date: "Oct 2025", event: "Vietnam outlet (Ho Chi Minh City) opening soon", image: "/outlets/vietnam.jpg", comingSoon: true }
+    { date: "Nov 2017", event: "First outlet @ One Shamelin Mall, KL", image: "/outlets/shamelin/shamelin.jpg" },
+    { date: "Sept 2022", event: "Seremban outlet opens", image: "/outlets/seremban/seremban.jpg" },
+    { date: "Mar 2023", event: "Viva Home outlet opens", image: "/outlets/vivahome/vivahome.jpg" },
+    { date: "Jul 2024", event: "Scott Garden outlet opens – one of the biggest in KL", image: "/outlets/scottgarden/scottgarden.jpg" },
+    { date: "Jan 2025", event: "USJ outlet opens at 91 Sports Arena + Group HQ established", image: "/outlets/usj/usj.PNG" },
+    { date: "Oct 2025", event: "Vietnam outlet (Ho Chi Minh City) opening soon", image: "/outlets/vietnam/vietnam.jpg", comingSoon: true }
   ];
 
   const values = [
@@ -341,7 +341,7 @@ export default function AboutPageContent() {
         </section>
 
         {/* Clients and Partners Banner */}
-        <section className="py-12 md:py-16 bg-gray-700">
+        <section className="py-12 md:py-16 bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 md:px-10">
             {/* Header */}
             <div className="text-center mb-8 md:mb-12">
@@ -354,8 +354,9 @@ export default function AboutPageContent() {
               </p>
             </div>
 
-            {/* Brand Logo Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12 lg:gap-16 mb-8 md:mb-0">
+            {/* Brand Logo Grid - Sorted by Usage Frequency */}
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 md:gap-8 lg:gap-6 mb-8 md:mb-0">
+              {/* 1. Earl - Most used (6 outlets, 85 tables) */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -364,12 +365,13 @@ export default function AboutPageContent() {
                 className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
                 <img 
-                  src="/about/brand/duya.png" 
-                  alt="DUYA" 
-                  className="max-h-20 md:max-h-24 w-auto object-contain brightness-110 contrast-110"
+                  src="/about/brand/earl.png" 
+                  alt="EARL" 
+                  className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
                 />
               </motion.div>
 
+              {/* 2. Rasson - (6 outlets, 35 tables) */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -378,12 +380,13 @@ export default function AboutPageContent() {
                 className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
                 <img 
-                  src="/about/brand/joy.png" 
-                  alt="JOY" 
-                  className="max-h-20 md:max-h-24 w-auto object-contain brightness-110 contrast-110"
+                  src="/about/brand/rasson.png" 
+                  alt="RASSON" 
+                  className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
                 />
               </motion.div>
 
+              {/* 3. Duya - (3 outlets, 16 tables) */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -392,12 +395,13 @@ export default function AboutPageContent() {
                 className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
                 <img 
-                  src="/about/brand/rasson.png" 
-                  alt="RASSON" 
-                  className="max-h-20 md:max-h-24 w-auto object-contain brightness-110 contrast-110"
+                  src="/about/brand/duya.png" 
+                  alt="DUYA" 
+                  className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
                 />
               </motion.div>
 
+              {/* 4. Aplus - (1 outlet, 14 tables) */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -406,12 +410,13 @@ export default function AboutPageContent() {
                 className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
                 <img 
-                  src="/about/brand/aramith.png" 
-                  alt="ARAMITH" 
-                  className="max-h-20 md:max-h-24 w-auto object-contain brightness-110 contrast-110"
+                  src="/about/brand/aplus.png" 
+                  alt="APLUS" 
+                  className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
                 />
               </motion.div>
 
+              {/* 5. Joy - (2 outlets, 14 tables) */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -420,12 +425,13 @@ export default function AboutPageContent() {
                 className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
                 <img 
-                  src="/about/brand/wiraka.png" 
-                  alt="WIRAKA" 
-                  className="max-h-20 md:max-h-24 w-auto object-contain brightness-110 contrast-110"
+                  src="/about/brand/joy.png" 
+                  alt="JOY" 
+                  className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
                 />
               </motion.div>
 
+              {/* 6. Wiraka - (1 outlet, 7 tables) */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -434,9 +440,39 @@ export default function AboutPageContent() {
                 className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
                 <img 
+                  src="/about/brand/wiraka.png" 
+                  alt="WIRAKA" 
+                  className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
+                />
+              </motion.div>
+
+              {/* 7. Aramith - Billiard balls brand */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                viewport={{ once: true }}
+                className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
+              >
+                <img 
+                  src="/about/brand/aramith.png" 
+                  alt="ARAMITH" 
+                  className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
+                />
+              </motion.div>
+
+              {/* 8. Acurra - Cue brand */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                viewport={{ once: true }}
+                className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
+              >
+                <img 
                   src="/about/brand/acurra.png" 
                   alt="ACURRA" 
-                  className="max-h-20 md:max-h-24 w-auto object-contain brightness-110 contrast-110"
+                  className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
                 />
               </motion.div>
             </div>
