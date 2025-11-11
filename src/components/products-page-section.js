@@ -6,6 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useMemo, useCallback } from "react";
 import ProductSidebar from "@/components/product-sidebar";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function ProductsPageSection() {
   const [filters, setFilters] = useState({
@@ -23,7 +28,8 @@ export default function ProductsPageSection() {
       name: "DUYA II Table (RED)",
       brand: "DUYA",
       priceValue: 15000, // for sorting purposes
-      image: "/products/duya2.png",
+      image: "/products/duya/red/duya2.jpg",
+      images: ["/products/duya/red/duya2.jpg"], // Multiple images for swiper
       category: "Tables",
       description: "Luminous \"Sports car-grade shell with high magnetism\", applying automotive injection molding process",
       specifications: {
@@ -53,7 +59,8 @@ export default function ProductsPageSection() {
       name: "DUYA Lambo Gold",
       brand: "DUYA",
       priceValue: 18000, // for sorting purposes
-      image: "/products/duyalambogold.png",
+      image: "/products/duya/lambogold/duyalambogold.jpg",
+      images: ["/products/duya/lambogold/duyalambogold.jpg"], // Multiple images for swiper
       category: "Tables",
       description: "Drawing inspiration from Lamborghini's fluidic surface design, the all-alloy chassis is made from aerospace-grade aluminum.",
       specifications: {
@@ -80,61 +87,82 @@ export default function ProductsPageSection() {
     },
     {
       id: 3,
-      name: "APLUS Premier Classic Model (7-ft Traditional Table)",
+      name: "APLUS Apollo",
       brand: "APLUS",
       priceValue: 12000, // for sorting purposes
-      image: "/products/apluspremier.png",
+      image: "/products/aplus/Apollo/IMG_6135.PNG",
+      images: [
+        "/products/aplus/Apollo/IMG_6135.PNG",
+        "/products/aplus/Apollo/IMG_6133.PNG",
+        "/products/aplus/Apollo/IMG_6134.PNG",
+        "/products/aplus/Apollo/IMG_6132.PNG"
+      ], // Multiple images for swiper
       category: "Tables",
-      description: "The Aplus Premier 7ft competition table is the perfect choice for home training when space doesn't allow for a full-sized 9ft table. This table features a central ball return system that channels balls neatly into a collection tray, enhancing both aesthetics and convenience for 8-ball, 9-ball, and 10-ball pool games.",
+      description: "One of the newest premium products of Aplus Billiards, featuring unique design, exceptional durability and integrated modern technologies. Meets international tournament standards with ISO 9001:2015 certification.",
       specifications: {
-        overallDimensions: "234 x 135 x 81 cm",
-        playingArea: "198.1 x 99 cm",
+        overallDimensions: "290 x 164 x 81 cm",
+        playingSurface: "254 x 127 cm",
+        centerPockets: "11.5 cm",
+        cornerPockets: "10.5-11 cm",
         color: "Black",
-        centerPockets: "11.5 cm (4.5\")",
-        cornerPockets: "10.5 cm (4.13\")",
-        frame: "Steel and plywood frame for enhanced stability and warp resistance",
-        slate: "Premium black-green natural slate with a flatness of up to 99.99%, built to international tournament standards",
-        rails: "Nickel-plated aluminum alloy edges for added aesthetics and sturdiness",
-        rubberCushions: "Premier K55 Taiwan rubber cushions, ensuring smooth and accurate ball movement",
-        accessories: "Durable, rust-resistant ADC nickel-plated aluminum accessories with high-grade ADC aluminum alloy cast corners"
+        frame: "Solid metal frame combined with wood, engineered for stability and vibration reduction",
+        slate: "Natural dark green slate, premium grade, 1 inch thick (3 pieces) with 99.99% flatness to international tournament standards",
+        cushions: "Premier K55 Taiwan rubber provides accurate responses and superior durability",
+        cloth: "Dragon Gold felt maintains flatness and provides smooth playing experience",
+        rails: "Reinforced rubber wood rails with high-pressure lamination and Laminate surface coating",
+        corners: "Premium ADC aluminum alloy corners with nickel plating, cast as single pieces",
+        warranty: "2-year coverage for frame, slate surface, and rubber cushions"
       },
       highlights: [
-        "Genuine Aplus Billiards Product - ISO 9001:2015 certified",
-        "Premium black-green natural slate with 99.99% flatness",
-        "Central ball return system for enhanced convenience",
-        "Premier K55 Taiwan rubber cushions for accurate ball movement",
-        "Perfect for home training with compact 7ft size"
+        "ISO 9001:2015 certified - International tournament approved",
+        "Natural dark green slate with 99.99% flatness accuracy",
+        "Premier K55 Taiwan rubber cushions for accurate responses",
+        "Dragon Gold felt for smooth playing experience",
+        "Solid metal and wood frame for stability and vibration reduction",
+        "2-year warranty coverage"
       ]
     },
     {
       id: 4,
-      name: "Classic APLUS \"English Pool / Pub-Style\" Table (8 ft)",
+      name: "APLUS Special Eco",
       brand: "APLUS",
       priceValue: 14000, // for sorting purposes
-      image: null,
+      image: "/products/aplus/Eco/IMG_6130.PNG",
+      images: [
+        "/products/aplus/Eco/IMG_6130.PNG",
+        "/products/aplus/Eco/IMG_6129.PNG",
+        "/products/aplus/Eco/IMG_6131.PNG",
+        "/products/aplus/Eco/IMG_6136.PNG"
+      ], // Multiple images for swiper
       category: "Tables",
-      description: "This 8-ft English pool / pub-style table is designed for recreational and social use while maintaining professional build quality for reliable performance.",
+      description: "A sturdy and durable table with millimeter precision, featuring metal framework combined with wood. Designed to meet international competition standards with ISO 9001:2015 certification.",
       specifications: {
-        dimensions: "8-ft standard size",
-        slateThickness: "Solid 3-piece slate",
-        frameMaterial: "Wood / Alloy frame options",
-        cushionMaterial: "Tournament-grade rubber",
-        pocketType: "Drop / Leather pockets",
-        accessories: "Cue set, balls, table brush",
+        overallDimensions: "292 x 164 x 81 cm",
+        playingSurface: "254 x 127 cm",
+        centerPockets: "11.5 cm",
+        cornerPockets: "10.5-11 cm",
+        color: "Gray",
+        frame: "Metal framework combined with wood offering sturdy and durable design with millimeter precision",
+        legs: "Heavy-duty steel frame with reinforced joints for stability and long-term durability",
+        slate: "High-quality dark green natural slate with flatness up to 99.9%, meeting international competition standards",
+        cushions: "Premier K55 Taiwan rubber ensures smooth and accurate ball movement",
+        rails: "Rubber wood with high-pressure laminate coating and nickel-plated aluminum trim for durability and aesthetics",
+        warranty: "2-year coverage on rubber cushions, frame, and slate surface"
       },
       highlights: [
-        "Solid 3-piece slate top",
-        "Durable frame & rail construction",
-        "Timeless pub-style aesthetic",
-        "Professional build quality",
-        "8-ft standard size"
+        "ISO 9001:2015 certified - International competition standards",
+        "Natural slate with 99.9% flatness accuracy",
+        "Premier K55 Taiwan rubber for smooth ball movement",
+        "Heavy-duty steel frame with reinforced joints",
+        "Precision point system for accurate play",
+        "2-year warranty coverage"
       ]
     }
   ], []);
 
   const handleGetQuotation = (product) => {
     const message = encodeURIComponent(`Hi! I'm interested in the ${product.name}. Could you please provide me with a quotation and more details?`);
-    window.open(`https://wa.me/60113504112?text=${message}`, '_blank');
+    window.open(`https://wa.me/60102949688?text=${message}`, '_blank');
   };
 
   const handleWishlist = (product) => {
@@ -253,6 +281,30 @@ export default function ProductsPageSection() {
             onClose={() => setIsSidebarOpen(false)}
           />
           <div className="flex-1 py-16 px-4 sm:px-6 lg:px-8">
+            {/* Exclusive Agent Banner */}
+            <motion.div 
+              className="mb-8 bg-gradient-to-r from-[#ffd701]/20 via-[#ffd701]/10 to-[#ffd701]/20 border-l-4 border-[#ffd701] p-4 sm:p-6 rounded-lg"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 mt-1">
+                  <svg className="w-6 h-6 text-[#ffd701]" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-[#ffd701] font-bold text-lg mb-1 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    Exclusive Agent in Malaysia
+                  </h3>
+                  <p className="text-gray-300 text-sm sm:text-base italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                    We are the <span className="text-white font-semibold">exclusive agent</span> for <span className="text-white font-semibold">DUYA</span> and <span className="text-white font-semibold">APLUS</span> brands in Malaysia.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Mobile Filter Button and Products Count */}
             <div className="flex items-center justify-between mb-6">
               <p className="text-gray-300">
@@ -271,7 +323,7 @@ export default function ProductsPageSection() {
             </div>
             
             {/* Products Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 w-full max-w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-8 w-full max-w-full">
             {filteredProducts.length > 0 ? filteredProducts.map((product, index) => (
               <motion.div
                 key={product.id}
@@ -409,39 +461,49 @@ export default function ProductsPageSection() {
             </button>
 
             <div className="flex flex-col gap-0">
-              {/* Product Image */}
+              {/* Product Image Swiper */}
               <div className="relative h-64 sm:h-80 lg:h-96 bg-white">
-                {selectedProduct.image ? (
-                  <Image
-                    src={selectedProduct.image}
-                    alt={selectedProduct.name}
-                    fill
-                    className="object-contain rounded-t-2xl"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
+                {selectedProduct.images && selectedProduct.images.length > 0 ? (
+                  <Swiper
+                    modules={[Navigation, Pagination]}
+                    navigation
+                    pagination={{ clickable: true }}
+                    className="h-full w-full rounded-t-2xl"
+                    style={{
+                      '--swiper-navigation-color': '#ffd701',
+                      '--swiper-pagination-color': '#ffd701',
                     }}
-                  />
-                ) : null}
-                {/* Fallback background when no image or image fails to load */}
-                <div 
-                  className={`absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 ${!selectedProduct.image ? 'flex' : 'hidden'} items-center justify-center rounded-t-2xl`}
-                  style={{ display: !selectedProduct.image ? 'flex' : 'none' }}
-                >
-                  <div className="text-center px-4">
-                    <div className="w-16 h-16 mx-auto mb-2 bg-gray-400 rounded-full flex items-center justify-center">
-                      <svg className="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2z" />
-                      </svg>
+                  >
+                    {selectedProduct.images.map((img, index) => (
+                      <SwiperSlide key={index}>
+                        <div className="relative h-full w-full">
+                          <Image
+                            src={img}
+                            alt={`${selectedProduct.name} - Image ${index + 1}`}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center rounded-t-2xl">
+                    <div className="text-center px-4">
+                      <div className="w-16 h-16 mx-auto mb-2 bg-gray-400 rounded-full flex items-center justify-center">
+                        <svg className="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <span className="text-gray-500 text-sm font-medium text-center">
+                        Coming Soon
+                      </span>
                     </div>
-                    <span className="text-gray-500 text-sm font-medium text-center">
-                      Coming Soon
-                    </span>
                   </div>
-                </div>
+                )}
                 
                 {/* Brand Badge */}
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-4 left-4 z-10">
                   <div className="bg-[#ffd701] text-black px-3 py-1 rounded-full font-bold text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                     {selectedProduct.brand}
                   </div>
@@ -452,7 +514,7 @@ export default function ProductsPageSection() {
               {/* Product Details */}
               <div className="p-6 lg:p-8 rounded-b-2xl bg-gray-900">
                 {/* Product Name */}
-                <h2 className="text-2xl lg:text-3xl font-black text-white mb-4 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                <h2 className="text-2xl lg:text-3xl font-black text-white mb-4" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                   {selectedProduct.name}
                 </h2>
 

@@ -11,33 +11,19 @@ export default function EventsPromotions() {
   const tournamentEvents = [
     {
       id: 1,
-      date: "28 Feb 2023",
-      players: "Serena Larsson – Olivia Schneider",
-      time: "08:00",
-      court: "Court 01",
-      image: "/home/events/duya.jpg",
-      title: "Championship Finals",
-      description: "High-stakes tournament featuring top players"
+      image: "/news/1.JPG"
     },
     {
       id: 2,
-      date: "21 Mar 2023", 
-      players: "Andreas Medvedev – Antony Fonsteur",
-      time: "06:00",
-      court: "Court 01",
-      image: "/home/events/hiring.jpg",
-      title: "Professional Series",
-      description: "Elite competition with international players"
+      image: "/news/2.JPG"
     },
     {
       id: 3,
-      date: "28 Feb 2023",
-      players: "Serena Larsson – Olivia Schneider",
-      time: "08:00",
-      court: "Court 01",
-      image: "/home/events/duya.jpg",
-      title: "Championship Finals",
-      description: "High-stakes tournament featuring top players"
+      image: "/news/3.JPG"
+    },
+    {
+      id: 4,
+      image: "/news/4.JPG"
     }
   ];
 
@@ -72,7 +58,6 @@ export default function EventsPromotions() {
                 fontFamily: 'Kanit, system-ui, sans-serif',
                 letterSpacing: '0.05em',
                 filter: 'blur(0.5px)',
-                fontStyle: 'italic',
               }}
             >
               EVENTS
@@ -85,7 +70,6 @@ export default function EventsPromotions() {
                 fontFamily: 'Kanit, system-ui, sans-serif',
                 letterSpacing: '0.05em',
                 filter: 'blur(0.5px)',
-                fontStyle: 'italic',
                 color: 'rgba(255, 215, 1, 1)',
                 WebkitTextStroke: '1.5px rgba(255, 215, 1, 0.8)',
                 textStroke: '1.5px rgba(255, 215, 1, 0.8)',

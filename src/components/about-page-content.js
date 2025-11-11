@@ -1,14 +1,288 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
+
+// Timeline Section Component
+function TimelineSection({ milestones }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  // Extract years from dates and create structured data
+  const timelineData = milestones.map((m) => {
+    const year = m.date.includes('2017') ? '2017' : 
+                 m.date.includes('2022') ? '2022' :
+                 m.date.includes('2023') ? '2023' :
+                 m.date.includes('2024') ? '2024' : '2025';
+    
+    // Parse event details
+    let title = m.event;
+    let highlights = [];
+    
+    if (m.event.includes('–')) {
+      const parts = m.event.split('–');
+      title = parts[0].trim();
+      highlights.push(parts[1].trim());
+    }
+    
+    if (m.event.includes('+')) {
+      const parts = m.event.split('+');
+      title = parts[0].trim();
+      highlights.push(parts[1].trim());
+    }
+    
+    return {
+      ...m,
+      year,
+      title,
+      highlights
+    };
+  });
+
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => (prev === 0 ? timelineData.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === timelineData.length - 1 ? 0 : prev + 1));
+  };
+
+  const currentItem = timelineData[currentIndex];
+
+  return (
+    <section className="py-16 md:py-24 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+      {/* Subtle decorative elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#ffd701] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#ffd701] rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-2 md:px-4 relative">
+        {/* Section Header */}
+        <motion.div
+          className="text-center mb-12 md:mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+            DEVELOPMENT <span className="text-[#ffd701] relative">
+              HISTORY
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#ffd701] to-[#ccaa4c] rounded-full"></div>
+            </span>
+          </h2>
+        </motion.div>
+
+        {/* Main Timeline Content */}
+        <div className="relative mb-6 md:mb-12">
+          {/* Desktop Left Arrow */}
+          <button
+            onClick={handlePrevious}
+            className="hidden md:flex absolute -left-2 md:-left-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-[#ffd701] hover:bg-[#e6c200] rounded-full items-center justify-center transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-110"
+            aria-label="Previous"
+          >
+            <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Desktop Right Arrow */}
+          <button
+            onClick={handleNext}
+            className="hidden md:flex absolute -right-2 md:-right-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-[#ffd701] hover:bg-[#e6c200] rounded-full items-center justify-center transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-110"
+            aria-label="Next"
+          >
+            <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Content Container */}
+          <div className="w-full px-8 md:px-12">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4 }}
+                className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center"
+              >
+                {/* Left Side - Large Image (3 columns) */}
+                <div className="lg:col-span-3 relative">
+                  <div className="relative overflow-hidden rounded-xl group">
+                    <img
+                      src={currentItem.image}
+                      alt={currentItem.title}
+                      className="w-full h-[350px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
+
+                {/* Right Side - Content (2 columns) */}
+                <div className="lg:col-span-2 space-y-6 md:space-y-8">
+                  {/* Year Display - Large and Bold */}
+                  <div className="relative">
+                    <motion.h3 
+                      className="text-6xl md:text-7xl font-black text-[#ffd701] leading-none italic"
+                      style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {currentItem.year}
+                    </motion.h3>
+                  </div>
+
+                  {/* Event Details List */}
+                  <div className="space-y-4 md:space-y-5">
+                    {/* Date with number prefix */}
+                    <motion.div 
+                      className="flex items-start space-x-4"
+                      initial={{ x: 20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
+                    >
+                      <span className="text-[#ffd701] font-bold text-lg flex-shrink-0 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                        02:
+                      </span>
+                      <p className="text-white text-base md:text-lg font-medium leading-relaxed italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                        {currentItem.title}
+                      </p>
+                    </motion.div>
+
+                    {/* Highlights with numbered prefixes */}
+                    {currentItem.highlights.map((highlight, idx) => (
+                      <motion.div 
+                        key={idx}
+                        className="flex items-start space-x-4"
+                        initial={{ x: 20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
+                      >
+                        <span className="text-[#ffd701] font-bold text-lg flex-shrink-0 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                          {String(idx + 6).padStart(2, '0')}:
+                        </span>
+                        <p className="text-white/90 text-base md:text-lg font-medium leading-relaxed italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                          {highlight}
+                        </p>
+                      </motion.div>
+                    ))}
+
+                    {/* Additional Event Description if needed */}
+                    {!currentItem.highlights.length && (
+                      <motion.div 
+                        className="flex items-start space-x-4"
+                        initial={{ x: 20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                      >
+                        <span className="text-[#ffd701] font-bold text-lg flex-shrink-0 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                          06:
+                        </span>
+                        <p className="text-white/90 text-base md:text-lg font-medium leading-relaxed italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                          Expanding our presence in Malaysia
+                        </p>
+                      </motion.div>
+                    )}
+
+                    {/* Coming Soon Badge */}
+                    {currentItem.comingSoon && (
+                      <motion.div 
+                        className="inline-block bg-gradient-to-r from-[#ffd701] to-[#ffed4e] px-5 py-2 rounded-lg shadow-lg mt-6"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                      >
+                        <p className="text-black text-base font-black italic flex items-center space-x-2" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
+                          </svg>
+                          <span>COMING SOON</span>
+                        </p>
+                      </motion.div>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Mobile Navigation Buttons - Below Content */}
+          <div className="flex md:hidden justify-center items-center gap-4 mt-8">
+            <button
+              onClick={handlePrevious}
+              className="w-12 h-12 bg-[#ffd701] hover:bg-[#e6c200] rounded-full flex items-center justify-center transition-all duration-300 shadow-xl hover:scale-110"
+              aria-label="Previous"
+            >
+              <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button
+              onClick={handleNext}
+              className="w-12 h-12 bg-[#ffd701] hover:bg-[#e6c200] rounded-full flex items-center justify-center transition-all duration-300 shadow-xl hover:scale-110"
+              aria-label="Next"
+            >
+              <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Year Navigation Timeline */}
+        <div className="max-w-5xl mx-auto mt-12 md:mt-16 px-4 md:px-8">
+          <div className="flex justify-between items-center relative py-4">
+            {/* Timeline connecting line */}
+            <div className="absolute top-1/2 left-0 right-0 h-1 bg-[#ffd701]/40 -translate-y-1/2"></div>
+            
+            {timelineData.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className="relative flex flex-col items-center group transition-all duration-300 z-10"
+              >
+                {/* Dot indicator */}
+                <div className="relative mb-3">
+                  {currentIndex === index ? (
+                    <div className="w-5 h-5 bg-[#ffd701] rounded-full shadow-lg relative">
+                      <div className="absolute inset-0 bg-[#ffd701] rounded-full animate-ping opacity-75"></div>
+                      <div className="absolute inset-0 bg-[#ffd701] rounded-full"></div>
+                    </div>
+                  ) : (
+                    <div className="w-4 h-4 border-2 border-white/50 rounded-full group-hover:border-[#ffd701] group-hover:bg-[#ffd701] transition-all duration-300"></div>
+                  )}
+                </div>
+                
+                {/* Year label */}
+                <span 
+                  className={`text-base md:text-lg font-bold transition-all duration-300 italic ${
+                    currentIndex === index 
+                      ? 'text-[#ffd701] scale-110' 
+                      : 'text-white/60 group-hover:text-[#ffd701]'
+                  }`}
+                  style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
+                >
+                  {item.year}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function AboutPageContent() {
   const milestones = [
     { date: "Nov 2017", event: "First outlet @ One Shamelin Mall, KL", image: "/outlets/shamelin/shamelin.jpg" },
     { date: "Sept 2022", event: "Seremban outlet opens", image: "/outlets/seremban/seremban.jpg" },
     { date: "Mar 2023", event: "Viva Home outlet opens", image: "/outlets/vivahome/vivahome.jpg" },
-    { date: "Jul 2024", event: "Scott Garden outlet opens – one of the biggest in KL", image: "/outlets/scottgarden/scottgarden.jpg" },
+    { date: "Jul 2024", event: "The Scott Garden outlet opens – one of the biggest in KL", image: "/outlets/scottgarden/scottgarden.jpg" },
     { date: "Jan 2025", event: "USJ outlet opens at 91 Sports Arena + Group HQ established", image: "/outlets/usj/usj.PNG" },
     { date: "Oct 2025", event: "Vietnam outlet (Ho Chi Minh City) opening soon", image: "/outlets/vietnam/vietnam.jpg", comingSoon: true }
   ];
@@ -133,21 +407,12 @@ export default function AboutPageContent() {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img 
-                    src="/about/team.jpg" 
-                    alt="O'O+ Billiards Group - Professional Team"
+                    src="/about/logo.png" 
+                    alt="O'O+ Billiards Group Logo"
                     className="w-full h-[500px] object-cover"
                   />
                   {/* Image Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                  
-                  {/* Image Badge */}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="bg-white/95 backdrop-blur-sm p-4 rounded-xl">
-                      <p className="text-gray-900 font-bold italic text-sm" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                        &ldquo;Our professional in-house coaching team&rdquo;
-                      </p>
-                    </div>
-                  </div>
                 </div>
                 
                 {/* Floating Accent */}
@@ -354,43 +619,13 @@ export default function AboutPageContent() {
               </p>
             </div>
 
-            {/* Brand Logo Grid - Sorted by Usage Frequency */}
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 md:gap-8 lg:gap-6 mb-8 md:mb-0">
-              {/* 1. Earl - Most used (6 outlets, 85 tables) */}
+            {/* Brand Logo Grid - Custom Sorting */}
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-9 gap-6 md:gap-8 lg:gap-6 mb-8 md:mb-0">
+              {/* 1. Duya */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
-              >
-                <img 
-                  src="/about/brand/earl.png" 
-                  alt="EARL" 
-                  className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
-                />
-              </motion.div>
-
-              {/* 2. Rasson - (6 outlets, 35 tables) */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
-              >
-                <img 
-                  src="/about/brand/rasson.png" 
-                  alt="RASSON" 
-                  className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
-                />
-              </motion.div>
-
-              {/* 3. Duya - (3 outlets, 16 tables) */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
                 className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
@@ -401,11 +636,26 @@ export default function AboutPageContent() {
                 />
               </motion.div>
 
-              {/* 4. Aplus - (1 outlet, 14 tables) */}
+              {/* 2. Earl */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
+              >
+                <img 
+                  src="/about/brand/earl.png" 
+                  alt="EARL" 
+                  className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
+                />
+              </motion.div>
+
+              {/* 3. Aplus */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
                 className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
               >
@@ -416,7 +666,22 @@ export default function AboutPageContent() {
                 />
               </motion.div>
 
-              {/* 5. Joy - (2 outlets, 14 tables) */}
+              {/* 4. Rasson */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
+              >
+                <img 
+                  src="/about/brand/rasson.png" 
+                  alt="RASSON" 
+                  className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
+                />
+              </motion.div>
+
+              {/* 5. Joy */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -431,7 +696,7 @@ export default function AboutPageContent() {
                 />
               </motion.div>
 
-              {/* 6. Wiraka - (1 outlet, 7 tables) */}
+              {/* 6. Wiraka */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -446,7 +711,7 @@ export default function AboutPageContent() {
                 />
               </motion.div>
 
-              {/* 7. Aramith - Billiard balls brand */}
+              {/* 7. Aramith */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -461,7 +726,7 @@ export default function AboutPageContent() {
                 />
               </motion.div>
 
-              {/* 8. Acurra - Cue brand */}
+              {/* 8. Acurra */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -472,6 +737,21 @@ export default function AboutPageContent() {
                 <img 
                   src="/about/brand/acurra.png" 
                   alt="ACURRA" 
+                  className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
+                />
+              </motion.div>
+
+              {/* 9. Omin */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                viewport={{ once: true }}
+                className="flex items-center justify-center grayscale-0 hover:grayscale-0 transition-all duration-300 p-6 bg-white/20 rounded-lg hover:bg-white/30 shadow-lg"
+              >
+                <img 
+                  src="/about/brand/omin.png" 
+                  alt="OMIN" 
                   className="max-h-20 md:max-h-24 lg:max-h-32 w-auto object-contain brightness-110 contrast-110"
                 />
               </motion.div>
@@ -730,216 +1010,12 @@ export default function AboutPageContent() {
         </section>
 
 
-        {/* Corporate Milestones Section - Enhanced */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
-          {/* Background Decorative Elements */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-20 left-10 w-64 h-64 bg-[#ffd701] rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#ccaa4c] rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#ffd701] rounded-full blur-3xl opacity-5"></div>
-          </div>
-          
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-32 bottom-32 w-1 bg-gradient-to-b from-[#ffd701] via-[#ccaa4c] to-[#ffd701] opacity-30"></div>
-          
-          <div className="max-w-7xl mx-auto px-5 md:px-10 relative">
-            {/* Section Header */}
-            <motion.div
-              className="text-center mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-block bg-gradient-to-r from-[#ffd701] to-[#ccaa4c] p-1 rounded-2xl mb-8">
-                <div className="bg-black px-8 py-3 rounded-2xl">
-                  <span className="text-[#ffd701] font-bold italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                    🏆 Our Journey Through Time
-                  </span>
-                </div>
-              </div>
-              
-              <h2 className="text-4xl md:text-6xl font-black text-white mb-6 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                Corporate <span className="text-[#ffd701] relative">
-                  Milestones
-                  <div className="absolute -bottom-3 left-0 right-0 h-2 bg-gradient-to-r from-[#ffd701] to-[#ccaa4c] rounded-full opacity-70"></div>
-                </span>
-              </h2>
-              
-              <p className="text-white/70 text-xl max-w-3xl mx-auto italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                From our first outlet to international expansion, witness our remarkable growth story
-              </p>
-            </motion.div>
-            
-            {/* Timeline Items */}
-            <div className="space-y-16">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={milestone.date}
-                  className={`flex items-stretch lg:items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex-col lg:text-left text-center`}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  {/* Mobile: Timeline Node Above Card */}
-                  <div className="lg:hidden mb-6 flex justify-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#ffd701] to-[#ccaa4c] rounded-full flex items-center justify-center shadow-2xl border-4 border-white/20">
-                      <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
-                        <span className="text-[#ffd701] font-black text-base italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Content Side */}
-                  <div className={`w-full lg:flex-1 ${index % 2 === 0 ? 'lg:pr-16' : 'lg:pl-16'} mb-8 lg:mb-0`}>
-                    {/* Desktop: Text Card, Mobile: Photo Background Card */}
-                    <div className="rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden h-80 flex flex-col">
-                      
-                      {/* Mobile: Background Image */}
-                      <div className="absolute inset-0 z-0 lg:hidden">
-                        <img
-                          src={milestone.image}
-                          alt={milestone.event.includes('outlet') ? milestone.event.split(' outlet')[0] + ' Outlet' : 'O\'O+ Billiards'}
-                          className="w-full h-full object-cover"
-                        />
-                        {/* Gradient Overlay for text readability */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
-                      </div>
-                      
-                      {/* Desktop: Solid Background */}
-                      <div className="absolute inset-0 z-0 hidden lg:block bg-white/5 backdrop-blur-sm"></div>
-                      
-                      {/* Card Content */}
-                      <div className="p-8 relative z-10 flex-1 flex flex-col justify-between">
-                        <div>
-                          {/* Date Badge */}
-                          <div className="inline-block bg-gradient-to-r from-[#ffd701] to-[#ccaa4c] p-1 rounded-full mb-6">
-                            <div className="bg-black px-6 py-2 rounded-full">
-                              <span className="text-[#ffd701] font-bold text-lg italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                                {milestone.date}
-                              </span>
-                            </div>
-                          </div>
-                          
-                          {/* Event Description */}
-                          <h3 className="text-2xl font-bold text-white mb-4 italic lg:drop-shadow-none drop-shadow-lg" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                            {milestone.event.split('–')[0]}
-                          </h3>
-                          
-                          {milestone.event.includes('–') && (
-                            <p className="text-white/90 lg:text-white/80 text-lg italic leading-relaxed lg:drop-shadow-none drop-shadow-md" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                              {milestone.event.split('–')[1]}
-                            </p>
-                          )}
-                        </div>
-                        
-                        {/* Outlet Label at bottom - Mobile only */}
-                        <div className="mt-auto lg:hidden">
-                          <div className="bg-black/60 backdrop-blur-sm px-4 py-2 rounded-lg inline-block">
-                            <p className="text-[#ffd701] font-bold text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                              {milestone.event.includes('outlet') ? 
-                                milestone.event.split(' outlet')[0].replace('First outlet @ ', '').replace(' opens', '') + ' Outlet' : 
-                                milestone.event.includes('Vietnam') ? 'Vietnam Expansion' :
-                                milestone.event.includes('HQ') ? 'Group Headquarters' : 
-                                'O\'O+ Billiards'
-                              }
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Desktop: Timeline Node */}
-                  <div className="relative z-10 flex-shrink-0 hidden lg:block">
-                    <div className="w-20 h-20 bg-gradient-to-br from-[#ffd701] to-[#ccaa4c] rounded-full flex items-center justify-center shadow-2xl border-4 border-white/20 md:group-hover:scale-110 transition-transform duration-300">
-                      <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
-                        <span className="text-[#ffd701] font-black text-lg italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                      </div>
-                    </div>
-                    
-                    {/* Connecting Line to Timeline */}
-                    <div className={`absolute top-10 w-8 h-1 bg-gradient-to-r from-[#ffd701] to-[#ccaa4c] ${index % 2 === 0 ? '-left-8' : '-right-8'}`}></div>
-                  </div>
-                  
-                  {/* Outlet Photo for Empty Space */}
-                  <div className="flex-1 hidden lg:block">
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.8, delay: 0.3 }}
-                      viewport={{ once: true }}
-                      className={`${index % 2 === 0 ? 'ml-16' : 'mr-16'} relative`}
-                    >
-                      <div className="relative overflow-hidden rounded-2xl shadow-2xl group">
-                        <img
-                          src={milestone.image}
-                          alt={milestone.event.includes('outlet') ? milestone.event.split(' outlet')[0] + ' Outlet' : 'O\'O+ Billiards'}
-                          className="w-full h-64 object-cover transition-transform duration-500 md:group-hover:scale-110"
-                        />
-                        {/* Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-100 md:group-hover:opacity-100 transition-opacity duration-300"></div>
-                        
-                        {/* Photo Label - Always visible */}
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <div className="bg-black/80 backdrop-blur-sm px-4 py-2 rounded-lg">
-                            <p className="text-white font-bold text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                              {milestone.event.includes('outlet') ? 
-                                milestone.event.split(' outlet')[0].replace('First outlet @ ', '').replace(' opens', '') + ' Outlet' : 
-                                milestone.event.includes('Vietnam') ? 'Vietnam Expansion' :
-                                milestone.event.includes('HQ') ? 'Group Headquarters' : 
-                                'O\'O+ Billiards'
-                              }
-                            </p>
-                          </div>
-                        </div>
-                        
-                        {/* Decorative Corner */}
-                        <div className="absolute top-4 right-4 w-8 h-8 bg-[#ffd701] rounded-full flex items-center justify-center opacity-80">
-                          <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                          </svg>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            
-            {/* Bottom Decorative Element */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="text-center mt-20"
-            >
-              <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-[#ffd701] to-[#ccaa4c] p-1 rounded-full">
-                <div className="bg-black px-8 py-4 rounded-full flex items-center space-x-3">
-                  <svg className="w-6 h-6 text-[#ffd701]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
-                  <span className="text-white font-bold italic text-lg" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                    The Journey Continues...
-                  </span>
-                  <svg className="w-6 h-6 text-[#ffd701]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        {/* Corporate Milestones Section - Horizontal Timeline */}
+        <TimelineSection milestones={milestones} />
 
 
         {/* Partnerships Section */}
-        <section className="py-16 bg-gray-900">
+        <section className="py-16 bg-gradient-to-br from-gray-900 to-black">
           <div className="max-w-7xl mx-auto px-5 md:px-10 text-center">
             <motion.h2
               className="text-3xl md:text-4xl font-bold text-white mb-8 italic"

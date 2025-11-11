@@ -37,7 +37,7 @@ export default function HeroBanner() {
           />
         </motion.div>
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
+        <div className="absolute inset-0 bg-black/65 z-10"></div>
       </div>
 
 
@@ -79,12 +79,12 @@ export default function HeroBanner() {
                 <div className="text-center relative z-10 flex flex-col justify-center h-full">
                   {/* Main Title - Moved up */}
                   <div className="mb-6 -mt-8">
-                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white leading-none font-kanit italic">
-                      <span className="block text-white">BILLIARDS</span>
-                      <span className="block text-white whitespace-nowrap -mt-3 sm:-mt-4 md:-mt-5 lg:-mt-6 xl:-mt-8" style={{
-                        color: 'rgba(255, 255, 255, 0.15)',
-                        WebkitTextStroke: '3px #ffffff',
-                        textStroke: '3px #ffffff',
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none font-kanit italic">
+                      <span className="block" style={{ color: '#ffd701' }}>BILLIARDS</span>
+                      <span className="block whitespace-nowrap -mt-3 sm:-mt-4 md:-mt-5 lg:-mt-6 xl:-mt-8" style={{
+                        color: 'rgba(255, 215, 1, 0.15)',
+                        WebkitTextStroke: '3px #ffd701',
+                        textStroke: '3px #ffd701',
                       }}>EMPIRE</span>
                     </h1>
                   </div>

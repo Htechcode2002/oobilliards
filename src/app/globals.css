@@ -176,3 +176,33 @@ a, button, [role="button"], input[type="submit"], input[type="button"], .cursor-
 input[type="text"], input[type="email"], input[type="password"], textarea {
   cursor: text !important;
 }
+
+/* Product Swiper Styles */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 40px !important;
+  height: 40px !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 22px !important;
+  font-weight: bold;
+  color: #ffd701 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(1.2);
+}
+
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ffd701 !important;
+}

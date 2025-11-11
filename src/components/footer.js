@@ -24,7 +24,7 @@ export default function Footer() {
       { name: "One Shamelin Mall", href: "/outlets" },
       { name: "Seremban Outlet", href: "/outlets" },
       { name: "Viva Home Outlet", href: "/outlets" },
-      { name: "Scott Garden Outlet", href: "/outlets" },
+      { name: "The Scott Garden Outlet", href: "/outlets" },
       { name: "USJ Outlet", href: "/outlets" }
     ]
   };
@@ -76,7 +76,7 @@ export default function Footer() {
             
             {/* Company Logo and Description */}
             <div className="lg:col-span-1">
-              <div className="mb-6 flex items-center gap-3">
+              <div className="mb-6 flex items-center gap-3 flex-nowrap overflow-x-auto sm:overflow-visible sm:flex-wrap max-w-none sm:max-w-[260px]">
                 {/* Main Logo */}
                 <Image
                   src="/logo.png"
@@ -87,7 +87,7 @@ export default function Footer() {
                 />
                 
                 {/* Additional Small Logos */}
-                <div className="relative w-14 h-14 flex-shrink-0">
+                <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0">
                   <Image
                     src="/logo/1.png"
                     alt="Logo 1"
@@ -95,7 +95,7 @@ export default function Footer() {
                     className="object-contain"
                   />
                 </div>
-                <div className="relative w-15 h-15 flex-shrink-0">
+                <div className="relative w-12 h-12 sm:w-15 sm:h-15 flex-shrink-0">
                   <Image
                     src="/logo/2.png"
                     alt="Logo 2"
@@ -103,10 +103,18 @@ export default function Footer() {
                     className="object-contain"
                   />
                 </div>
-                <div className="relative w-14 h-14 flex-shrink-0">
+                <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0">
                   <Image
                     src="/logo/3.png"
                     alt="Logo 3"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="relative w-14 h-14 flex-shrink-0">
+                  <Image
+                    src="/logo/4.png"
+                    alt="Logo 4"
                     fill
                     className="object-contain"
                   />

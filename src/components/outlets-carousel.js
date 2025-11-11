@@ -17,7 +17,7 @@ export default function OutletsCarousel() {
   const outlets = [
     {
       id: 1,
-      name: "OO Snooker @ One Shamelin Mall",
+      name: "O'O Snooker @ One Shamelin Mall",
       location: "Kuala Lumpur",
       description: "The very first O'O+ Billiard's outlet, opened in November 2017",
       image: "/outlets/shamelin/shamelin.jpg",
@@ -27,7 +27,7 @@ export default function OutletsCarousel() {
     },
     {
       id: 2,
-      name: "OO Snooker @ Seremban",
+      name: "O'O Snooker @ Seremban",
       location: "Negeri Sembilan",
       description: "First outlet outside Kuala Lumpur, opened in September 2022",
       image: "/outlets/seremban/seremban.jpg",
@@ -37,7 +37,7 @@ export default function OutletsCarousel() {
     },
     {
       id: 3,
-      name: "OO Snooker @ Viva Home",
+      name: "O'O Snooker @ Viva Home",
       location: "Kuala Lumpur",
       description: "Located in the heart of Kuala Lumpur, opened in March 2023",
       image: "/outlets/vivahome/vivahome.jpg",
@@ -47,7 +47,7 @@ export default function OutletsCarousel() {
     },
     {
       id: 4,
-      name: "OO+ Billiards @ Scott Garden Mall",
+      name: "O'O+ Billiards @ The Scott Garden",
       location: "Kuala Lumpur",
       description: "One of the biggest billiards halls in KL, opened in July 2024",
       image: "/outlets/scottgarden/scottgarden.jpg",
@@ -57,7 +57,7 @@ export default function OutletsCarousel() {
     },
     {
       id: 5,
-      name: "OO+ Billiards @ USJ",
+      name: "O'O+ Billiards @ USJ",
       location: "91 Sports Arena, Subang Jaya",
       description: "The largest outlet in Subang Jaya, opened in January 2025",
       image: "/outlets/usj/usj.PNG",
@@ -67,7 +67,7 @@ export default function OutletsCarousel() {
     },
     {
       id: 6,
-      name: "OO+ Billiards @ Ho Chi Minh",
+      name: "O'O+ Billiards @ Ho Chi Minh",
       location: "Vietnam",
       description: "Our first international outlet, opening in October 2025",
       image: "/outlets/vietnam/vietnam.jpg",
@@ -124,7 +124,6 @@ export default function OutletsCarousel() {
                   fontFamily: 'Kanit, system-ui, sans-serif',
                   letterSpacing: '0.05em',
                   filter: 'blur(0.5px)',
-                  fontStyle: 'italic',
                 }}
               >
                 OUTLETS
@@ -137,7 +136,6 @@ export default function OutletsCarousel() {
                   fontFamily: 'Kanit, system-ui, sans-serif',
                   letterSpacing: '0.05em',
                   filter: 'blur(0.5px)',
-                  fontStyle: 'italic',
                   color: 'rgba(255, 215, 1, 1)',
                   WebkitTextStroke: '1.5px rgba(255, 215, 1, 0.8)',
                   textStroke: '1.5px rgba(255, 215, 1, 0.8)',
@@ -278,7 +276,7 @@ export default function OutletsCarousel() {
                         </motion.div>
 
                         {/* Title with Shimmer Effect */}
-                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-[#ffd701] transition-colors duration-300 italic relative" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
+                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-[#ffd701] transition-colors duration-300 relative" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                           {outlet.name}
                           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ffd701] to-transparent group-hover:w-full transition-all duration-500"></span>
                         </h3>

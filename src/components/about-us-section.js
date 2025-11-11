@@ -5,7 +5,22 @@ import Link from "next/link";
 
 export default function AboutUsSection() {
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+    <section className="py-16 sm:py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url('/about/e575c09e-8948-40ea-a98d-45b76d4916d4.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+        }}
+      ></div>
+      
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/70 z-0"></div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header with Background Text Effect */}
         <div className="text-center mb-16 relative">
@@ -22,7 +37,6 @@ export default function AboutUsSection() {
                   fontFamily: 'Kanit, system-ui, sans-serif',
                   letterSpacing: '0.05em',
                   filter: 'blur(0.5px)',
-                  fontStyle: 'italic',
                 }}
               >
                 ABOUT US
@@ -35,7 +49,6 @@ export default function AboutUsSection() {
                   fontFamily: 'Kanit, system-ui, sans-serif',
                   letterSpacing: '0.05em',
                   filter: 'blur(0.5px)',
-                  fontStyle: 'italic',
                   color: 'rgba(255, 215, 1, 1)',
                   WebkitTextStroke: '1.5px rgba(255, 215, 1, 0.8)',
                   textStroke: '1.5px rgba(255, 215, 1, 0.8)',
@@ -95,7 +108,7 @@ export default function AboutUsSection() {
           >
             <div className="space-y-6">
               <motion.p 
-                className="text-lg text-gray-300 leading-relaxed italic"
+                className="text-lg text-gray-300 leading-relaxed text-justify italic"
                 style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +121,7 @@ export default function AboutUsSection() {
               </motion.p>
               
               <motion.p 
-                className="text-lg text-gray-300 leading-relaxed italic"
+                className="text-lg text-gray-300 leading-relaxed text-justify italic"
                 style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -179,26 +192,17 @@ export default function AboutUsSection() {
             viewport={{ once: true }}
           >
             <motion.div 
-              className="relative overflow-hidden rounded-2xl shadow-2xl h-[500px]"
+              className="relative h-[500px] flex items-center justify-center"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
               <img
-                src="/about/team.jpg"
-                alt="O'O+ In-House Coaching Team"
-                className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+                src="about/logo.png"
+                alt="O'O+ Billiards Group Logo"
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-white font-bold text-xl mb-2 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                  Professional In-House Coaching Team
-                </h3>
-                <p className="text-white/90 text-sm italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                  Expert coaches dedicated to elevating your billiards skills
-                </p>
-              </div>
               
               {/* Decorative Element */}
               <div className="absolute top-6 right-6 bg-[#ffd701] p-3 rounded-full">

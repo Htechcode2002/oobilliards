@@ -13,7 +13,7 @@ export default function ProductSection() {
       price: "Get Quotation",
       originalPrice: null,
       rating: 5,
-      image: "/products/duya2.png",
+      image: "/products/duya/red/duya2.jpg",
       description: "DUYA II is a high-end competition table featuring a modern, technological design with a fully alloy base and LED under-lighting."
     },
     {
@@ -22,26 +22,26 @@ export default function ProductSection() {
       price: "Get Quotation",
       originalPrice: null,
       rating: 5,
-      image: "/products/duyalambogold.png",
+      image: "/products/duya/lambogold/duyalambogold.jpg",
       description: "DUYA Lambo Gold represents the pinnacle of luxury billiards tables with premium gold finishing and exceptional craftsmanship."
     },
     {
       id: 3,
-      name: "APLUS Premier Classic Model (7-ft Traditional Table)",
+      name: "APLUS Apollo",
       price: "Get Quotation",
       originalPrice: null,
       rating: 5,
-      image: "/products/apluspremier.png",
-      description: "APLUS Premier Classic Model features traditional 7-foot design with premium craftsmanship for authentic billiards experience."
+      image: "/products/aplus/Apollo/IMG_6135.PNG",
+      description: "One of the newest premium products of Aplus Billiards, featuring unique design, exceptional durability and integrated modern technologies."
     },
     {
       id: 4,
-      name: "Classic APLUS \"English Pool / Pub-Style\" Table (8 ft)",
+      name: "APLUS Special Eco",
       price: "Get Quotation",
       originalPrice: null,
       rating: 5,
-      image: null,
-      description: "Classic APLUS English Pool table with authentic pub-style design, perfect for 8-ball and 9-ball games."
+      image: "/products/aplus/Eco/IMG_6130.PNG",
+      description: "A sturdy and durable table with millimeter precision, featuring metal framework combined with wood."
     }
   ];
 
@@ -67,7 +67,6 @@ export default function ProductSection() {
                   fontFamily: 'Kanit, system-ui, sans-serif',
                   letterSpacing: '0.05em',
                   filter: 'blur(0.5px)',
-                  fontStyle: 'italic',
                 }}
               >
                 PRODUCTS
@@ -80,7 +79,6 @@ export default function ProductSection() {
                   fontFamily: 'Kanit, system-ui, sans-serif',
                   letterSpacing: '0.05em',
                   filter: 'blur(0.5px)',
-                  fontStyle: 'italic',
                   color: 'rgba(255, 215, 1, 1)',
                   WebkitTextStroke: '1.5px rgba(255, 215, 1, 0.8)',
                   textStroke: '1.5px rgba(255, 215, 1, 0.8)',

@@ -15,7 +15,7 @@ export default function OutletsSection() {
   const outlets = [
     {
       id: 1,
-      name: "OO Snooker @ One Shamelin Mall",
+      name: "O'O Snooker @ One Shamelin Mall",
       location: "Kuala Lumpur",
       description: "The very first O'O+ Billiard's outlet, opened in November 2017, equipped with professional snooker tables, ideal for both casual players and competitive tournaments.",
       openDate: "November 2017",
@@ -44,7 +44,7 @@ export default function OutletsSection() {
       },
       contact: {
         phone: "+6011-35041123",
-        whatsapp: "+60113504112"
+        whatsapp: "+601135041123"
       },
       socialMedia: {
         facebook: "https://www.facebook.com/share/1FeA1XNBiy/?mibextid=wwXIfr",
@@ -55,7 +55,7 @@ export default function OutletsSection() {
     },
     {
       id: 2,
-      name: "OO Snooker @ Seremban",
+      name: "O'O Snooker @ Seremban",
       location: "Negeri Sembilan",
       description: "Opened in September 2022, the first outlet outside Kuala Lumpur, bringing professional billiards facilities to Negeri Sembilan.",
       openDate: "September 2022",
@@ -81,7 +81,7 @@ export default function OutletsSection() {
       },
       contact: {
         phone: "+6011-16683556",
-        whatsapp: "+60111668355"
+        whatsapp: "+601116683556"
       },
       socialMedia: {
         facebook: "https://www.facebook.com/share/1FeA1XNBiy/?mibextid=wwXIfr",
@@ -92,7 +92,7 @@ export default function OutletsSection() {
     },
     {
       id: 3,
-      name: "OO Snooker @ Viva Home",
+      name: "O'O Snooker @ Viva Home",
       location: "Kuala Lumpur",
       description: "Opened in March 2023, located in the heart of Kuala Lumpur, offering multiple game formats for both casual and competitive players.",
       openDate: "March 2023",
@@ -123,7 +123,7 @@ export default function OutletsSection() {
       },
       contact: {
         phone: "+6011-11102935",
-        whatsapp: "+60111110293"
+        whatsapp: "+601111102935"
       },
       socialMedia: {
         facebook: "https://www.facebook.com/share/1FeA1XNBiy/?mibextid=wwXIfr",
@@ -134,7 +134,7 @@ export default function OutletsSection() {
     },
     {
       id: 4,
-      name: "OO+ Billiards @ Scott Garden Mall",
+      name: "O'O+ Billiards @ The Scott Garden",
       location: "Kuala Lumpur",
       description: "Opened in July 2024, one of the biggest billiards halls in Kuala Lumpur with a variety of game formats and professional facilities.",
       openDate: "July 2024",
@@ -176,7 +176,7 @@ export default function OutletsSection() {
     },
     {
       id: 5,
-      name: "OO+ Billiards @ USJ",
+      name: "O'O+ Billiards @ USJ",
       location: "91 Sports Arena, Subang Jaya",
       description: "Opened in January 2025, the largest outlet in Subang Jaya, located above Giant USJ1 within 91 Sports Arena. Offers coaching programs, tournaments, and multiple table types.",
       openDate: "January 2025",
@@ -218,13 +218,18 @@ export default function OutletsSection() {
     },
     {
       id: 6,
-      name: "OO+ Billiards @ Ho Chi Minh",
+      name: "O'O+ Billiards @ Ho Chi Minh",
       location: "Vietnam",
       description: "Opening in October 2025, our first international outlet in Vietnam, bringing O'O+ Billiards' signature facilities and experiences to Ho Chi Minh City.",
       openDate: "October 2025",
       image: "/outlets/vietnam/vietnam.jpg",
       images: [
-        "/outlets/vietnam/vietnam.jpg"
+        "/outlets/vietnam/vietnam.jpg",
+        "/outlets/vietnam/IMG_6169.JPG",
+        "/outlets/vietnam/IMG_6162.JPG",
+        "/outlets/vietnam/IMG_61462.jpg",
+        "/outlets/vietnam/IMG_61461.jpg",
+        "/outlets/vietnam/IMG_6146.JPG"
       ],
       address: "34 Đ. Lê Văn Quới, Bình Trị Đông A, Bình Tân, Hồ Chí Minh 762000, Vietnam",
       brands: [
@@ -279,7 +284,7 @@ export default function OutletsSection() {
       1: "https://waze.com/ul/hw283g0kge", // Shamelin Mall
       2: "https://waze.com/ul/hw22rrxvk5", // Seremban
       3: "https://waze.com/ul/hw283f8tc5", // Viva Home
-      4: "https://waze.com/ul/hw2839emt4", // Scott Garden
+      4: "https://waze.com/ul/hw2839emt4", // The Scott Garden
       5: "https://waze.com/ul/hw281rughn", // USJ
       // 6: Vietnam - 暂时没有Waze链接
     };
