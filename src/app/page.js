@@ -9,6 +9,11 @@ import EventsPromotions from "@/components/events-promotions";
 import ProductSection from "@/components/product-section";
 import Footer from "@/components/footer";
 
+export const metadata = {
+  title: "Home — O'O+ Billiards Group",
+  description: "Premium billiards venues, coaching and equipment in Malaysia and Vietnam.",
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen">

@@ -145,7 +145,7 @@ function TimelineSection({ milestones }) {
                       transition={{ duration: 0.5, delay: 0.1 }}
                     >
                       <span className="text-[#ffd701] font-bold text-lg flex-shrink-0 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                        02:
+                        {String(1).padStart(2, '0') + ':'}
                       </span>
                       <p className="text-white text-base md:text-lg font-medium leading-relaxed italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                         {currentItem.title}
@@ -162,7 +162,7 @@ function TimelineSection({ milestones }) {
                         transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
                       >
                         <span className="text-[#ffd701] font-bold text-lg flex-shrink-0 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                          {String(idx + 6).padStart(2, '0')}:
+                          {String(idx + 2).padStart(2, '0') + ':'}
                         </span>
                         <p className="text-white/90 text-base md:text-lg font-medium leading-relaxed italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
                           {highlight}
@@ -179,10 +179,10 @@ function TimelineSection({ milestones }) {
                         transition={{ duration: 0.5, delay: 0.2 }}
                       >
                         <span className="text-[#ffd701] font-bold text-lg flex-shrink-0 italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                          06:
+                          {String(2).padStart(2, '0') + ':'}
                         </span>
                         <p className="text-white/90 text-base md:text-lg font-medium leading-relaxed italic" style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}>
-                          Expanding our presence in Malaysia
+                          {currentItem.image && currentItem.image.includes('/outlets/vietnam/') ? 'Expanding our presence in Vietnam' : 'Expanding our presence in Malaysia'}
                         </p>
                       </motion.div>
                     )}
@@ -284,7 +284,7 @@ export default function AboutPageContent() {
     { date: "Mar 2023", event: "Viva Home outlet opens", image: "/outlets/vivahome/vivahome.jpg" },
     { date: "Jul 2024", event: "The Scott Garden outlet opens – one of the biggest in KL", image: "/outlets/scottgarden/scottgarden.jpg" },
     { date: "Jan 2025", event: "USJ outlet opens at 91 Sports Arena + Group HQ established", image: "/outlets/usj/usj.PNG" },
-    { date: "Oct 2025", event: "Vietnam outlet (Ho Chi Minh City) opening soon", image: "/outlets/vietnam/vietnam.jpg", comingSoon: true }
+    { date: "Oct 2025", event: "Vietnam outlet (Ho Chi Minh City) opened", image: "/outlets/vietnam/vietnam.jpg" }
   ];
 
   const values = [
@@ -407,7 +407,7 @@ export default function AboutPageContent() {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img 
-                    src="/about/logo.png" 
+                    src="/about/logo.PNG" 
                     alt="O'O+ Billiards Group Logo"
                     className="w-full h-[500px] object-cover"
                   />

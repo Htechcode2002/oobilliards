@@ -199,7 +199,7 @@ export default function AboutUsSection() {
               viewport={{ once: true }}
             >
               <img
-                src="about/logo.png"
+                src="/about/logo.PNG"
                 alt="O'O+ Billiards Group Logo"
                 className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
               />
