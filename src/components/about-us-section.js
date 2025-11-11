@@ -1,27 +1,38 @@
-"use client";
+ "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function AboutUsSection() {
   return (
     <section className="py-16 sm:py-20 relative overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url('/about/e575c09e-8948-40ea-a98d-45b76d4916d4.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
-        }}
-      ></div>
+      {/* Background Image using next/Image + subtle scale animation (like hero banner) */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <motion.div
+          className="relative w-full h-full"
+          initial={{ scale: 1.02 }}
+          animate={{ scale: 1.05 }}
+          transition={{
+            duration: 6,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        >
+          <Image
+            src="/about/e575c09e-8948-40ea-a98d-45b76d4916d4.jpg"
+            alt="About background"
+            fill
+            className="object-cover"
+            priority
+          />
+        </motion.div>
+        {/* Overlay to keep text readable (lighter on mobile via utilities) */}
+        <div className="absolute inset-0 bg-black/60 md:bg-black/70 z-10"></div>
+      </div>
       
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/70 z-0"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         {/* Header with Background Text Effect */}
         <div className="text-center mb-16 relative">
           {/* Background Decorative Text */}
