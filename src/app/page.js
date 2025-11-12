@@ -10,8 +10,19 @@ import ProductSection from "@/components/product-section";
 import Footer from "@/components/footer";
 
 export const metadata = {
-  title: "Home — O'O+ Billiards Group",
-  description: "Premium billiards venues, coaching and equipment in Malaysia and Vietnam.",
+  title: "O'O+ Billiards | Premium Snooker & Pool Tables in Malaysia & Vietnam",
+  description: "Premier billiards venues in Malaysia & Vietnam offering professional snooker tables, pool tables, expert coaching and quality equipment. Visit our outlets in KL, Seremban & Ho Chi Minh City.",
+  openGraph: {
+    title: "O'O+ Billiards | Premium Snooker & Pool Tables in Malaysia & Vietnam",
+    description: "Premier billiards venues in Malaysia & Vietnam offering professional snooker tables, pool tables, expert coaching and quality equipment. Visit our outlets in KL, Seremban & Ho Chi Minh City.",
+    images: ['/metalogo.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "O'O+ Billiards | Premium Snooker & Pool Tables in Malaysia & Vietnam",
+    description: "Premier billiards venues in Malaysia & Vietnam offering professional snooker tables, pool tables, expert coaching and quality equipment.",
+    images: ['/metalogo.png'],
+  },
 };
 
 export default function Home() {

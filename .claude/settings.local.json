@@ -3,7 +3,12 @@
     "allow": [
       "Bash(tree:*)",
       "Bash(nul)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(find:*)",
+      "Bash(magick:*)",
+      "Bash(python create_og_image.py:*)",
+      "Bash(python create_og_image_hq.py:*)",
+      "Bash(python create_all_og_images.py:*)"
     ],
     "deny": [],
     "ask": []

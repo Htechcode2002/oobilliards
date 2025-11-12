@@ -3,8 +3,19 @@ import FaqSection from "@/components/faq-section";
 import Footer from "@/components/footer";
 
 export const metadata = {
-  title: "FAQ — O'O+ Billiards Group",
-  description: "Frequently asked questions about our services, coaching and outlets.",
+  title: "FAQ - Billiards Services & Coaching | O'O+ Billiards Group",
+  description: "Get answers about our billiards facilities, coaching programs, table bookings, and equipment. Learn more about O'O+ Billiards services in Malaysia & Vietnam.",
+  openGraph: {
+    title: "FAQ - Billiards Services & Coaching | O'O+ Billiards Group",
+    description: "Get answers about our billiards facilities, coaching programs, table bookings, and equipment. Learn more about O'O+ Billiards services in Malaysia & Vietnam.",
+    images: ['/metalogo.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "FAQ - Billiards Services & Coaching | O'O+ Billiards Group",
+    description: "Get answers about our billiards facilities, coaching programs, table bookings, and equipment.",
+    images: ['/metalogo.png'],
+  },
 };
 
 export default function FaqPage() {

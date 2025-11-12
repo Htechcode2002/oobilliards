@@ -17,8 +17,9 @@ const kanit = Kanit({
 });
 
 export const metadata = {
-  title: "OOBilliards - Premium Billiards Equipment",
-  description: "Feel The Joy, One Ball At A Time! Professional billiards tables and equipment.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oobilliards.com'),
+  title: "O'O+ Billiards | Premium Snooker & Pool Tables in Malaysia & Vietnam",
+  description: "Premier billiards venues offering professional snooker & pool tables, expert coaching, and quality equipment in Malaysia & Vietnam. Feel the joy, one ball at a time!",
   icons: {
     icon: '/metalogo.png',
     shortcut: '/metalogo.png',
