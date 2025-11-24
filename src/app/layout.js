@@ -38,12 +38,32 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) { 
+export default function RootLayout({ children }) {
+  // Structured data for organization logo - helps Google display correct logo in search results
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "O'O+ Billiards",
+    "url": "https://www.oobilliards.com",
+    "logo": "https://www.oobilliards.com/metalogo.png",
+    "image": "https://www.oobilliards.com/metalogo.png",
+    "description": "Premier billiards venues offering professional snooker & pool tables, expert coaching, and quality equipment in Malaysia & Vietnam.",
+    "sameAs": [
+      "https://www.facebook.com/share/1FeA1XNBiy/",
+      "https://www.instagram.com/oo_snooker",
+      "https://www.tiktok.com/@oosnooker"
+    ]
+  };
+
   return (
     <html lang="en">
       <body
         className={`${poppins.variable} ${kanit.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         {children}
         <ScrollToTop />
         <AnnouncementDialog />
