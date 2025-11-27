@@ -154,10 +154,11 @@ export default function OutletsSection() {
         { name: "Joy", logo: "/about/brand/joy.png" }        // 9 tables
       ],
       tables: [
-        "10 Rasson Snooker Tables",
+        "9 Rasson Snooker Tables",
         "13 Earl Snooker Tables",
         "9 Joy Chinese 8 Ball Tables",
         "4 Earl Chinese 8 Ball Tables",
+        "2 DUYA Chinese 9 Ball Tables",
         "4 Rasson American Pool Tables"
       ],
       hours: {
