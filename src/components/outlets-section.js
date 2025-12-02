@@ -19,14 +19,14 @@ export default function OutletsSection() {
       location: "Kuala Lumpur",
       description: "The very first O'O+ Billiard's outlet, opened in November 2017, equipped with professional snooker tables, ideal for both casual players and competitive tournaments.",
       openDate: "November 2017",
-      image: "/outlets/shamelin/shamelin.jpg",
+      image: "/outlets/shamelin/DXQ06717.jpg",
       images: [
-        "/outlets/shamelin/shamelin.jpg",
-        "/outlets/shamelin/DSC08668.JPG",
-        "/outlets/shamelin/DSC08681.JPG",
-        "/outlets/shamelin/DSC08695.JPG",
-        "/outlets/shamelin/DSC08704.JPG",
-        "/outlets/shamelin/DSC08709.JPG"
+        "/outlets/shamelin/DXQ06722.jpg",
+        "/outlets/shamelin/DXQ06717.jpg",
+        "/outlets/shamelin/DXQ06619.jpg",
+        "/outlets/shamelin/DXQ06628.jpg",
+        "/outlets/shamelin/DXQ06740.jpg",
+        "/outlets/shamelin/DXQ06741.jpg"
       ],
       brands: [
         { name: "Earl", logo: "/about/brand/earl.png" },      // 15 tables
@@ -35,7 +35,7 @@ export default function OutletsSection() {
       ],
       tables: [
         "3 Rasson Snooker Tables",
-        "15 Earl Snooker Tables", 
+        "15 Earl Snooker Tables",
         "7 Wiraka Snooker Tables"
       ],
       hours: {
@@ -297,7 +297,7 @@ export default function OutletsSection() {
   return (
     <div className="min-h-screen relative">
       {/* Full Page Background Image */}
-      <div 
+      <div
         className="fixed inset-0 z-0"
         style={{
           backgroundImage: `url('/outlets/outlets.jpg')`,
@@ -320,7 +320,7 @@ export default function OutletsSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h1 
+            <motion.h1
               className="text-3xl sm:text-5xl lg:text-6xl font-black mb-3 sm:mb-4 leading-tight italic px-2"
               style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
               initial={{ opacity: 0, y: 30 }}
@@ -329,8 +329,8 @@ export default function OutletsSection() {
             >
               Visit Our <span className="text-[#ffd701]">Outlets</span>
             </motion.h1>
-            
-            <motion.div 
+
+            <motion.div
               className="text-white/70 text-base sm:text-lg mb-4 sm:mb-6"
               style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
               initial={{ opacity: 0, y: 20 }}
@@ -370,7 +370,7 @@ export default function OutletsSection() {
                           <div className="mb-6">
                             <div className="w-20 h-20 mx-auto mb-4 bg-[#ffd701] rounded-full flex items-center justify-center">
                               <svg className="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                               </svg>
                             </div>
                           </div>
@@ -422,7 +422,7 @@ export default function OutletsSection() {
                           }}
                         />
                         {/* Fallback background when image fails to load */}
-                        <div 
+                        <div
                           className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-500 hidden items-center justify-center"
                           style={{ display: 'none' }}
                         >
@@ -467,7 +467,7 @@ export default function OutletsSection() {
                         </div>
                         <div className="flex gap-3 flex-wrap">
                           {outlet.brands.map((brand, idx) => (
-                            <div 
+                            <div
                               key={idx}
                               className="relative w-14 h-14 sm:w-16 sm:h-16 hover:scale-110 transition-transform duration-300"
                               title={brand.name}
@@ -586,17 +586,17 @@ export default function OutletsSection() {
                           <span className="font-medium text-sm">WhatsApp</span>
                         </button>
                       )}
-                      
-                      <button 
+
+                      <button
                         onClick={() => handleMapClick(outlet.id)}
                         className="flex-1 bg-[#ffd701] text-black py-3 px-4 rounded-md hover:bg-[#e6c200] transition-colors duration-200 flex items-center justify-center gap-2"
                       >
                         <i className="fa-solid fa-location-dot w-4 h-4"></i>
                         <span className="font-medium text-sm">Google Maps</span>
                       </button>
-                      
+
                       {outlet.id <= 5 && (
-                        <button 
+                        <button
                           onClick={() => handleWazeClick(outlet.id)}
                           className="flex-1 bg-[#33a1ff] text-white py-3 px-4 rounded-md hover:bg-[#2a8ce6] transition-colors duration-200 flex items-center justify-center gap-2"
                         >

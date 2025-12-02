@@ -20,7 +20,7 @@ export default function OutletsCarousel() {
       name: "O'O Snooker @ One Shamelin Mall",
       location: "Kuala Lumpur",
       description: "The very first O'O+ Billiard's outlet, opened in November 2017",
-      image: "/outlets/shamelin/shamelin.jpg",
+      image: "/outlets/shamelin/DXQ06717.jpg",
       link: "/outlets",
       badge: "Original",
       rating: 4.8
@@ -84,7 +84,7 @@ export default function OutletsCarousel() {
         {/* Gradient Orbs */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#ffd701]/10 rounded-full filter blur-3xl animate-pulse"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#ffd701]/5 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
-        
+
         {/* Grid Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -115,7 +115,7 @@ export default function OutletsCarousel() {
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div className="relative">
               {/* Base White Text */}
-              <span 
+              <span
                 className="text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
                 style={{
                   color: 'rgba(255, 255, 255, 0.15)',
@@ -128,9 +128,9 @@ export default function OutletsCarousel() {
               >
                 OUTLETS
               </span>
-              
+
               {/* Golden Flash Overlay */}
-              <motion.span 
+              <motion.span
                 className="absolute inset-0 text-[5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold leading-none select-none tracking-normal"
                 style={{
                   fontFamily: 'Kanit, system-ui, sans-serif',
@@ -234,7 +234,7 @@ export default function OutletsCarousel() {
             {outlets.map((outlet, index) => (
               <SwiperSlide key={outlet.id} className="pb-4">
                 <Link href={outlet.link}>
-                  <motion.div 
+                  <motion.div
                     className="relative group cursor-pointer h-[400px] sm:h-[450px] lg:h-[500px] rounded-2xl overflow-hidden"
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -243,7 +243,7 @@ export default function OutletsCarousel() {
                   >
                     {/* Glow Effect Border */}
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#ffd701]/50 via-transparent to-[#ffd701]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
-                    
+
                     {/* Card Container with Border */}
                     <div className="relative h-full rounded-2xl overflow-hidden border-2 border-transparent group-hover:border-[#ffd701]/50 transition-all duration-500 shadow-2xl group-hover:shadow-[0_0_30px_rgba(255,215,1,0.3)]">
                       {/* Image */}
@@ -263,7 +263,7 @@ export default function OutletsCarousel() {
                       {/* Content */}
                       <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 z-10">
                         {/* Location Badge */}
-                        <motion.div 
+                        <motion.div
                           className="mb-3"
                           initial={{ x: -20, opacity: 0 }}
                           whileInView={{ x: 0, opacity: 1 }}
@@ -290,7 +290,7 @@ export default function OutletsCarousel() {
                         <div className="w-full h-px bg-gradient-to-r from-transparent via-[#ffd701]/50 to-transparent mb-4 group-hover:via-[#ffd701] transition-colors duration-300"></div>
 
                         {/* View Details Button with Icon Animation */}
-                        <motion.div 
+                        <motion.div
                           className="flex items-center gap-2 text-[#ffd701] font-semibold text-sm"
                           whileHover={{ x: 10 }}
                           transition={{ duration: 0.3 }}
@@ -299,10 +299,10 @@ export default function OutletsCarousel() {
                             View Details
                             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#ffd701] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                           </span>
-                          <motion.svg 
-                            className="w-5 h-5" 
-                            fill="none" 
-                            stroke="currentColor" 
+                          <motion.svg
+                            className="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
                             viewBox="0 0 24 24"
                             animate={{ x: [0, 5, 0] }}
                             transition={{ duration: 1.5, repeat: Infinity }}
@@ -332,7 +332,7 @@ export default function OutletsCarousel() {
           viewport={{ once: true }}
         >
           <Link href="/outlets">
-            <motion.button 
+            <motion.button
               className="relative bg-gradient-to-r from-[#ffd701] to-[#ffed4e] text-black px-10 py-5 rounded-full font-bold text-lg italic overflow-hidden group shadow-2xl"
               style={{ fontFamily: 'Kanit, system-ui, sans-serif' }}
               whileHover={{ scale: 1.05 }}
@@ -341,10 +341,10 @@ export default function OutletsCarousel() {
               {/* Button Content */}
               <span className="relative flex items-center gap-3">
                 <span>View All Outlets</span>
-                <motion.svg 
-                  className="w-6 h-6" 
-                  fill="none" 
-                  stroke="currentColor" 
+                <motion.svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
