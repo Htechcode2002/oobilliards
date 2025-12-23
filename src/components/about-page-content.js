@@ -283,7 +283,7 @@ function TimelineSection({ milestones }) {
 
 export default function AboutPageContent() {
   const milestones = [
-    { date: "Nov 2017", event: "First outlet @ One Shamelin Mall, KL", image: "/outlets/shamelin/shamelin.jpg" },
+    { date: "Nov 2017", event: "First outlet @ One Shamelin Mall, KL", image: "/outlets/shamelin/DXQ06722.jpg" },
     { date: "Sept 2022", event: "Seremban outlet opens", image: "/outlets/seremban/seremban.jpg" },
     { date: "Jul 2024", event: "The Scott Garden outlet opens – one of the biggest in KL", image: "/outlets/scottgarden/scottgarden.jpg" },
     { date: "Jan 2025", event: "USJ outlet opens at 91 Sports Arena + Group HQ established", image: "/outlets/usj/usj.PNG" },
