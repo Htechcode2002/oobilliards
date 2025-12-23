@@ -10,7 +10,10 @@
       "Bash(python create_og_image_hq.py:*)",
       "Bash(python create_all_og_images.py:*)",
       "Bash(ls:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(git pull:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
