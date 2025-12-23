@@ -8,7 +8,9 @@
       "Bash(magick:*)",
       "Bash(python create_og_image.py:*)",
       "Bash(python create_og_image_hq.py:*)",
-      "Bash(python create_all_og_images.py:*)"
+      "Bash(python create_all_og_images.py:*)",
+      "Bash(ls:*)",
+      "Bash(npm run dev:*)"
     ],
     "deny": [],
     "ask": []

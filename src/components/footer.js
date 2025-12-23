@@ -23,7 +23,6 @@ export default function Footer() {
     outlets: [
       { name: "One Shamelin Mall", href: "/outlets" },
       { name: "Seremban Outlet", href: "/outlets" },
-      { name: "Viva Home Outlet", href: "/outlets" },
       { name: "The Scott Garden Outlet", href: "/outlets" },
       { name: "USJ Outlet", href: "/outlets" }
     ]

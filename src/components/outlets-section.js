@@ -91,48 +91,6 @@ export default function OutletsSection() {
       isOpen: true
     },
     {
-      id: 3,
-      name: "O'O Snooker @ Viva Home",
-      location: "Kuala Lumpur",
-      description: "Opened in March 2023, located in the heart of Kuala Lumpur, offering multiple game formats for both casual and competitive players.",
-      openDate: "March 2023",
-      image: "/outlets/vivahome/vivahome.jpg",
-      images: [
-        "/outlets/vivahome/vivahome.jpg",
-        "/outlets/vivahome/04dee5af-53e8-400f-b423-84aef6815343.jpg",
-        "/outlets/vivahome/41a3cd6c-c7b2-46d1-a9f2-614f2d45037a.jpg",
-        "/outlets/vivahome/4a899528-a58e-4f8e-b88e-8f2cded53f94.jpg",
-        "/outlets/vivahome/733a81d9-227c-45c7-9b82-76f46e040960.jpg",
-        "/outlets/vivahome/7b3b575c-a51c-4597-b4ef-f7fbd2456ad4.jpg",
-        "/outlets/vivahome/ce2972a9-cca5-4570-bfcf-964b45f0358e.jpg",
-        "/outlets/vivahome/e575c09e-8948-40ea-a98d-45b76d4916d4.jpg",
-        "/outlets/vivahome/e83a9f36-b0b3-4285-9059-93ea1139ed65.jpg"
-      ],
-      brands: [
-        { name: "Earl", logo: "/about/brand/earl.png" },     // 16 tables (11+5)
-        { name: "Rasson", logo: "/about/brand/rasson.png" }  // 2 tables
-      ],
-      tables: [
-        "2 Rasson Snooker Tables",
-        "11 Earl Snooker Tables",
-        "5 Earl Chinese 8 Ball Tables",
-        "1 Pool Table"
-      ],
-      hours: {
-        daily: "Open Daily: 12:00 PM – 8:00 AM"
-      },
-      contact: {
-        phone: "+6011-11102935",
-        whatsapp: "+601111102935"
-      },
-      socialMedia: {
-        facebook: "https://www.facebook.com/share/1FeA1XNBiy/?mibextid=wwXIfr",
-        instagram: "https://www.instagram.com/oo_snooker?igsh=MWlncWk2MDczbXkzaA%3D%3D&utm_source=qr",
-        tiktok: "https://www.tiktok.com/@oosnooker?_r=1&_d=eh0f7la31e648l&sec_uid=MS4wLjABAAAAmo9UKIlOWObeu5BtLiX_gKtG0mpWv_R7xmPHkS15jHi8dPJ2ziXcgo4LkkUsMAWE&share_author_id=6597732250212433921&sharer_language=zh&source=h5_t&u_code=e2cfe5h3gi50em&item_author_type=2&utm_source=whatsapp&tt_from=whatsapp&enable_checksum=1&utm_medium=ios&share_link_id=24EEBD75-0FFF-4279-838F-E54B8A6E86DA&user_id=7112419096864162821&sec_user_id=MS4wLjABAAAAh0LnLKq10TFNC7kXdlgzMgU63uPRqXpUWjMs1NJ05Cu56Yvcs7-Abw6bEObxmTn9&social_share_type=5&ug_btm=b6880,b5836&utm_campaign=client_share&share_app_id=1180"
-      },
-      isOpen: true
-    },
-    {
       id: 4,
       name: "O'O+ Billiards @ The Scott Garden",
       location: "Kuala Lumpur",
@@ -268,7 +226,6 @@ export default function OutletsSection() {
     const mapUrls = {
       1: "http://google.com/maps?rlz=1C1VDKB_zh-CNMY1157MY1157&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg70gEHNDkwajBqN6gCCLACAfEFV3HVLPlccYs&um=1&ie=UTF-8&fb=1&gl=my&sa=X&geocode=KS-D8ehvNswxMfmT7MYJQf05&daddr=Taman,+Taman+Shamelin+Perkasa,+55300+Kuala+Lumpur,+Federal+Territory+of+Kuala+Lumpur",
       2: "https://www.google.com/maps/dir//1st+Floor,+Lot+3258,+Jalan+Dato+Sheikh+Ahmad,+Bandar+Seremban,+70000+Seremban,+Negeri+Sembilan/@2.7238228,101.8562042,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31cdddcacbccf395:0xd0574dda180db38c!2m2!1d101.9386062!2d2.7238256?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D",
-      3: "https://www.google.com/maps/dir//32-5,+Third+Floor,+Viva+Shopping+Mall.85,+Jalan+Loke+Yew+Cheras,+Maluri,+55200+Wilayah+Persekutuan,+Wilayah+Persekutuan+Kuala+Lumpur/@3.1230634,101.6370601,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31cc37378fd7e06b:0xf46c2e3286dace56!2m2!1d101.7194621!2d3.1230666?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D",
       4: "http://google.com/maps?rlz=1C1VDKB_zh-CNMY1157MY1157&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBBzgxMmowajSoAgCwAgA&um=1&ie=UTF-8&fb=1&gl=my&sa=X&geocode=KR8J4jkkS8wxMWZAVZRSYev1&daddr=Lot+G-01-01A,+Ground+Floor,+Jln+Klang+Lama,+The+Scott+Garden,+58100+Kuala+Lumpur,+Wilayah+Persekutuan+Kuala+Lumpur",
       5: "https://www.google.com/maps/dir//Lot+T2,T3,T4,+Giant+USJ+1,+1,+Persiaran+Subang+Permai,+Usj+1,+47500+Subang+Jaya,+Selangor/@3.0590089,101.5125797,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31cc4d58a4b0c415:0x358376bf40d00d88!2m2!1d101.5949817!2d3.0590121?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D",
       6: "https://maps.app.goo.gl/wTzPafdjUmwR7fcW7"
@@ -283,7 +240,6 @@ export default function OutletsSection() {
     const wazeUrls = {
       1: "https://waze.com/ul/hw283g0kge", // Shamelin Mall
       2: "https://waze.com/ul/hw22rrxvk5", // Seremban
-      3: "https://waze.com/ul/hw283f8tc5", // Viva Home
       4: "https://waze.com/ul/hw2839emt4", // The Scott Garden
       5: "https://waze.com/ul/hw281rughn", // USJ
       // 6: Vietnam - 暂时没有Waze链接

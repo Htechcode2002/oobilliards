@@ -36,16 +36,6 @@ export default function OutletsCarousel() {
       rating: 4.7
     },
     {
-      id: 3,
-      name: "O'O Snooker @ Viva Home",
-      location: "Kuala Lumpur",
-      description: "Located in the heart of Kuala Lumpur, opened in March 2023",
-      image: "/outlets/vivahome/vivahome.jpg",
-      link: "/outlets",
-      badge: "Premium",
-      rating: 4.9
-    },
-    {
       id: 4,
       name: "O'O+ Billiards @ The Scott Garden",
       location: "Kuala Lumpur",

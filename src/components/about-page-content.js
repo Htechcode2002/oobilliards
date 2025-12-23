@@ -111,11 +111,15 @@ function TimelineSection({ milestones }) {
               >
                 {/* Left Side - Large Image (3 columns) */}
                 <div className="lg:col-span-3 relative">
-                  <div className="relative overflow-hidden rounded-xl group">
+                  <div className="relative overflow-hidden rounded-xl group bg-gray-800">
                     <img
                       src={currentItem.image}
                       alt={currentItem.title}
                       className="w-full h-[350px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading={currentIndex === 0 ? "eager" : "lazy"}
+                      onError={(e) => {
+                        console.error('Image failed to load:', currentItem.image);
+                      }}
                     />
                   </div>
                 </div>
@@ -281,7 +285,6 @@ export default function AboutPageContent() {
   const milestones = [
     { date: "Nov 2017", event: "First outlet @ One Shamelin Mall, KL", image: "/outlets/shamelin/shamelin.jpg" },
     { date: "Sept 2022", event: "Seremban outlet opens", image: "/outlets/seremban/seremban.jpg" },
-    { date: "Mar 2023", event: "Viva Home outlet opens", image: "/outlets/vivahome/vivahome.jpg" },
     { date: "Jul 2024", event: "The Scott Garden outlet opens – one of the biggest in KL", image: "/outlets/scottgarden/scottgarden.jpg" },
     { date: "Jan 2025", event: "USJ outlet opens at 91 Sports Arena + Group HQ established", image: "/outlets/usj/usj.PNG" },
     { date: "Oct 2025", event: "Vietnam outlet (Ho Chi Minh City) opened", image: "/outlets/vietnam/vietnam.jpg" }
